@@ -1,0 +1,20 @@
+01/04/2016 13:29:29:952: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Entity connection string: data source=HUYTO-PC\MSSQLSERVER2K14;initial catalog=HPE;user id=sa;password=Abcd1234;MultipleActiveResultSets=True;App=EntityFramework] .
+-------------------------------------------
+01/04/2016 13:29:30:484: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Login failed for user 'sa'.] .
+-------------------------------------------
+01/04/2016 13:29:47:109: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Entity connection string: data source=HUYTO-PC\MSSQLSERVER2K14;initial catalog=HPE;user id=sa;password=Abcd1234;MultipleActiveResultSets=True;App=EntityFramework] .
+-------------------------------------------
+01/04/2016 13:29:47:507: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Login failed for user 'sa'.] .
+-------------------------------------------
+01/04/2016 13:29:49:724: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Entity connection string: data source=HUYTO-PC\MSSQLSERVER2K14;initial catalog=HPE;user id=sa;password=Abcd1234;MultipleActiveResultSets=True;App=EntityFramework] .
+-------------------------------------------
+01/04/2016 13:29:50:109: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Login failed for user 'sa'.] .
+-------------------------------------------
+01/04/2016 13:29:54:110: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Entity connection string: data source=HUYTO-PC\MSSQLSERVER2K14;initial catalog=HPE;user id=sa;password=Abcd1234;MultipleActiveResultSets=True;App=EntityFramework] .
+-------------------------------------------
+01/04/2016 13:29:54:507: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Login failed for user 'sa'.] .
+-------------------------------------------
+01/04/2016 13:30:15:827: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Entity connection string: data source=HUYTO-PC\MSSQLSERVER2K14;initial catalog=HPE;user id=sa;password=Abcd1234;MultipleActiveResultSets=True;App=EntityFramework] .
+-------------------------------------------
+01/04/2016 13:30:21:730: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Entity connection string: data source=HUYTO-PC\MSSQLSERVER2K14;initial catalog=HPE;user id=sa;password=Abcd1234;MultipleActiveResultSets=True;App=EntityFramework] .
+-------------------------------------------

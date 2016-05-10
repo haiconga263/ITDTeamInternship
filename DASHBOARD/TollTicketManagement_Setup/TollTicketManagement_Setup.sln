@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "TollTicketManagement_Setup", "TollTicketManagement_Setup\TollTicketManagement_Setup.isproj", "{D36FA209-3F4B-4C74-8469-4FEFCA77EB05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Default = CD_ROM|Default
+		DVD-5|Default = DVD-5|Default
+		SingleImage|Default = SingleImage|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D36FA209-3F4B-4C74-8469-4FEFCA77EB05}.CD_ROM|Default.ActiveCfg = CD_ROM
+		{D36FA209-3F4B-4C74-8469-4FEFCA77EB05}.CD_ROM|Default.Build.0 = CD_ROM
+		{D36FA209-3F4B-4C74-8469-4FEFCA77EB05}.DVD-5|Default.ActiveCfg = DVD-5
+		{D36FA209-3F4B-4C74-8469-4FEFCA77EB05}.DVD-5|Default.Build.0 = DVD-5
+		{D36FA209-3F4B-4C74-8469-4FEFCA77EB05}.SingleImage|Default.ActiveCfg = SingleImage
+		{D36FA209-3F4B-4C74-8469-4FEFCA77EB05}.SingleImage|Default.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

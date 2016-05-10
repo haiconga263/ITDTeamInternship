@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{395F2E56-F3E9-44B9-B44B-1484EC8CBAB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TollManagement.Data</RootNamespace>
+    <AssemblyName>TollManagement.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cts_supervision_sp_rpt_TollManagement_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IN_CheckSmartCard.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_CMO_DASHBOARD_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetInLane_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetOutLane_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_LS_Lane_Devices_GetInformation_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_LS_Lane_GetAll1_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_LS_Lane_GetAll_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_LS_Lane_Station_GetInformation_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_LS_Shift_GetAll_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_LS_Shift_GetByID_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_LS_Station_GetAll_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_rpt_TollManagement_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_ToolManagement_GetAllOutCheck_NoEntryInfo_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_ToolManagement_GetAllOutCheck_UnPrecheck_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_ToolManagement_GetDeviceStatus1_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_ToolManagement_GetDeviceStatus_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_ToolManagement_GetTrafficVolume_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_ToolManagement_UpdatePrecheck_CountRowEffect_Result.cs">
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TollManagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TollManagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TollManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TollManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TollManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TollManagement.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="TollManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TollManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TollManagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TollManagement.edmx</DependentUpon>
+      <LastGenOutput>TollManagement.Context.cs</LastGenOutput>
+    </None>
+    <None Include="TollManagement.edmx.diagram">
+      <DependentUpon>TollManagement.edmx</DependentUpon>
+    </None>
+    <None Include="TollManagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TollManagement.edmx</DependentUpon>
+      <LastGenOutput>TollManagement.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

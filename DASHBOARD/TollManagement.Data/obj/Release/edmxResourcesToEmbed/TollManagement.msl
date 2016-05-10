@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HPEModelStoreContainer" CdmEntityContainer="HPEEntities">
+    <EntitySetMapping Name="IN_CheckSmartCard">
+      <EntityTypeMapping TypeName="HPEModel.IN_CheckSmartCard">
+        <MappingFragment StoreEntitySet="IN_CheckSmartCard">
+          <ScalarProperty Name="IsVehicleInfoManual" ColumnName="IsVehicleInfoManual" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="WIMID" ColumnName="WIMID" />
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="SupervisionStatus" ColumnName="SupervisionStatus" />
+          <ScalarProperty Name="PreSupervisionStatus" ColumnName="PreSupervisionStatus" />
+          <ScalarProperty Name="PrecheckStatus" ColumnName="PrecheckStatus" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="RecogResultType" ColumnName="RecogResultType" />
+          <ScalarProperty Name="RecogPlateNumber" ColumnName="RecogPlateNumber" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="TicketTypeID" ColumnName="TicketTypeID" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="SmartCardID" ColumnName="SmartCardID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="InCheckSmartCardID" ColumnName="InCheckSmartCardID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_LS_Shift_GetAll" FunctionName="HPEModel.Store.sp_LS_Shift_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_LS_Shift_GetAll_Result">
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="ShiftCode" ColumnName="ShiftCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_LS_Shift_GetByID" FunctionName="HPEModel.Store.sp_LS_Shift_GetByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_LS_Shift_GetByID_Result">
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="ShiftCode" ColumnName="ShiftCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Shift_GetCurrentShift_ByTime" FunctionName="HPEModel.Store.sp_Shift_GetShiftID" />
+    <FunctionImportMapping FunctionImportName="cts_supervision_sp_rpt_TollManagement" FunctionName="HPEModel.Store.cts_supervision_sp_rpt_TollManagement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.cts_supervision_sp_rpt_TollManagement_Result">
+          <ScalarProperty Name="StationName" ColumnName="StationName" />
+          <ScalarProperty Name="Lane01" ColumnName="Lane01" />
+          <ScalarProperty Name="Lane02" ColumnName="Lane02" />
+          <ScalarProperty Name="Lane03" ColumnName="Lane03" />
+          <ScalarProperty Name="Lane04" ColumnName="Lane04" />
+          <ScalarProperty Name="Lane05" ColumnName="Lane05" />
+          <ScalarProperty Name="Lane06" ColumnName="Lane06" />
+          <ScalarProperty Name="InExport" ColumnName="InExport" />
+          <ScalarProperty Name="SumIn" ColumnName="SumIn" />
+          <ScalarProperty Name="InInstock" ColumnName="InInstock" />
+          <ScalarProperty Name="Lane07" ColumnName="Lane07" />
+          <ScalarProperty Name="Lane08" ColumnName="Lane08" />
+          <ScalarProperty Name="Lane09" ColumnName="Lane09" />
+          <ScalarProperty Name="Lane10" ColumnName="Lane10" />
+          <ScalarProperty Name="Lane11" ColumnName="Lane11" />
+          <ScalarProperty Name="Lane12" ColumnName="Lane12" />
+          <ScalarProperty Name="Lane13" ColumnName="Lane13" />
+          <ScalarProperty Name="Lane14" ColumnName="Lane14" />
+          <ScalarProperty Name="Lane15" ColumnName="Lane15" />
+          <ScalarProperty Name="Lane16" ColumnName="Lane16" />
+          <ScalarProperty Name="SumOut" ColumnName="SumOut" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_LS_Station_GetAll" FunctionName="HPEModel.Store.sp_LS_Station_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_LS_Station_GetAll_Result">
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetInLane" FunctionName="HPEModel.Store.sp_GetInLane">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_GetInLane_Result">
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SumInLane" ColumnName="SumInLane" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetOutLane" FunctionName="HPEModel.Store.sp_GetOutLane">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_GetOutLane_Result">
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SumOutLane" ColumnName="SumOutLane" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_GetAllOutCheck_NoEntryInfo" FunctionName="HPEModel.Store.sp_ToolManagement_GetAllOutCheck_NoEntryInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_ToolManagement_GetAllOutCheck_NoEntryInfo_Result">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="ExitPlateNumber" ColumnName="ExitPlateNumber" />
+          <ScalarProperty Name="EntryPlateNumber" ColumnName="EntryPlateNumber" />
+          <ScalarProperty Name="EntryLaneID" ColumnName="EntryLaneID" />
+          <ScalarProperty Name="EntryTracsactionID" ColumnName="EntryTracsactionID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_GetAllOutCheck_UpdateEntryInfo" FunctionName="HPEModel.Store.sp_ToolManagement_GetAllOutCheck_UpdateEntryInfo" />
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_UpdateEntryInfo_CountRowEffect" FunctionName="HPEModel.Store.sp_ToolManagement_UpdateEntryInfo_CountRowEffect" />
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_UpdatePrecheck_CountRowEffect" FunctionName="HPEModel.Store.sp_ToolManagement_UpdatePrecheck_CountRowEffect" />
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_GetTrafficVolume" FunctionName="HPEModel.Store.sp_ToolManagement_GetTrafficVolume">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_ToolManagement_GetTrafficVolume_Result">
+          <ScalarProperty Name="REG_DATE" ColumnName="REG_DATE" />
+          <ScalarProperty Name="COLLECT_DATE" ColumnName="COLLECT_DATE" />
+          <ScalarProperty Name="Tollgate_ID" ColumnName="Tollgate_ID" />
+          <ScalarProperty Name="Lane_ID" ColumnName="Lane_ID" />
+          <ScalarProperty Name="VOLUME" ColumnName="VOLUME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_InsertDeviceStatus" FunctionName="HPEModel.Store.sp_ToolManagement_InsertDeviceStatus" />
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_GetDeviceStatus" FunctionName="HPEModel.Store.sp_ToolManagement_GetDeviceStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_ToolManagement_GetDeviceStatus_Result">
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="StationCode" ColumnName="StationCode" />
+          <ScalarProperty Name="LaneCode" ColumnName="LaneCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_LS_Lane_GetAll1" FunctionName="HPEModel.Store.sp_LS_Lane_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_LS_Lane_GetAll1_Result">
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_LS_Lane_GetAll" FunctionName="HPEModel.Store.sp_LS_Lane_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_LS_Lane_GetAll_Result">
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_InsertTrafficVolume" FunctionName="HPEModel.Store.sp_ToolManagement_InsertTrafficVolume" />
+    <FunctionImportMapping FunctionImportName="sp_ToolManagement_GetAllOutCheck_UnPrecheck" FunctionName="HPEModel.Store.sp_ToolManagement_GetAllOutCheck_UnPrecheck">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_ToolManagement_GetAllOutCheck_UnPrecheck_Result">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="ExitPlateNumber" ColumnName="ExitPlateNumber" />
+          <ScalarProperty Name="ExitVehicleTypeID" ColumnName="ExitVehicleTypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CMO_DASHBOARD" FunctionName="HPEModel.Store.sp_CMO_DASHBOARD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModel.sp_CMO_DASHBOARD_Result">
+          <ScalarProperty Name="StationName" ColumnName="StationName" />
+          <ScalarProperty Name="LaneCode" ColumnName="LaneCode" />
+          <ScalarProperty Name="Vol" ColumnName="Vol" />
+          <ScalarProperty Name="StatusVol" ColumnName="StatusVol" />
+          <ScalarProperty Name="LaneStatus" ColumnName="LaneStatus" />
+          <ScalarProperty Name="IsAlarm" ColumnName="IsAlarm" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+          <ScalarProperty Name="IsProblem" ColumnName="IsProblem" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
