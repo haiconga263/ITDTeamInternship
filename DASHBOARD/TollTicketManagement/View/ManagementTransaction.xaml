@@ -1,0 +1,22 @@
+﻿<Window x:Class="TollTicketManagement.View.ManagementTransaction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TollTicketManagement"
+        Style="{StaticResource CustomDialog}" 
+        Title="DashboardView" Height="768" Width="1366" 
+        Loaded="Window_Loaded" ResizeMode="CanMinimize" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:IntToImageConverter x:Key="ConvertBoolToImage" />
+        <DataTemplate x:Key="StatusImage" x:Name="mStatusImage">
+            <Image Width="16" Height="16" Margin="3,0" Source="{Binding Converter={StaticResource ConvertBoolToImage}}" />
+        </DataTemplate>
+        <local:IntToImageConverter2 x:Key="ConvertBoolToImage2" />
+        <DataTemplate x:Key="StatusImage2" x:Name="mStatusImage2">
+            <Image Width="16" Height="16" Margin="3,0" Source="{Binding Converter={StaticResource ConvertBoolToImage2}}" />
+        </DataTemplate>
+        <local:IntToImageConverter3 x:Key="ConvertBoolToImage3" />
+        <DataTemplate x:Key="StatusImage3" x:Name="mStatusImage3">
+            <Image Width="16" Height="16" Margin="3,0" Source="{Binding Converter={StaticResource ConvertBoolToImage3}}" />
+        </DataTemplate>
+    </Window.Resources>
+</Window>

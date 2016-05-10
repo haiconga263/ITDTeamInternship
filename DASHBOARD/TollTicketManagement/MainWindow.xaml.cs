@@ -368,5 +368,33 @@ namespace TollTicketManagement
                 }
             }
         }
+
+        private void btnManagementTran_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Cursor prevCursor = Mouse.OverrideCursor;
+                Mouse.OverrideCursor = Cursors.Arrow;
+                var w = new ManagementTransaction();
+                lblFunctionActiving.Content = w.Title;
+                w.Activate();
+                w.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null)
+                {
+                    LogUtility.WriteLogFile_SQL(
+                        MethodBase.GetCurrentMethod().DeclaringType + "." + MethodBase.GetCurrentMethod().Name,
+                        ex.Message + ".InnerMessage:" + ex.InnerException.Message);
+                }
+                else
+                {
+                    LogUtility.WriteLogFile_SQL(
+                        MethodBase.GetCurrentMethod().DeclaringType + "." + MethodBase.GetCurrentMethod().Name,
+                        ex.Message);
+                }
+            }
+        }
     }
 }

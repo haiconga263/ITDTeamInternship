@@ -68,6 +68,9 @@
     <Compile Include="View\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagementTransaction.xaml.cs">
+      <DependentUpon>ManagementTransaction.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UpdateOutCheckInfoView.xaml.cs">
       <DependentUpon>UpdateOutCheckInfoView.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EquipmentStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagementTransaction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

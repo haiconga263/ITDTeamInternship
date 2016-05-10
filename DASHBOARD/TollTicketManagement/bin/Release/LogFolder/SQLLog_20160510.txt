@@ -15,3 +15,15 @@ Login failed for user 'sa'.] .
 -------------------------------------------
 10/05/2016 13:28:47:296: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - Keyword not supported: 'metadata'.] .
 -------------------------------------------
+10/05/2016 15:06:48:039: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:The EXECUTE permission was denied on the object 'sp_CMO_DASHBOARD', database 'HPE', schema 'dbo'.] .
+-------------------------------------------
+10/05/2016 15:06:57:479: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:The EXECUTE permission was denied on the object 'sp_CMO_DASHBOARD', database 'HPE', schema 'dbo'.] .
+-------------------------------------------
+10/05/2016 15:06:58:167: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:The EXECUTE permission was denied on the object 'sp_CMO_DASHBOARD', database 'HPE', schema 'dbo'.] .
+-------------------------------------------
+10/05/2016 15:07:00:616: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:The EXECUTE permission was denied on the object 'sp_CMO_DASHBOARD', database 'HPE', schema 'dbo'.] .
+-------------------------------------------
+10/05/2016 15:19:12:736: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:The EXECUTE permission was denied on the object 'sp_CMO_DASHBOARD', database 'HPE', schema 'dbo'.] .
+-------------------------------------------
+10/05/2016 15:19:15:652: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:The EXECUTE permission was denied on the object 'sp_CMO_DASHBOARD', database 'HPE', schema 'dbo'.] .
+-------------------------------------------
