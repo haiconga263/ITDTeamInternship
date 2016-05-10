@@ -1,0 +1,24 @@
+21/02/2016 20:01:05:710: [TollTicketManagement.Controller.TollManagement_Ctrl.InsertTrafficVolume - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:Invalid object name 'TCS_L_TRAFFICVOLUME'.] .
+-------------------------------------------
+21/02/2016 20:01:05:912: [TollTicketManagement.Controller.TollManagement_Ctrl.GetAllLane - An error occurred while preparing the command definition. See the inner exception for details..InnerMessage:The function import 'HPEEntities.sp_LS_Lane_GetAll' cannot be executed because it is not mapped to a store function.] .
+-------------------------------------------
+21/02/2016 20:01:05:931: [TollTicketManagement.View.UpdateOutCheckInfo.trafficWorker_DoWork - Object reference not set to an instance of an object.] .
+-------------------------------------------
+21/02/2016 20:01:33:981: [TollTicketManagement.Controller.TollManagement_Ctrl.InsertTrafficVolume - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:Invalid object name 'TCS_L_TRAFFICVOLUME'.] .
+-------------------------------------------
+21/02/2016 20:01:34:056: [TollTicketManagement.Controller.TollManagement_Ctrl.GetAllLane - An error occurred while preparing the command definition. See the inner exception for details..InnerMessage:The function import 'HPEEntities.sp_LS_Lane_GetAll' cannot be executed because it is not mapped to a store function.] .
+-------------------------------------------
+21/02/2016 20:01:34:072: [TollTicketManagement.View.UpdateOutCheckInfo.trafficWorker_DoWork - Object reference not set to an instance of an object.] .
+-------------------------------------------
+21/02/2016 20:02:03:846: [TollTicketManagement.Controller.TollManagement_Ctrl.InsertTrafficVolume - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:Invalid object name 'TCS_L_TRAFFICVOLUME'.] .
+-------------------------------------------
+21/02/2016 20:02:03:923: [TollTicketManagement.Controller.TollManagement_Ctrl.GetAllLane - An error occurred while preparing the command definition. See the inner exception for details..InnerMessage:The function import 'HPEEntities.sp_LS_Lane_GetAll' cannot be executed because it is not mapped to a store function.] .
+-------------------------------------------
+21/02/2016 20:02:03:939: [TollTicketManagement.View.UpdateOutCheckInfo.trafficWorker_DoWork - Object reference not set to an instance of an object.] .
+-------------------------------------------
+21/02/2016 20:02:33:845: [TollTicketManagement.Controller.TollManagement_Ctrl.InsertTrafficVolume - An error occurred while executing the command definition. See the inner exception for details..InnerMessage:Invalid object name 'TCS_L_TRAFFICVOLUME'.] .
+-------------------------------------------
+21/02/2016 20:02:33:921: [TollTicketManagement.Controller.TollManagement_Ctrl.GetAllLane - An error occurred while preparing the command definition. See the inner exception for details..InnerMessage:The function import 'HPEEntities.sp_LS_Lane_GetAll' cannot be executed because it is not mapped to a store function.] .
+-------------------------------------------
+21/02/2016 20:02:33:961: [TollTicketManagement.View.UpdateOutCheckInfo.trafficWorker_DoWork - Object reference not set to an instance of an object.] .
+-------------------------------------------

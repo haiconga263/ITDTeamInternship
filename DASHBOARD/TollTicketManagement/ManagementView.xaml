@@ -1,0 +1,138 @@
+﻿<Window x:Class="TollTicketManagement.ManagementView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Quản lý thẻ" Height="768" Width="1024" WindowState="Maximized" Loaded="Window_Loaded">
+    <StackPanel Name="mainSpanel">
+        <TextBlock Text="MÀN HÌNH QUẢN LÝ THẺ" Margin="0" FontSize="16" Width="200"  Padding="8,2" TextAlignment="Center"/>
+        <TextBlock Text="Ngày 17/12/2015 ca 1" Margin="0" FontSize="16" Width="200"  Padding="8,2" TextAlignment="Center"/>
+        <Grid Name="mainGrid" Height="502" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Name="headerGrid" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="TRẠM" Grid.Column="0" Margin="0,0,0,0" FontSize="14" Background="#3E74CE" Foreground="White"  Padding="8,2" TextAlignment="Center"/>
+                <TextBlock Text="LÀN VÀO" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,0" FontSize="14" Background="#3E74CE" Foreground="White" Padding="8,2" TextAlignment="Center"/>
+                <TextBlock Text="TỔNG CỘNG" Grid.Column="3"  Margin="0,0,0,0" FontSize="14" Background="#3E74CE" Foreground="White" Padding="8,2" TextAlignment="Center"/>
+                <TextBlock Text="LÀN RA" Grid.Column="4" Margin="0,0,0,0" FontSize="14" Background="#3E74CE" Foreground="White" Padding="8,2" TextAlignment="Center"/>
+                <TextBlock Text="TỔNG CỘNG" Grid.Column="5" Margin="0,0,0,0" FontSize="14" Background="#3E74CE" Foreground="White" Padding="8,2" TextAlignment="Center"/>
+                <TextBlock Text="LƯỢNG TỒN" Grid.Column="6" Margin="0,0,0,0" FontSize="14" Background="#3E74CE" Foreground="White" Padding="8,2" TextAlignment="Center"/>
+            </Grid>
+            <Grid Name="stationGrid" Grid.Row="1" Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Name="tbStationName" Text="Đầu tuyến" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                <TextBlock Text="Làn" Grid.Row="0" FontSize="14" Grid.Column="1" Margin="5"/>
+                <TextBlock Text="Số lượng thẻ" FontSize="14" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                <!--<DataGrid Name="dgInLane" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="0,0,0,0" Width="64">
+                    <DataGrid.LayoutTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-90"/>
+                        </TransformGroup>
+                    </DataGrid.LayoutTransform>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding LaneCode}"/>
+                        <DataGridTextColumn Binding="{Binding TotalTicket}"/>
+                    </DataGrid.Columns>
+                </DataGrid>-->
+                <Grid Name="inLaneGrid" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="42"/>
+                        <ColumnDefinition Width="42"/>
+                        <ColumnDefinition Width="42"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="tbInLane1" Text="0101" FontSize="14" Grid.Row="0" Grid.Column="0" Margin="2" TextAlignment="Center" BorderBrush ="Black"/>
+                    <TextBox Name="tbInLane2" Text="0102" FontSize="14" Grid.Row="0" Grid.Column="1" Margin="2" TextAlignment="Center" BorderBrush="Black"/>
+                    <TextBox Name="tbInTicket1" Text="10" FontSize="14" Grid.Row="1" Grid.Column="0" Margin="2" TextAlignment="Center" BorderBrush="Black"/>
+                    <TextBox Name="tbInTicket2" Text="20" FontSize="14" Grid.Row="1" Grid.Column="1" Margin="2" TextAlignment="Center" BorderBrush="Black" />
+                </Grid>
+
+                <TextBlock Name="tbInLaneTicket" Text="30" Grid.Row="2" Grid.Column="3" FontSize="14" TextAlignment="Center" Margin="5"/>
+                <!--<DataGrid Name="dgOutLane" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" Width="64">
+                    <DataGrid.LayoutTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-90"/>
+                        </TransformGroup>
+                    </DataGrid.LayoutTransform>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="32" Binding="{Binding LaneCode}"/>
+                        <DataGridTextColumn Width="32" Binding="{Binding TotalTicket}"/>
+                    </DataGrid.Columns>
+                </DataGrid>-->
+                <Grid Name="outLaneGrid" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="42"/>
+                        <ColumnDefinition Width="42"/>
+                        <ColumnDefinition Width="42"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="tbOutLane1" Text="0101" FontSize="14" Grid.Row="0" Grid.Column="0" Margin="2" TextAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"/>
+                    <TextBox Name="tbOutLane2" Text="0102" FontSize="14" Grid.Row="0" Grid.Column="1" Margin="2" VerticalContentAlignment="Center" TextAlignment="Center" BorderBrush="Black" />
+                    <TextBox Name="tbOutTicket1" Text="10" FontSize="14" Grid.Row="1" Grid.Column="0" Margin="2" TextAlignment="Center" BorderBrush="Black"/>
+                    <TextBox Name="tbOutTicket2" Text="20" FontSize="14" Grid.Row="1" Grid.Column="1" Margin="2" TextAlignment="Center" BorderBrush="Black"/>
+                </Grid>
+                <TextBlock Name="tbOutLaneTicket" Text="30" FontSize="14" TextAlignment="Center" Grid.Row="2" Grid.Column="5" Margin="5"/>
+                <TextBlock Name="tbInStockTicket" Text="100" FontSize="14" TextAlignment="Center" Grid.Row="2" Grid.Column="6" Margin="5"/>
+                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="7" BorderThickness="2" BorderBrush="#3E74CE"></Border>
+            </Grid>
+        </Grid>
+        <Border BorderThickness="2" BorderBrush="#3E74CE">
+            <Grid Name="footerGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="197"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Số lượng thẻ đang lưu thông" FontSize="14" Grid.Row="0" Grid.Column="0" Margin="0,5"/>
+                <TextBlock Name="tbOnWayTicket" Text="200" Grid.Row="0" FontSize="14" Grid.Column="1" Margin="28,5,0,5"/>
+                <TextBlock Text="Số lượng thẻ tại trung tâm" FontSize="14" Grid.Row="1" Grid.Column="0" Margin="0,5"/>
+                <TextBlock Name="txtCMOTicket" Text="10000" Grid.Row="1" FontSize="14" Grid.Column="1" Margin="28,5,0,5"/>
+                <Border Grid.Row="0" Grid.Column="0"  BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="0" Grid.Column="1"  BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="1" Grid.Column="0"  BorderThickness="1" BorderBrush="#3E74CE"/>
+                <Border Grid.Row="1" Grid.Column="1"  BorderThickness="1" BorderBrush="#3E74CE"/>
+            </Grid>
+        </Border>
+        
+    </StackPanel>
+</Window>

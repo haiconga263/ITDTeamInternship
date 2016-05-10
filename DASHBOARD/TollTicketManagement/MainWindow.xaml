@@ -1,0 +1,140 @@
+﻿<Window x:Class="TollTicketManagement.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                Style="{StaticResource CustomWindow}" Loaded="Window_Loaded"
+                Title="ITD - TRUNG TÂM QUẢN LÝ" Width="1280" Height="auto" Icon="/Resources/Images/itd.ico"
+                WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanMinimize">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom" Height="32" Background="#FF007ACC">
+            <StatusBarItem>
+                <Label Name="lblFunctionActiving" Foreground="White" Content="PHÂN HỆ QUẢN LÝ THIẾT BỊ" Width="300"/>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <Label Name="lblStatusConnect" Foreground="White" Content="Server" Width="370"/>
+            </StatusBarItem>
+            <!--<Separator />
+            <StatusBarItem>
+                <Label Name="lblUserName" Foreground="White" Content="UserName" Width="0" Visibility="Hidden"/>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <Label Name="lblShift" Foreground="White" Content="Shift" Width="0" Visibility="Hidden"/>
+            </StatusBarItem>-->
+            <Separator />
+            <StatusBarItem>
+                <Label Name="lblDateTime" Foreground="White" Content="DateTime" Width="200" HorizontalContentAlignment="Left" />
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <Label Name="lblVersion" Foreground="White" Content="Release Date:" Width="200" HorizontalContentAlignment="Left" />
+            </StatusBarItem>
+        </StatusBar>
+        <TextBlock DockPanel.Dock="Left" Text="ITD Software" VerticalAlignment="Center" Margin="5" FontSize="14">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="-90"/>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="17*"/>
+                <RowDefinition Height="688*"/>
+            </Grid.RowDefinitions>
+            <TabControl Name="TabControl1" Margin="0,0,22,0" Style="{StaticResource CustomTabControl}" Grid.Row="1">
+                <TabItem Header="Dashboard" Name="TabDashBoard" >
+                    <StackPanel Margin="80,60,60,40" HorizontalAlignment="Stretch">
+                        <TextBlock Text="QUẢN LÝ TRUNG TÂM" Style="{StaticResource GroupboxTitle}"/>
+                        <Button  Name="btnDashBoard" Style="{StaticResource ActionButtonStyle}" Click="BtnDashBoard_OnClick" HorizontalAlignment="Left">
+                            <StackPanel>
+                                <Image Source="Resources/Images/computer-search-icon.png" Width="65" Height="65"/>
+                                <TextBlock HorizontalAlignment="Center">Màn hình<LineBreak/>giám sát trung tâm</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Cấu hình" Name="TabConfig">
+                    <StackPanel Margin="80,60,60,40" HorizontalAlignment="Stretch">
+                        <TextBlock Text="CẤU HÌNH" Style="{StaticResource GroupboxTitle}"/>
+                        <StackPanel Style="{StaticResource GroupboxPanel}">
+                            <Button Name="btnConfigSystem" Style="{StaticResource ActionButtonStyle}" Click="BtnConfigSystem_OnClick">
+                                <StackPanel>
+                                    <Image Width="64" Height="64" Source="Resources/Images/System-icon.png"/>
+                                    <TextBlock HorizontalAlignment="Center">Hệ thống</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <!--<Button Name="btnConfigPrinter" Style="{StaticResource ActionButtonStyle}" >
+                                <StackPanel>
+                                    <Image Source="Resources/Images/Printer-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">Máy in</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Name="btnConfigMantenent" Style="{StaticResource ActionButtonStyle}" >
+                                <StackPanel>
+                                    <Image Source="Resources/Images/Manternent-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">Bảo trì</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Name="btnLockProgram" Style="{StaticResource ActionButtonStyle}" >
+                                <StackPanel>
+                                    <Image Source="Resources/Images/password-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">Khóa chương trình</TextBlock>
+                                </StackPanel>
+                            </Button>-->
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Giám sát" Name="TabSupervision" Visibility="Hidden">
+                    <StackPanel Margin="80,60,60,40" HorizontalAlignment="Stretch">
+                        <TextBlock Text="QUẢN LÝ TRẠNG THÁI THIẾT BỊ" Style="{StaticResource GroupboxTitle}"/>
+                        <StackPanel Style="{StaticResource GroupboxPanel}">
+                            <Button  Name="btnMonitorEquipment" Style="{StaticResource ActionButtonStyle}" Click="BtnMonitorEquipment_OnClick" IsEnabled="False">
+                                <StackPanel>
+                                    <Image Source="Resources/Images/computer-search-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">Trạng thái<LineBreak/>thiết bị</TextBlock>
+                                </StackPanel>
+                            </Button>
+                           </StackPanel>
+                        <TextBlock Text="QUẢN LÝ THẺ" Style="{StaticResource GroupboxTitle}"/>
+                        <StackPanel Style="{StaticResource GroupboxPanel}">
+                            <Button  Name="btnCardManagement" Style="{StaticResource ActionButtonStyle}" Click="BtnCardManagement_OnClick" IsEnabled="True">
+                                <StackPanel>
+                                    <Image Source="Resources/Images/Card-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">Quản lý thẻ<LineBreak/></TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Chức năng hổ trợ" Name="TabSupervisionUtility" Visibility="Hidden">
+                    <StackPanel Margin="80,60,60,40" HorizontalAlignment="Stretch">
+                        <TextBlock Text="CẬP NHẬT THÔNG TIN TRẠM RA" Style="{StaticResource GroupboxTitle}"/>
+                        <StackPanel Style="{StaticResource GroupboxPanel}">
+                            <Button  Name="btnUpdateOutCheckInfo" Style="{StaticResource ActionButtonStyle}" Click="btnUpdateOutCheckInfo_Click" IsEnabled="True">
+                                <StackPanel>
+                                    <Image Source="Resources/Images/computer-search-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">Cập nhật <LineBreak/>đầu ra</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button  Name="btnTrafficVolume" Style="{StaticResource ActionButtonStyle}" Click="btnUpdateOutCheckInfo_Click">
+                                <StackPanel>
+                                    <Image Source="Resources/Images/computer-search-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">Thống kê <LineBreak/>lưu lượng</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <TextBlock Text="HẬU KIỂM THÔNG MINH" Style="{StaticResource GroupboxTitle}"/>
+                        <StackPanel Style="{StaticResource GroupboxPanel}">
+                            <Button  Name="btnSmartSupervion" Style="{StaticResource ActionButtonStyle}" Click="btnSmartSupervion_Click" IsEnabled="True">
+                                <StackPanel>
+                                    <Image Source="Resources/Images/Card-icon.png" Width="64" Height="64"/>
+                                    <TextBlock HorizontalAlignment="Center">HT hậu kiểm<LineBreak/></TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                
+            </TabControl>
+        </Grid>
+    </DockPanel>
+</Window>

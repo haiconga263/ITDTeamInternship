@@ -1,0 +1,17 @@
+10/05/2016 10:31:09:856: [TollTicketManagement.Controller.Station_Ctrl.GetAllStation - The underlying provider failed on Open..InnerMessage:Cannot open database "QL20" requested by the login. The login failed.
+Login failed for user 'sa'.] .
+-------------------------------------------
+10/05/2016 10:31:13:891: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - The underlying provider failed on Open..InnerMessage:Cannot open database "QL20" requested by the login. The login failed.
+Login failed for user 'sa'.] .
+-------------------------------------------
+10/05/2016 10:31:24:240: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - The underlying provider failed on Open..InnerMessage:Cannot open database "QL20" requested by the login. The login failed.
+Login failed for user 'sa'.] .
+-------------------------------------------
+10/05/2016 13:27:11:440: [TollTicketManagement.Controller.Station_Ctrl.GetAllStation - Keyword not supported: 'metadata'.] .
+-------------------------------------------
+10/05/2016 13:28:24:413: [TollTicketManagement.Controller.Station_Ctrl.GetAllStation - Keyword not supported: 'metadata'.] .
+-------------------------------------------
+10/05/2016 13:28:37:289: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - Keyword not supported: 'metadata'.] .
+-------------------------------------------
+10/05/2016 13:28:47:296: [TollTicketManagement.Controller.TollManagement_Ctrl.GetDashBoardList - Keyword not supported: 'metadata'.] .
+-------------------------------------------

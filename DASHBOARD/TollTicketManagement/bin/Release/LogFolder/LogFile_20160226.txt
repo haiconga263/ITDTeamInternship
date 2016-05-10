@@ -1,0 +1,2 @@
+26/02/2016 03:16:05:282: [TollTicketManagement.Controller.Base_Ctrl.TestConnection - Entity connection string: data source=HUYTO-PC\MSSQLSERVER2K14;initial catalog=HPE;user id=sa;password=Abcd1234;MultipleActiveResultSets=True;App=EntityFramework] .
+-------------------------------------------
