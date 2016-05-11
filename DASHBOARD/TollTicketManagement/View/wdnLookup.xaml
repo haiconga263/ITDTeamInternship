@@ -1,0 +1,55 @@
+﻿<Window x:Class="TollTicketManagement.View.wdnLookup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="wdnLookup"  Width="1280" Height="auto" 
+        Icon="/Resources/Images/itd.ico"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanMinimize" Style="{StaticResource CustomWindow}">
+    <StackPanel>
+        <TextBlock Style="{StaticResource ListViewTitleStyle}" Text="TRA CỨU THÔNG TIN GIAO DỊCH"/>
+        <TabControl Style="{StaticResource CustomTabControl}" Margin="10">
+            <TabItem Header="Thông tin tìm kiếm" >
+                <StackPanel Style="{StaticResource GroupboxPanel}" Orientation="Vertical">
+                    <GroupBox Padding="5" >
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <Grid>
+                            
+                        </Grid>    
+                    </GroupBox>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Mã thẻ" Grid.Column="0" Margin="5"/>
+                            <TextBox Style="{StaticResource NormalTextBox}" Width="200" Grid.Column="1"/>
+                            <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Số xe" Grid.Column="2" Margin="5"/>
+                            <TextBox Style="{StaticResource NormalTextBox}" Width="200" Grid.Column="3"/>
+
+                        </Grid>
+                        <Button Style="{StaticResource NormalButton}" Content="Tìm kiếm" Width="100" Margin="10"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        
+        <TabControl Style="{StaticResource CustomTabControl}" Margin="10">
+            <TabItem Header="Thông tin giao dịch">
+                <StackPanel>
+                    <GroupBox Height="300">
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <DataGrid Margin="10" Style="{StaticResource CustomDataGridStyle}"/>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Window>

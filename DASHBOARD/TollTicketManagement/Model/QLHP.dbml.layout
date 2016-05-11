@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLHP">
+  <DataContextMoniker Name="/QLHPDataContext" />
+  <nestedChildShapes>
+    <classShape Id="27924d84-4908-407a-9fe6-a9661fccd125" isExpanded="false" absoluteBounds="6, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/QLHPDataContext/AC_PPCWhiteList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11cd1e34-a79a-45a4-8bc5-9ce91a5731a5" absoluteBounds="6.0150000000000006, 3.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7001ad37-dbf9-4cf5-b7a9-b620b6ce7531" isExpanded="false" absoluteBounds="6.125, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/QLHPDataContext/AC_TollWhiteList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76e7d9fb-e675-4531-b4c2-bf5f10242ade" absoluteBounds="6.1400000000000006, 1.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64253195-f4c9-4cb7-ae22-8bb757eeb838" isExpanded="false" absoluteBounds="3.375, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/QLHPDataContext/IN_CheckPrepaidCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d647ce56-e48d-45c2-a7fa-f4e274908e1b" absoluteBounds="3.39, 3.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7abd0ade-5d06-4fe9-b2f2-a18db9ae2dae" isExpanded="false" absoluteBounds="3.375, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/QLHPDataContext/OUT_CheckPrepaidCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6df30e07-5479-4321-85b0-2c608840b3c7" absoluteBounds="3.39, 1.96, 1.9700000000000002, 7.941446940104167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82802e97-c5ae-403c-b0a8-3c11fed60432" isExpanded="false" absoluteBounds="0.75, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/QLHPDataContext/OUT_CheckSmartCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6272196f-1841-4c0e-bafb-0b9e172c9426" absoluteBounds="0.76500000000000012, 1.96, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ed87c06-be06-4f30-873d-5c0aff67308e" isExpanded="false" absoluteBounds="0.625, 3, 2, 0.45">
+      <DataClassMoniker Name="/QLHPDataContext/IN_CheckSmartCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="acefbac9-541c-4ffe-8ad7-c9b2f039ed19" absoluteBounds="0.64, 3.46, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.6875 : 3); (1.6875 : 1.95)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLHPDataContext/IN_CheckSmartCard/IN_CheckSmartCard_OUT_CheckSmartCard" />
+      <nodes>
+        <classShapeMoniker Id="1ed87c06-be06-4f30-873d-5c0aff67308e" />
+        <classShapeMoniker Id="82802e97-c5ae-403c-b0a8-3c11fed60432" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

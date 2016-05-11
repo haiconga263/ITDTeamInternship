@@ -411,3 +411,5 @@ D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\To
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.Resources.Message.SUP_Form.resources
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.Resources.Message.SUP_Message.resources
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.csproj.GenerateResource.Cache
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\wdnLookup.baml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\wdnLookup.g.cs

@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,6 +66,11 @@
     <Compile Include="IntToImageConverter3.cs" />
     <Compile Include="IntToImageConverter2.cs" />
     <Compile Include="IntToImageConverter.cs" />
+    <Compile Include="Model\QLHP.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHP.dbml</DependentUpon>
+    </Compile>
     <Compile Include="View\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="View\UpdatePrecheckStatusView.xaml.cs">
       <DependentUpon>UpdatePrecheckStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wdnLookup.xaml.cs">
+      <DependentUpon>wdnLookup.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -126,6 +135,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\wdnLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CommonConfigModel.cs" />
@@ -164,6 +177,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Model\QLHP.dbml.layout">
+      <DependentUpon>QLHP.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -176,6 +192,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Message\SUP_Form.resx" />
     <EmbeddedResource Include="Resources\Message\SUP_Message.resx" />
+    <None Include="Model\QLHP.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLHP.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -417,6 +438,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
