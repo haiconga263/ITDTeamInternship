@@ -13,14 +13,6 @@
             <StatusBarItem>
                 <Label Name="lblStatusConnect" Foreground="White" Content="Server" Width="370"/>
             </StatusBarItem>
-            <!--<Separator />
-            <StatusBarItem>
-                <Label Name="lblUserName" Foreground="White" Content="UserName" Width="0" Visibility="Hidden"/>
-            </StatusBarItem>
-            <Separator />
-            <StatusBarItem>
-                <Label Name="lblShift" Foreground="White" Content="Shift" Width="0" Visibility="Hidden"/>
-            </StatusBarItem>-->
             <Separator />
             <StatusBarItem>
                 <Label Name="lblDateTime" Foreground="White" Content="DateTime" Width="200" HorizontalContentAlignment="Left" />
@@ -42,15 +34,44 @@
             </Grid.RowDefinitions>
             <TabControl Name="TabControl1" Margin="0,0,22,0" Style="{StaticResource CustomTabControl}" Grid.Row="1">
                 <TabItem Header="Dashboard" Name="TabDashBoard" >
-                    <StackPanel Margin="80,60,60,40" HorizontalAlignment="Stretch">
-                        <TextBlock Text="QUẢN LÝ TRUNG TÂM" Style="{StaticResource GroupboxTitle}"/>
-                        <Button  Name="btnDashBoard" Style="{StaticResource ActionButtonStyle}" Click="BtnDashBoard_OnClick" HorizontalAlignment="Left">
-                            <StackPanel>
-                                <Image Source="Resources/Images/computer-search-icon.png" Width="65" Height="65"/>
-                                <TextBlock HorizontalAlignment="Center">Màn hình<LineBreak/>giám sát trung tâm</TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </StackPanel>
+                    <UniformGrid Margin="80,60,60,40" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1000" Rows="2" Columns="5" Height="400">
+                        <!--QUẢN LÝ TRUNG TÂM-->
+                        <Grid Width="200" Height="150">
+                            <TextBlock Text="QUẢN LÝ TRUNG TÂM" Style="{StaticResource GroupboxTitle}" HorizontalAlignment="Center"/>
+                            <Button  Name="btnDashBoard" Style="{StaticResource ActionButtonStyle}" Click="BtnDashBoard_OnClick" HorizontalAlignment="Left">
+                                <StackPanel>
+                                    <Image Source="Resources/Images/computer-search-icon.png" Width="65" Height="65"/>
+                                    <TextBlock HorizontalAlignment="Center">Màn hình<LineBreak/>giám sát trung tâm</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+
+                        <!--QUẢN LÝ GIAO DỊCH-->
+                        <Grid Width="200" Height="150">
+                            <TextBlock Text="QUẢN LÝ GIAO DỊCH" Style="{StaticResource GroupboxTitle}" HorizontalAlignment="Center"/>
+                            <Button Name="btnLookup" 
+                                     Style="{StaticResource ActionButtonStyle}" 
+                                     HorizontalAlignment="Left" Click="btnLookup_Click">
+                                <StackPanel>
+                                    <Image Source="Resources\Images\Lookup.png" Width="65" Height="65"/>
+                                    <TextBlock HorizontalAlignment="Center" >Màn hình<LineBreak/>Tra cứu</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                        
+                        <!--THÔNG KẾ-->
+                        <Grid Width="200" Height="150">
+                            <TextBlock Text="THỐNG KÊ" Style="{StaticResource GroupboxTitle}" HorizontalAlignment="Center"/>
+                            <Button  Name="btnStatistics" 
+                                     Style="{StaticResource ActionButtonStyle}" 
+                                     HorizontalAlignment="Left" Click="btnStatistics_Click">
+                                <StackPanel>
+                                    <Image Source="Resources\Images\Statistics.png" Width="65" Height="65" HorizontalAlignment="Center"/>
+                                    <TextBlock HorizontalAlignment="Center" >Màn hình<LineBreak/>thống kê</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </UniformGrid>
                 </TabItem>
                 <TabItem Header="Cấu hình" Name="TabConfig">
                     <StackPanel Margin="80,60,60,40" HorizontalAlignment="Stretch">

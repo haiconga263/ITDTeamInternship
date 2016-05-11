@@ -368,5 +368,15 @@ namespace TollTicketManagement
                 }
             }
         }
+
+        private void btnLookup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnStatistics_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
