@@ -142,5 +142,6 @@
                 
             </TabControl>
         </Grid>
+       
     </DockPanel>
 </Window>

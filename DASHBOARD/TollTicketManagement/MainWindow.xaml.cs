@@ -396,5 +396,10 @@ namespace TollTicketManagement
                 }
             }
         }
+
+        private void TabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -413,3 +413,5 @@ E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTic
 E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.csproj.GenerateResource.Cache
 E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\ManagementTransaction.g.cs
 E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\ManagementTransaction.baml
+E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Report.g.cs
+E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Report.baml
