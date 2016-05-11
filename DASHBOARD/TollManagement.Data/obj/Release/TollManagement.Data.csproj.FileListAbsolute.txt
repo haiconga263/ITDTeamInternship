@@ -70,3 +70,15 @@ E:\PROJECT\CTS\HPE\trunk\Implementation\DASHBOARD\TollManagement.Data\obj\Releas
 E:\PROJECT\CTS\HPE\trunk\Implementation\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.csproj.GenerateResource.Cache
 E:\PROJECT\CTS\HPE\trunk\Implementation\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.exe
 E:\PROJECT\CTS\HPE\trunk\Implementation\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.pdb
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\bin\Release\TollManagement.Data.exe.config
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\bin\Release\TollManagement.Data.exe
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\bin\Release\TollManagement.Data.pdb
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\bin\Release\EntityFramework.dll
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\bin\Release\EntityFramework.xml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.csprojResolveAssemblyReference.cache
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.Properties.Resources.resources
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.csproj.GenerateResource.Cache
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.exe
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Data\obj\Release\TollManagement.Data.pdb
