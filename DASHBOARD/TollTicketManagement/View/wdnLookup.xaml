@@ -29,11 +29,11 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Mã thẻ" Grid.Column="0" Margin="5" Grid.Row="0"/>
-                                <TextBox Style="{StaticResource NormalTextBox}" Width="200" Grid.Column="1" Grid.Row="0"/>
+                                <TextBox Text="{Binding KeyMaThe, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource NormalTextBox}" Width="200" Grid.Column="1" Grid.Row="0"/>
                                 <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Số xe" Grid.Column="0" Margin="5" Grid.Row="1"/>
-                                <TextBox Style="{StaticResource NormalTextBox}" Width="200" Grid.Column="1" Grid.Row="1"/>
+                                <TextBox Text="{Binding KeySoXe, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource NormalTextBox}" Width="200" Grid.Column="1" Grid.Row="1"/>
                                 <TextBlock Style="{StaticResource NormalTextBlock}" Text="Loại xe" Grid.Column="0" Margin="5" Grid.Row="2"/>
-                                <ComboBox Name="cbLoaiXe" Style="{StaticResource NormalComboBox}" Width="200" Grid.Column="1" Grid.Row="2" ItemsSource="{Binding lstVeh}" DisplayMemberPath="Name" SelectedValuePath="VehicleTypeID" SelectedIndex="0"/>
+                                <ComboBox Name="cbLoaiXe" Style="{StaticResource NormalComboBox}" Width="200" Grid.Column="1" Grid.Row="2" ItemsSource="{Binding lstVeh}" DisplayMemberPath="Name" SelectedValuePath="VehicleTypeID" SelectedItem="{Binding SelectedItemVehicleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             </Grid>
                         </GroupBox>
                         <GroupBox Header="Thông tin trạm" Padding="1" Margin="5">
@@ -61,16 +61,14 @@
                                 </Grid.Resources>
 
                                 <TextBlock Text="Trạm vào" Grid.Column="0" Grid.Row="0"/>
-                                <TextBlock Text="Trạm ra" Grid.Column="0" Grid.Row="1"/>
-
-                                <ComboBox Style="{StaticResource NormalComboBox}" Grid.Column="1" Grid.Row="0" Width="150"/>
-                                <ComboBox Style="{StaticResource NormalComboBox}" Grid.Column="1" Grid.Row="1" Width="150"/>
-
+                                <ComboBox Name="cdStationIn" Style="{StaticResource NormalComboBox}" Grid.Column="1" Grid.Row="0" Width="150" ItemsSource="{Binding lstStation}" DisplayMemberPath="Name" SelectedValuePath="LS_Lanes" SelectedItem="{Binding SelectedItemStationIn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <TextBlock Text="Làn vào" Grid.Column="3" Grid.Row="0"/>
+                                <ComboBox Style="{StaticResource NormalComboBox}" Grid.Column="4" Grid.Row="0" Width="150" ItemsSource="{Binding ElementName=cdStationIn, Path=SelectedValue}" DisplayMemberPath="Name" SelectedValuePath="LaneID" SelectedItem="{Binding SelectedItemLaneIn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                
+                                <TextBlock Text="Trạm ra" Grid.Column="0" Grid.Row="1"/>
+                                <ComboBox Name="cdStationOut" Style="{StaticResource NormalComboBox}" Grid.Column="1" Grid.Row="1" Width="150" ItemsSource="{Binding lstStation}" DisplayMemberPath="Name" SelectedValuePath="LS_Lanes" SelectedItem="{Binding SelectedItemStationOut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <TextBlock Text="Làn ra" Grid.Column="3" Grid.Row="1"/>
-
-                                <ComboBox Style="{StaticResource NormalComboBox}" Grid.Column="4" Grid.Row="0" Width="150"/>
-                                <ComboBox Style="{StaticResource NormalComboBox}" Grid.Column="4" Grid.Row="1" Width="150"/>
+                                <ComboBox Style="{StaticResource NormalComboBox}" Grid.Column="4" Grid.Row="1" Width="150" ItemsSource="{Binding ElementName=cdStationOut, Path=SelectedValue}" DisplayMemberPath="Name" SelectedValuePath="LaneID" SelectedItem="{Binding SelectedItemLaneOut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             </Grid>
                         </GroupBox>
                         <GroupBox Header="Thời gian" Padding="1" Margin="5">
@@ -96,17 +94,16 @@
                                 </Grid.Resources>
 
                                 <TextBlock Text="Từ ngày" Grid.Column="0" Grid.Row="0"/>
+                                <DatePicker Text="{Binding KeyDateIn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" Width="150" FontSize="14" VerticalAlignment="Center"/>
+                                <wpfTool:DateTimeUpDown Text="{Binding KeyTimeIn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="1" Width="150" Height="25" Format="ShortTime"/>
+                                
                                 <TextBlock Text="Đến ngày" Grid.Column="0" Grid.Row="1"/>
-
-                                <DatePicker Grid.Column="1" Grid.Row="0" Width="150" FontSize="14" VerticalAlignment="Center"/>
-                                <DatePicker Grid.Column="1" Grid.Row="1" Width="150" FontSize="14" VerticalAlignment="Center"/>
-
-                                <wpfTool:DateTimePicker Grid.Column="2" Grid.Row="0" Width="150" Height="25"/>
-                                <wpfTool:DateTimePicker Grid.Column="2" Grid.Row="1" Width="150" Height="25"/>
+                                <DatePicker Text="{Binding KeyDateOut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" Width="150" FontSize="14" VerticalAlignment="Center"/>
+                                <wpfTool:DateTimeUpDown Text="{Binding KeyTimeOut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="0" Width="150" Height="25" Format="ShortTime"/>
                             </Grid>
                         </GroupBox>
                     </StackPanel>
-                    <Button Style="{StaticResource NormalButton}" Content="Tìm kiếm" Width="100" HorizontalAlignment="Right" Margin="10, 10, 30, 10"/>
+                    <Button Style="{StaticResource NormalButton}" Command="{Binding SearchCommand}" Content="Tìm kiếm" Width="100" HorizontalAlignment="Right" Margin="10, 10, 30, 10"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
@@ -120,21 +117,23 @@
                                 <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
                             </DataTemplate>
                         </GroupBox.HeaderTemplate>
-                        <DataGrid Margin="10" Style="{StaticResource CustomDataGridStyle}" ClipToBounds="True">
+                        <DataGrid Margin="10" Style="{StaticResource CustomDataGridStyle}" ClipToBounds="True" ItemsSource="{Binding DataResults, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                             <DataGrid.Resources>
                                 <DataTemplate x:Key="HeaderTemplate">
-                                    <TextBlock Style="{StaticResource NormalTextBlock}" MinWidth="150" HorizontalAlignment="Center" Text="{Binding}"/>
+                                    <StackPanel>
+                                        <TextBlock Style="{StaticResource NormalTextBlock}" MinWidth="170" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding}"/>
+                                    </StackPanel>
                                 </DataTemplate>
                             </DataGrid.Resources>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Loại xe" HeaderTemplate="{StaticResource HeaderTemplate}"/>
-                                <DataGridTextColumn Header="Trạm vào" HeaderTemplate="{StaticResource HeaderTemplate}"/>
-                                <DataGridTextColumn Header="Làn vào" HeaderTemplate="{StaticResource HeaderTemplate}"/>
-                                <DataGridTextColumn Header="Trạm ra" HeaderTemplate="{StaticResource HeaderTemplate}"/>
-                                <DataGridTextColumn Header="Làn ra" HeaderTemplate="{StaticResource HeaderTemplate}"/>
-                                <DataGridTextColumn Header="Giao dịch cuối" HeaderTemplate="{StaticResource HeaderTemplate}"/>
-                                <DataGridTextColumn Header="Lộ trình" HeaderTemplate="{StaticResource HeaderTemplate}"/>
-                                <DataGridTextColumn Header="Kích hoạt" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Loại thẻ" Binding="{Binding TypeCard}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Loại xe" Binding="{Binding VehicleType.Name}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Trạm vào" Binding="{Binding StationIn.Name}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Làn vào" Binding="{Binding LaneIn.Name}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Trạm ra" Binding="{Binding StationOut.Name}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Làn ra" Binding="{Binding LaneOut.Name}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Giao dịch cuối" Binding="{Binding LastCheck}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
+                                <DataGridTextColumn Header="Lộ trình" Binding="{Binding Route.Name}" HeaderTemplate="{StaticResource HeaderTemplate}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>

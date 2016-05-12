@@ -377,7 +377,8 @@ namespace TollTicketManagement
 
         private void btnStatistics_Click(object sender, RoutedEventArgs e)
         {
-
+            var wdn = new wdnRoute();
+            wdn.ShowDialog();
         }
     }
 }

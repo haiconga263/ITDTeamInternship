@@ -1,0 +1,9 @@
+﻿<Window x:Class="TollTicketManagement.wdnRoute"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rp="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        Title="wdnRoute" Height="300" Width="300">
+    <Grid>
+        <rp:CrystalReportsViewer Name="crv" />
+    </Grid>
+</Window>

@@ -33,9 +33,36 @@ namespace TollTicketManagement.Model
     partial void InsertLS_VehicleType(LS_VehicleType instance);
     partial void UpdateLS_VehicleType(LS_VehicleType instance);
     partial void DeleteLS_VehicleType(LS_VehicleType instance);
+    partial void InsertLS_Lane(LS_Lane instance);
+    partial void UpdateLS_Lane(LS_Lane instance);
+    partial void DeleteLS_Lane(LS_Lane instance);
+    partial void InsertLS_Station(LS_Station instance);
+    partial void UpdateLS_Station(LS_Station instance);
+    partial void DeleteLS_Station(LS_Station instance);
+    partial void InsertLS_Route(LS_Route instance);
+    partial void UpdateLS_Route(LS_Route instance);
+    partial void DeleteLS_Route(LS_Route instance);
+    partial void InsertIN_CheckSmartCard(IN_CheckSmartCard instance);
+    partial void UpdateIN_CheckSmartCard(IN_CheckSmartCard instance);
+    partial void DeleteIN_CheckSmartCard(IN_CheckSmartCard instance);
+    partial void InsertIN_CheckPrepaidCard(IN_CheckPrepaidCard instance);
+    partial void UpdateIN_CheckPrepaidCard(IN_CheckPrepaidCard instance);
+    partial void DeleteIN_CheckPrepaidCard(IN_CheckPrepaidCard instance);
+    partial void InsertOUT_CheckSmartCard(OUT_CheckSmartCard instance);
+    partial void UpdateOUT_CheckSmartCard(OUT_CheckSmartCard instance);
+    partial void DeleteOUT_CheckSmartCard(OUT_CheckSmartCard instance);
+    partial void InsertOUT_CheckPrepaidCard(OUT_CheckPrepaidCard instance);
+    partial void UpdateOUT_CheckPrepaidCard(OUT_CheckPrepaidCard instance);
+    partial void DeleteOUT_CheckPrepaidCard(OUT_CheckPrepaidCard instance);
     partial void InsertAC_PPCWhiteList(AC_PPCWhiteList instance);
     partial void UpdateAC_PPCWhiteList(AC_PPCWhiteList instance);
     partial void DeleteAC_PPCWhiteList(AC_PPCWhiteList instance);
+    partial void InsertLS_Card(LS_Card instance);
+    partial void UpdateLS_Card(LS_Card instance);
+    partial void DeleteLS_Card(LS_Card instance);
+    partial void InsertAC_TollWhiteList(AC_TollWhiteList instance);
+    partial void UpdateAC_TollWhiteList(AC_TollWhiteList instance);
+    partial void DeleteAC_TollWhiteList(AC_TollWhiteList instance);
     #endregion
 		
 		public QLHPDataContext() : 
@@ -76,11 +103,83 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		public System.Data.Linq.Table<LS_Lane> LS_Lanes
+		{
+			get
+			{
+				return this.GetTable<LS_Lane>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LS_Station> LS_Stations
+		{
+			get
+			{
+				return this.GetTable<LS_Station>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LS_Route> LS_Routes
+		{
+			get
+			{
+				return this.GetTable<LS_Route>();
+			}
+		}
+		
+		public System.Data.Linq.Table<IN_CheckSmartCard> IN_CheckSmartCards
+		{
+			get
+			{
+				return this.GetTable<IN_CheckSmartCard>();
+			}
+		}
+		
+		public System.Data.Linq.Table<IN_CheckPrepaidCard> IN_CheckPrepaidCards
+		{
+			get
+			{
+				return this.GetTable<IN_CheckPrepaidCard>();
+			}
+		}
+		
+		public System.Data.Linq.Table<OUT_CheckSmartCard> OUT_CheckSmartCards
+		{
+			get
+			{
+				return this.GetTable<OUT_CheckSmartCard>();
+			}
+		}
+		
+		public System.Data.Linq.Table<OUT_CheckPrepaidCard> OUT_CheckPrepaidCards
+		{
+			get
+			{
+				return this.GetTable<OUT_CheckPrepaidCard>();
+			}
+		}
+		
 		public System.Data.Linq.Table<AC_PPCWhiteList> AC_PPCWhiteLists
 		{
 			get
 			{
 				return this.GetTable<AC_PPCWhiteList>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LS_Card> LS_Cards
+		{
+			get
+			{
+				return this.GetTable<LS_Card>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AC_TollWhiteList> AC_TollWhiteLists
+		{
+			get
+			{
+				return this.GetTable<AC_TollWhiteList>();
 			}
 		}
 	}
@@ -105,6 +204,12 @@ namespace TollTicketManagement.Model
 		
 		private bool _IsUsed;
 		
+		private EntitySet<IN_CheckSmartCard> _IN_CheckSmartCards;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -127,6 +232,9 @@ namespace TollTicketManagement.Model
 		
 		public LS_VehicleType()
 		{
+			this._IN_CheckSmartCards = new EntitySet<IN_CheckSmartCard>(new Action<IN_CheckSmartCard>(this.attach_IN_CheckSmartCards), new Action<IN_CheckSmartCard>(this.detach_IN_CheckSmartCards));
+			this._AC_PPCWhiteLists = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists));
+			this._AC_TollWhiteLists = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists));
 			OnCreated();
 		}
 		
@@ -270,6 +378,4694 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_VehicleType_IN_CheckSmartCard", Storage="_IN_CheckSmartCards", ThisKey="VehicleTypeID", OtherKey="VehicleTypeID")]
+		public EntitySet<IN_CheckSmartCard> IN_CheckSmartCards
+		{
+			get
+			{
+				return this._IN_CheckSmartCards;
+			}
+			set
+			{
+				this._IN_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_VehicleType_AC_PPCWhiteList", Storage="_AC_PPCWhiteLists", ThisKey="VehicleTypeID", OtherKey="VehicleTypeID")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_VehicleType_AC_TollWhiteList", Storage="_AC_TollWhiteLists", ThisKey="VehicleTypeID", OtherKey="VehicleTypeID")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists
+		{
+			get
+			{
+				return this._AC_TollWhiteLists;
+			}
+			set
+			{
+				this._AC_TollWhiteLists.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_VehicleType = this;
+		}
+		
+		private void detach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_VehicleType = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_VehicleType = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_VehicleType = null;
+		}
+		
+		private void attach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_VehicleType = this;
+		}
+		
+		private void detach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_VehicleType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LS_Lane")]
+	public partial class LS_Lane : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LaneID;
+		
+		private int _StationID;
+		
+		private string _LaneCode;
+		
+		private string _Name;
+		
+		private short _DirectionType;
+		
+		private int _LaneType;
+		
+		private string _Note;
+		
+		private bool _IsUsed;
+		
+		private EntitySet<IN_CheckSmartCard> _IN_CheckSmartCards;
+		
+		private EntitySet<OUT_CheckSmartCard> _OUT_CheckSmartCards;
+		
+		private EntitySet<OUT_CheckPrepaidCard> _OUT_CheckPrepaidCards;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists1;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists1;
+		
+		private EntityRef<LS_Station> _LS_Station;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLaneIDChanging(int value);
+    partial void OnLaneIDChanged();
+    partial void OnStationIDChanging(int value);
+    partial void OnStationIDChanged();
+    partial void OnLaneCodeChanging(string value);
+    partial void OnLaneCodeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDirectionTypeChanging(short value);
+    partial void OnDirectionTypeChanged();
+    partial void OnLaneTypeChanging(int value);
+    partial void OnLaneTypeChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnIsUsedChanging(bool value);
+    partial void OnIsUsedChanged();
+    #endregion
+		
+		public LS_Lane()
+		{
+			this._IN_CheckSmartCards = new EntitySet<IN_CheckSmartCard>(new Action<IN_CheckSmartCard>(this.attach_IN_CheckSmartCards), new Action<IN_CheckSmartCard>(this.detach_IN_CheckSmartCards));
+			this._OUT_CheckSmartCards = new EntitySet<OUT_CheckSmartCard>(new Action<OUT_CheckSmartCard>(this.attach_OUT_CheckSmartCards), new Action<OUT_CheckSmartCard>(this.detach_OUT_CheckSmartCards));
+			this._OUT_CheckPrepaidCards = new EntitySet<OUT_CheckPrepaidCard>(new Action<OUT_CheckPrepaidCard>(this.attach_OUT_CheckPrepaidCards), new Action<OUT_CheckPrepaidCard>(this.detach_OUT_CheckPrepaidCards));
+			this._AC_PPCWhiteLists = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists));
+			this._AC_PPCWhiteLists1 = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists1), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists1));
+			this._AC_TollWhiteLists = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists));
+			this._AC_TollWhiteLists1 = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists1), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists1));
+			this._LS_Station = default(EntityRef<LS_Station>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int LaneID
+		{
+			get
+			{
+				return this._LaneID;
+			}
+			set
+			{
+				if ((this._LaneID != value))
+				{
+					this.OnLaneIDChanging(value);
+					this.SendPropertyChanging();
+					this._LaneID = value;
+					this.SendPropertyChanged("LaneID");
+					this.OnLaneIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int NOT NULL")]
+		public int StationID
+		{
+			get
+			{
+				return this._StationID;
+			}
+			set
+			{
+				if ((this._StationID != value))
+				{
+					if (this._LS_Station.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._StationID = value;
+					this.SendPropertyChanged("StationID");
+					this.OnStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneCode", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string LaneCode
+		{
+			get
+			{
+				return this._LaneCode;
+			}
+			set
+			{
+				if ((this._LaneCode != value))
+				{
+					this.OnLaneCodeChanging(value);
+					this.SendPropertyChanging();
+					this._LaneCode = value;
+					this.SendPropertyChanged("LaneCode");
+					this.OnLaneCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DirectionType", DbType="SmallInt NOT NULL")]
+		public short DirectionType
+		{
+			get
+			{
+				return this._DirectionType;
+			}
+			set
+			{
+				if ((this._DirectionType != value))
+				{
+					this.OnDirectionTypeChanging(value);
+					this.SendPropertyChanging();
+					this._DirectionType = value;
+					this.SendPropertyChanged("DirectionType");
+					this.OnDirectionTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneType", DbType="Int NOT NULL")]
+		public int LaneType
+		{
+			get
+			{
+				return this._LaneType;
+			}
+			set
+			{
+				if ((this._LaneType != value))
+				{
+					this.OnLaneTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LaneType = value;
+					this.SendPropertyChanged("LaneType");
+					this.OnLaneTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(500)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsUsed", DbType="Bit NOT NULL")]
+		public bool IsUsed
+		{
+			get
+			{
+				return this._IsUsed;
+			}
+			set
+			{
+				if ((this._IsUsed != value))
+				{
+					this.OnIsUsedChanging(value);
+					this.SendPropertyChanging();
+					this._IsUsed = value;
+					this.SendPropertyChanged("IsUsed");
+					this.OnIsUsedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_IN_CheckSmartCard", Storage="_IN_CheckSmartCards", ThisKey="LaneID", OtherKey="LaneID")]
+		public EntitySet<IN_CheckSmartCard> IN_CheckSmartCards
+		{
+			get
+			{
+				return this._IN_CheckSmartCards;
+			}
+			set
+			{
+				this._IN_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_OUT_CheckSmartCard", Storage="_OUT_CheckSmartCards", ThisKey="LaneID", OtherKey="LaneID")]
+		public EntitySet<OUT_CheckSmartCard> OUT_CheckSmartCards
+		{
+			get
+			{
+				return this._OUT_CheckSmartCards;
+			}
+			set
+			{
+				this._OUT_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_OUT_CheckPrepaidCard", Storage="_OUT_CheckPrepaidCards", ThisKey="LaneID", OtherKey="LaneID")]
+		public EntitySet<OUT_CheckPrepaidCard> OUT_CheckPrepaidCards
+		{
+			get
+			{
+				return this._OUT_CheckPrepaidCards;
+			}
+			set
+			{
+				this._OUT_CheckPrepaidCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_PPCWhiteList", Storage="_AC_PPCWhiteLists", ThisKey="LaneID", OtherKey="LaneIDIn")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_PPCWhiteList1", Storage="_AC_PPCWhiteLists1", ThisKey="LaneID", OtherKey="LaneIDOut")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists1
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists1;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_TollWhiteList", Storage="_AC_TollWhiteLists", ThisKey="LaneID", OtherKey="LaneIDIn")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists
+		{
+			get
+			{
+				return this._AC_TollWhiteLists;
+			}
+			set
+			{
+				this._AC_TollWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_TollWhiteList1", Storage="_AC_TollWhiteLists1", ThisKey="LaneID", OtherKey="LaneIDOut")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists1
+		{
+			get
+			{
+				return this._AC_TollWhiteLists1;
+			}
+			set
+			{
+				this._AC_TollWhiteLists1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_LS_Lane", Storage="_LS_Station", ThisKey="StationID", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station
+		{
+			get
+			{
+				return this._LS_Station.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station.Entity = null;
+						previousValue.LS_Lanes.Remove(this);
+					}
+					this._LS_Station.Entity = value;
+					if ((value != null))
+					{
+						value.LS_Lanes.Add(this);
+						this._StationID = value.StationID;
+					}
+					else
+					{
+						this._StationID = default(int);
+					}
+					this.SendPropertyChanged("LS_Station");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = this;
+		}
+		
+		private void detach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = null;
+		}
+		
+		private void attach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = this;
+		}
+		
+		private void detach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = null;
+		}
+		
+		private void attach_OUT_CheckPrepaidCards(OUT_CheckPrepaidCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = this;
+		}
+		
+		private void detach_OUT_CheckPrepaidCards(OUT_CheckPrepaidCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists1(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane1 = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists1(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane1 = null;
+		}
+		
+		private void attach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = this;
+		}
+		
+		private void detach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane = null;
+		}
+		
+		private void attach_AC_TollWhiteLists1(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane1 = this;
+		}
+		
+		private void detach_AC_TollWhiteLists1(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Lane1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LS_Station")]
+	public partial class LS_Station : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _StationID;
+		
+		private string _StationCode;
+		
+		private string _Name;
+		
+		private int _CompanyID;
+		
+		private int _StationType;
+		
+		private string _Address;
+		
+		private string _Telephone;
+		
+		private string _Fax;
+		
+		private string _Note;
+		
+		private bool _IsUsed;
+		
+		private EntitySet<LS_Lane> _LS_Lanes;
+		
+		private EntitySet<LS_Route> _LS_Routes;
+		
+		private EntitySet<LS_Route> _LS_Routes1;
+		
+		private EntitySet<IN_CheckSmartCard> _IN_CheckSmartCards;
+		
+		private EntitySet<OUT_CheckSmartCard> _OUT_CheckSmartCards;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists1;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStationIDChanging(int value);
+    partial void OnStationIDChanged();
+    partial void OnStationCodeChanging(string value);
+    partial void OnStationCodeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnCompanyIDChanging(int value);
+    partial void OnCompanyIDChanged();
+    partial void OnStationTypeChanging(int value);
+    partial void OnStationTypeChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnTelephoneChanging(string value);
+    partial void OnTelephoneChanged();
+    partial void OnFaxChanging(string value);
+    partial void OnFaxChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnIsUsedChanging(bool value);
+    partial void OnIsUsedChanged();
+    #endregion
+		
+		public LS_Station()
+		{
+			this._LS_Lanes = new EntitySet<LS_Lane>(new Action<LS_Lane>(this.attach_LS_Lanes), new Action<LS_Lane>(this.detach_LS_Lanes));
+			this._LS_Routes = new EntitySet<LS_Route>(new Action<LS_Route>(this.attach_LS_Routes), new Action<LS_Route>(this.detach_LS_Routes));
+			this._LS_Routes1 = new EntitySet<LS_Route>(new Action<LS_Route>(this.attach_LS_Routes1), new Action<LS_Route>(this.detach_LS_Routes1));
+			this._IN_CheckSmartCards = new EntitySet<IN_CheckSmartCard>(new Action<IN_CheckSmartCard>(this.attach_IN_CheckSmartCards), new Action<IN_CheckSmartCard>(this.detach_IN_CheckSmartCards));
+			this._OUT_CheckSmartCards = new EntitySet<OUT_CheckSmartCard>(new Action<OUT_CheckSmartCard>(this.attach_OUT_CheckSmartCards), new Action<OUT_CheckSmartCard>(this.detach_OUT_CheckSmartCards));
+			this._AC_PPCWhiteLists = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists));
+			this._AC_PPCWhiteLists1 = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists1), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists1));
+			this._AC_TollWhiteLists = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists));
+			this._AC_TollWhiteLists1 = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists1), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists1));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int StationID
+		{
+			get
+			{
+				return this._StationID;
+			}
+			set
+			{
+				if ((this._StationID != value))
+				{
+					this.OnStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._StationID = value;
+					this.SendPropertyChanged("StationID");
+					this.OnStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationCode", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string StationCode
+		{
+			get
+			{
+				return this._StationCode;
+			}
+			set
+			{
+				if ((this._StationCode != value))
+				{
+					this.OnStationCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StationCode = value;
+					this.SendPropertyChanged("StationCode");
+					this.OnStationCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyID", DbType="Int NOT NULL")]
+		public int CompanyID
+		{
+			get
+			{
+				return this._CompanyID;
+			}
+			set
+			{
+				if ((this._CompanyID != value))
+				{
+					this.OnCompanyIDChanging(value);
+					this.SendPropertyChanging();
+					this._CompanyID = value;
+					this.SendPropertyChanged("CompanyID");
+					this.OnCompanyIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationType", DbType="Int NOT NULL")]
+		public int StationType
+		{
+			get
+			{
+				return this._StationType;
+			}
+			set
+			{
+				if ((this._StationType != value))
+				{
+					this.OnStationTypeChanging(value);
+					this.SendPropertyChanging();
+					this._StationType = value;
+					this.SendPropertyChanged("StationType");
+					this.OnStationTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(500)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telephone", DbType="NVarChar(100)")]
+		public string Telephone
+		{
+			get
+			{
+				return this._Telephone;
+			}
+			set
+			{
+				if ((this._Telephone != value))
+				{
+					this.OnTelephoneChanging(value);
+					this.SendPropertyChanging();
+					this._Telephone = value;
+					this.SendPropertyChanged("Telephone");
+					this.OnTelephoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fax", DbType="NVarChar(100)")]
+		public string Fax
+		{
+			get
+			{
+				return this._Fax;
+			}
+			set
+			{
+				if ((this._Fax != value))
+				{
+					this.OnFaxChanging(value);
+					this.SendPropertyChanging();
+					this._Fax = value;
+					this.SendPropertyChanged("Fax");
+					this.OnFaxChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(500)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsUsed", DbType="Bit NOT NULL")]
+		public bool IsUsed
+		{
+			get
+			{
+				return this._IsUsed;
+			}
+			set
+			{
+				if ((this._IsUsed != value))
+				{
+					this.OnIsUsedChanging(value);
+					this.SendPropertyChanging();
+					this._IsUsed = value;
+					this.SendPropertyChanged("IsUsed");
+					this.OnIsUsedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_LS_Lane", Storage="_LS_Lanes", ThisKey="StationID", OtherKey="StationID")]
+		public EntitySet<LS_Lane> LS_Lanes
+		{
+			get
+			{
+				return this._LS_Lanes;
+			}
+			set
+			{
+				this._LS_Lanes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_LS_Route", Storage="_LS_Routes", ThisKey="StationID", OtherKey="ToStationID")]
+		public EntitySet<LS_Route> LS_Routes
+		{
+			get
+			{
+				return this._LS_Routes;
+			}
+			set
+			{
+				this._LS_Routes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_LS_Route1", Storage="_LS_Routes1", ThisKey="StationID", OtherKey="FromStationID")]
+		public EntitySet<LS_Route> LS_Routes1
+		{
+			get
+			{
+				return this._LS_Routes1;
+			}
+			set
+			{
+				this._LS_Routes1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_IN_CheckSmartCard", Storage="_IN_CheckSmartCards", ThisKey="StationID", OtherKey="StationID")]
+		public EntitySet<IN_CheckSmartCard> IN_CheckSmartCards
+		{
+			get
+			{
+				return this._IN_CheckSmartCards;
+			}
+			set
+			{
+				this._IN_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_OUT_CheckSmartCard", Storage="_OUT_CheckSmartCards", ThisKey="StationID", OtherKey="StationID")]
+		public EntitySet<OUT_CheckSmartCard> OUT_CheckSmartCards
+		{
+			get
+			{
+				return this._OUT_CheckSmartCards;
+			}
+			set
+			{
+				this._OUT_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_PPCWhiteList", Storage="_AC_PPCWhiteLists", ThisKey="StationID", OtherKey="StationIDIn")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_PPCWhiteList1", Storage="_AC_PPCWhiteLists1", ThisKey="StationID", OtherKey="StationIDOut")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists1
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists1;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_TollWhiteList", Storage="_AC_TollWhiteLists", ThisKey="StationID", OtherKey="StationIDIn")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists
+		{
+			get
+			{
+				return this._AC_TollWhiteLists;
+			}
+			set
+			{
+				this._AC_TollWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_TollWhiteList1", Storage="_AC_TollWhiteLists1", ThisKey="StationID", OtherKey="LaneIDOut")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists1
+		{
+			get
+			{
+				return this._AC_TollWhiteLists1;
+			}
+			set
+			{
+				this._AC_TollWhiteLists1.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LS_Lanes(LS_Lane entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = this;
+		}
+		
+		private void detach_LS_Lanes(LS_Lane entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = null;
+		}
+		
+		private void attach_LS_Routes(LS_Route entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = this;
+		}
+		
+		private void detach_LS_Routes(LS_Route entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = null;
+		}
+		
+		private void attach_LS_Routes1(LS_Route entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station1 = this;
+		}
+		
+		private void detach_LS_Routes1(LS_Route entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station1 = null;
+		}
+		
+		private void attach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = this;
+		}
+		
+		private void detach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = null;
+		}
+		
+		private void attach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = this;
+		}
+		
+		private void detach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists1(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station1 = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists1(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station1 = null;
+		}
+		
+		private void attach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = this;
+		}
+		
+		private void detach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station = null;
+		}
+		
+		private void attach_AC_TollWhiteLists1(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station1 = this;
+		}
+		
+		private void detach_AC_TollWhiteLists1(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Station1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LS_Route")]
+	public partial class LS_Route : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RouteID;
+		
+		private string _RouteCode;
+		
+		private string _Name;
+		
+		private int _FromStationID;
+		
+		private int _ToStationID;
+		
+		private System.Nullable<int> _Length;
+		
+		private string _Note;
+		
+		private System.Nullable<bool> _IsMaxLength;
+		
+		private bool _IsUsed;
+		
+		private EntitySet<OUT_CheckSmartCard> _OUT_CheckSmartCards;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists;
+		
+		private EntityRef<LS_Station> _LS_Station;
+		
+		private EntityRef<LS_Station> _LS_Station1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRouteIDChanging(int value);
+    partial void OnRouteIDChanged();
+    partial void OnRouteCodeChanging(string value);
+    partial void OnRouteCodeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnFromStationIDChanging(int value);
+    partial void OnFromStationIDChanged();
+    partial void OnToStationIDChanging(int value);
+    partial void OnToStationIDChanged();
+    partial void OnLengthChanging(System.Nullable<int> value);
+    partial void OnLengthChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnIsMaxLengthChanging(System.Nullable<bool> value);
+    partial void OnIsMaxLengthChanged();
+    partial void OnIsUsedChanging(bool value);
+    partial void OnIsUsedChanged();
+    #endregion
+		
+		public LS_Route()
+		{
+			this._OUT_CheckSmartCards = new EntitySet<OUT_CheckSmartCard>(new Action<OUT_CheckSmartCard>(this.attach_OUT_CheckSmartCards), new Action<OUT_CheckSmartCard>(this.detach_OUT_CheckSmartCards));
+			this._AC_PPCWhiteLists = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists));
+			this._AC_TollWhiteLists = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists));
+			this._LS_Station = default(EntityRef<LS_Station>);
+			this._LS_Station1 = default(EntityRef<LS_Station>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int RouteID
+		{
+			get
+			{
+				return this._RouteID;
+			}
+			set
+			{
+				if ((this._RouteID != value))
+				{
+					this.OnRouteIDChanging(value);
+					this.SendPropertyChanging();
+					this._RouteID = value;
+					this.SendPropertyChanged("RouteID");
+					this.OnRouteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteCode", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string RouteCode
+		{
+			get
+			{
+				return this._RouteCode;
+			}
+			set
+			{
+				if ((this._RouteCode != value))
+				{
+					this.OnRouteCodeChanging(value);
+					this.SendPropertyChanging();
+					this._RouteCode = value;
+					this.SendPropertyChanged("RouteCode");
+					this.OnRouteCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FromStationID", DbType="Int NOT NULL")]
+		public int FromStationID
+		{
+			get
+			{
+				return this._FromStationID;
+			}
+			set
+			{
+				if ((this._FromStationID != value))
+				{
+					if (this._LS_Station1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFromStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._FromStationID = value;
+					this.SendPropertyChanged("FromStationID");
+					this.OnFromStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ToStationID", DbType="Int NOT NULL")]
+		public int ToStationID
+		{
+			get
+			{
+				return this._ToStationID;
+			}
+			set
+			{
+				if ((this._ToStationID != value))
+				{
+					if (this._LS_Station.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnToStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._ToStationID = value;
+					this.SendPropertyChanged("ToStationID");
+					this.OnToStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Int")]
+		public System.Nullable<int> Length
+		{
+			get
+			{
+				return this._Length;
+			}
+			set
+			{
+				if ((this._Length != value))
+				{
+					this.OnLengthChanging(value);
+					this.SendPropertyChanging();
+					this._Length = value;
+					this.SendPropertyChanged("Length");
+					this.OnLengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(500)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsMaxLength", DbType="Bit")]
+		public System.Nullable<bool> IsMaxLength
+		{
+			get
+			{
+				return this._IsMaxLength;
+			}
+			set
+			{
+				if ((this._IsMaxLength != value))
+				{
+					this.OnIsMaxLengthChanging(value);
+					this.SendPropertyChanging();
+					this._IsMaxLength = value;
+					this.SendPropertyChanged("IsMaxLength");
+					this.OnIsMaxLengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsUsed", DbType="Bit NOT NULL")]
+		public bool IsUsed
+		{
+			get
+			{
+				return this._IsUsed;
+			}
+			set
+			{
+				if ((this._IsUsed != value))
+				{
+					this.OnIsUsedChanging(value);
+					this.SendPropertyChanging();
+					this._IsUsed = value;
+					this.SendPropertyChanged("IsUsed");
+					this.OnIsUsedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Route_OUT_CheckSmartCard", Storage="_OUT_CheckSmartCards", ThisKey="RouteID", OtherKey="RouteID")]
+		public EntitySet<OUT_CheckSmartCard> OUT_CheckSmartCards
+		{
+			get
+			{
+				return this._OUT_CheckSmartCards;
+			}
+			set
+			{
+				this._OUT_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Route_AC_PPCWhiteList", Storage="_AC_PPCWhiteLists", ThisKey="RouteID", OtherKey="RouteID")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Route_AC_TollWhiteList", Storage="_AC_TollWhiteLists", ThisKey="RouteID", OtherKey="RouteID")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists
+		{
+			get
+			{
+				return this._AC_TollWhiteLists;
+			}
+			set
+			{
+				this._AC_TollWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_LS_Route", Storage="_LS_Station", ThisKey="ToStationID", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station
+		{
+			get
+			{
+				return this._LS_Station.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station.Entity = null;
+						previousValue.LS_Routes.Remove(this);
+					}
+					this._LS_Station.Entity = value;
+					if ((value != null))
+					{
+						value.LS_Routes.Add(this);
+						this._ToStationID = value.StationID;
+					}
+					else
+					{
+						this._ToStationID = default(int);
+					}
+					this.SendPropertyChanged("LS_Station");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_LS_Route1", Storage="_LS_Station1", ThisKey="FromStationID", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station1
+		{
+			get
+			{
+				return this._LS_Station1.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station1.Entity = null;
+						previousValue.LS_Routes1.Remove(this);
+					}
+					this._LS_Station1.Entity = value;
+					if ((value != null))
+					{
+						value.LS_Routes1.Add(this);
+						this._FromStationID = value.StationID;
+					}
+					else
+					{
+						this._FromStationID = default(int);
+					}
+					this.SendPropertyChanged("LS_Station1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Route = this;
+		}
+		
+		private void detach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Route = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Route = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Route = null;
+		}
+		
+		private void attach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Route = this;
+		}
+		
+		private void detach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Route = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.IN_CheckSmartCard")]
+	public partial class IN_CheckSmartCard : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _InCheckSmartCardID;
+		
+		private string _TransactionID;
+		
+		private string _SmartCardID;
+		
+		private System.DateTime _CheckDate;
+		
+		private System.Nullable<int> _TicketTypeID;
+		
+		private System.Nullable<int> _VehicleTypeID;
+		
+		private System.Nullable<int> _EmployeeID;
+		
+		private System.Nullable<int> _ShiftID;
+		
+		private System.Nullable<int> _LaneID;
+		
+		private System.Nullable<int> _StationID;
+		
+		private string _ImageID;
+		
+		private string _RecogPlateNumber;
+		
+		private System.Nullable<short> _RecogResultType;
+		
+		private System.Nullable<short> _TransactionStatus;
+		
+		private System.Nullable<short> _PrecheckStatus;
+		
+		private System.Nullable<short> _PreSupervisionStatus;
+		
+		private System.Nullable<short> _SupervisionStatus;
+		
+		private System.Nullable<int> _ErrorID;
+		
+		private System.Nullable<System.Guid> _WIMID;
+		
+		private string _Note;
+		
+		private System.Nullable<bool> _IsVehicleInfoManual;
+		
+		private EntitySet<OUT_CheckSmartCard> _OUT_CheckSmartCards;
+		
+		private EntityRef<LS_Lane> _LS_Lane;
+		
+		private EntityRef<LS_Station> _LS_Station;
+		
+		private EntityRef<LS_VehicleType> _LS_VehicleType;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInCheckSmartCardIDChanging(System.Guid value);
+    partial void OnInCheckSmartCardIDChanged();
+    partial void OnTransactionIDChanging(string value);
+    partial void OnTransactionIDChanged();
+    partial void OnSmartCardIDChanging(string value);
+    partial void OnSmartCardIDChanged();
+    partial void OnCheckDateChanging(System.DateTime value);
+    partial void OnCheckDateChanged();
+    partial void OnTicketTypeIDChanging(System.Nullable<int> value);
+    partial void OnTicketTypeIDChanged();
+    partial void OnVehicleTypeIDChanging(System.Nullable<int> value);
+    partial void OnVehicleTypeIDChanged();
+    partial void OnEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnEmployeeIDChanged();
+    partial void OnShiftIDChanging(System.Nullable<int> value);
+    partial void OnShiftIDChanged();
+    partial void OnLaneIDChanging(System.Nullable<int> value);
+    partial void OnLaneIDChanged();
+    partial void OnStationIDChanging(System.Nullable<int> value);
+    partial void OnStationIDChanged();
+    partial void OnImageIDChanging(string value);
+    partial void OnImageIDChanged();
+    partial void OnRecogPlateNumberChanging(string value);
+    partial void OnRecogPlateNumberChanged();
+    partial void OnRecogResultTypeChanging(System.Nullable<short> value);
+    partial void OnRecogResultTypeChanged();
+    partial void OnTransactionStatusChanging(System.Nullable<short> value);
+    partial void OnTransactionStatusChanged();
+    partial void OnPrecheckStatusChanging(System.Nullable<short> value);
+    partial void OnPrecheckStatusChanged();
+    partial void OnPreSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnPreSupervisionStatusChanged();
+    partial void OnSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnSupervisionStatusChanged();
+    partial void OnErrorIDChanging(System.Nullable<int> value);
+    partial void OnErrorIDChanged();
+    partial void OnWIMIDChanging(System.Nullable<System.Guid> value);
+    partial void OnWIMIDChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnIsVehicleInfoManualChanging(System.Nullable<bool> value);
+    partial void OnIsVehicleInfoManualChanged();
+    #endregion
+		
+		public IN_CheckSmartCard()
+		{
+			this._OUT_CheckSmartCards = new EntitySet<OUT_CheckSmartCard>(new Action<OUT_CheckSmartCard>(this.attach_OUT_CheckSmartCards), new Action<OUT_CheckSmartCard>(this.detach_OUT_CheckSmartCards));
+			this._LS_Lane = default(EntityRef<LS_Lane>);
+			this._LS_Station = default(EntityRef<LS_Station>);
+			this._LS_VehicleType = default(EntityRef<LS_VehicleType>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InCheckSmartCardID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid InCheckSmartCardID
+		{
+			get
+			{
+				return this._InCheckSmartCardID;
+			}
+			set
+			{
+				if ((this._InCheckSmartCardID != value))
+				{
+					this.OnInCheckSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._InCheckSmartCardID = value;
+					this.SendPropertyChanged("InCheckSmartCardID");
+					this.OnInCheckSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this.OnTransactionIDChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionID = value;
+					this.SendPropertyChanged("TransactionID");
+					this.OnTransactionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmartCardID", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string SmartCardID
+		{
+			get
+			{
+				return this._SmartCardID;
+			}
+			set
+			{
+				if ((this._SmartCardID != value))
+				{
+					this.OnSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._SmartCardID = value;
+					this.SendPropertyChanged("SmartCardID");
+					this.OnSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CheckDate
+		{
+			get
+			{
+				return this._CheckDate;
+			}
+			set
+			{
+				if ((this._CheckDate != value))
+				{
+					this.OnCheckDateChanging(value);
+					this.SendPropertyChanging();
+					this._CheckDate = value;
+					this.SendPropertyChanged("CheckDate");
+					this.OnCheckDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketTypeID", DbType="Int")]
+		public System.Nullable<int> TicketTypeID
+		{
+			get
+			{
+				return this._TicketTypeID;
+			}
+			set
+			{
+				if ((this._TicketTypeID != value))
+				{
+					this.OnTicketTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._TicketTypeID = value;
+					this.SendPropertyChanged("TicketTypeID");
+					this.OnTicketTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehicleTypeID", DbType="Int")]
+		public System.Nullable<int> VehicleTypeID
+		{
+			get
+			{
+				return this._VehicleTypeID;
+			}
+			set
+			{
+				if ((this._VehicleTypeID != value))
+				{
+					if (this._LS_VehicleType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVehicleTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._VehicleTypeID = value;
+					this.SendPropertyChanged("VehicleTypeID");
+					this.OnVehicleTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int")]
+		public System.Nullable<int> EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShiftID", DbType="Int")]
+		public System.Nullable<int> ShiftID
+		{
+			get
+			{
+				return this._ShiftID;
+			}
+			set
+			{
+				if ((this._ShiftID != value))
+				{
+					this.OnShiftIDChanging(value);
+					this.SendPropertyChanging();
+					this._ShiftID = value;
+					this.SendPropertyChanged("ShiftID");
+					this.OnShiftIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneID", DbType="Int")]
+		public System.Nullable<int> LaneID
+		{
+			get
+			{
+				return this._LaneID;
+			}
+			set
+			{
+				if ((this._LaneID != value))
+				{
+					if (this._LS_Lane.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLaneIDChanging(value);
+					this.SendPropertyChanging();
+					this._LaneID = value;
+					this.SendPropertyChanged("LaneID");
+					this.OnLaneIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int")]
+		public System.Nullable<int> StationID
+		{
+			get
+			{
+				return this._StationID;
+			}
+			set
+			{
+				if ((this._StationID != value))
+				{
+					if (this._LS_Station.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._StationID = value;
+					this.SendPropertyChanged("StationID");
+					this.OnStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageID", DbType="NVarChar(50)")]
+		public string ImageID
+		{
+			get
+			{
+				return this._ImageID;
+			}
+			set
+			{
+				if ((this._ImageID != value))
+				{
+					this.OnImageIDChanging(value);
+					this.SendPropertyChanging();
+					this._ImageID = value;
+					this.SendPropertyChanged("ImageID");
+					this.OnImageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogPlateNumber", DbType="NVarChar(15)")]
+		public string RecogPlateNumber
+		{
+			get
+			{
+				return this._RecogPlateNumber;
+			}
+			set
+			{
+				if ((this._RecogPlateNumber != value))
+				{
+					this.OnRecogPlateNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RecogPlateNumber = value;
+					this.SendPropertyChanged("RecogPlateNumber");
+					this.OnRecogPlateNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogResultType", DbType="SmallInt")]
+		public System.Nullable<short> RecogResultType
+		{
+			get
+			{
+				return this._RecogResultType;
+			}
+			set
+			{
+				if ((this._RecogResultType != value))
+				{
+					this.OnRecogResultTypeChanging(value);
+					this.SendPropertyChanging();
+					this._RecogResultType = value;
+					this.SendPropertyChanged("RecogResultType");
+					this.OnRecogResultTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionStatus", DbType="SmallInt")]
+		public System.Nullable<short> TransactionStatus
+		{
+			get
+			{
+				return this._TransactionStatus;
+			}
+			set
+			{
+				if ((this._TransactionStatus != value))
+				{
+					this.OnTransactionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionStatus = value;
+					this.SendPropertyChanged("TransactionStatus");
+					this.OnTransactionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecheckStatus", DbType="SmallInt")]
+		public System.Nullable<short> PrecheckStatus
+		{
+			get
+			{
+				return this._PrecheckStatus;
+			}
+			set
+			{
+				if ((this._PrecheckStatus != value))
+				{
+					this.OnPrecheckStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PrecheckStatus = value;
+					this.SendPropertyChanged("PrecheckStatus");
+					this.OnPrecheckStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreSupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> PreSupervisionStatus
+		{
+			get
+			{
+				return this._PreSupervisionStatus;
+			}
+			set
+			{
+				if ((this._PreSupervisionStatus != value))
+				{
+					this.OnPreSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PreSupervisionStatus = value;
+					this.SendPropertyChanged("PreSupervisionStatus");
+					this.OnPreSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> SupervisionStatus
+		{
+			get
+			{
+				return this._SupervisionStatus;
+			}
+			set
+			{
+				if ((this._SupervisionStatus != value))
+				{
+					this.OnSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._SupervisionStatus = value;
+					this.SendPropertyChanged("SupervisionStatus");
+					this.OnSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ErrorID", DbType="Int")]
+		public System.Nullable<int> ErrorID
+		{
+			get
+			{
+				return this._ErrorID;
+			}
+			set
+			{
+				if ((this._ErrorID != value))
+				{
+					this.OnErrorIDChanging(value);
+					this.SendPropertyChanging();
+					this._ErrorID = value;
+					this.SendPropertyChanged("ErrorID");
+					this.OnErrorIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WIMID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> WIMID
+		{
+			get
+			{
+				return this._WIMID;
+			}
+			set
+			{
+				if ((this._WIMID != value))
+				{
+					this.OnWIMIDChanging(value);
+					this.SendPropertyChanging();
+					this._WIMID = value;
+					this.SendPropertyChanged("WIMID");
+					this.OnWIMIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsVehicleInfoManual", DbType="Bit")]
+		public System.Nullable<bool> IsVehicleInfoManual
+		{
+			get
+			{
+				return this._IsVehicleInfoManual;
+			}
+			set
+			{
+				if ((this._IsVehicleInfoManual != value))
+				{
+					this.OnIsVehicleInfoManualChanging(value);
+					this.SendPropertyChanging();
+					this._IsVehicleInfoManual = value;
+					this.SendPropertyChanged("IsVehicleInfoManual");
+					this.OnIsVehicleInfoManualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IN_CheckSmartCard_OUT_CheckSmartCard", Storage="_OUT_CheckSmartCards", ThisKey="InCheckSmartCardID", OtherKey="InCheckSmartCardID")]
+		public EntitySet<OUT_CheckSmartCard> OUT_CheckSmartCards
+		{
+			get
+			{
+				return this._OUT_CheckSmartCards;
+			}
+			set
+			{
+				this._OUT_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_IN_CheckSmartCard", Storage="_LS_Lane", ThisKey="LaneID", OtherKey="LaneID", IsForeignKey=true)]
+		public LS_Lane LS_Lane
+		{
+			get
+			{
+				return this._LS_Lane.Entity;
+			}
+			set
+			{
+				LS_Lane previousValue = this._LS_Lane.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Lane.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Lane.Entity = null;
+						previousValue.IN_CheckSmartCards.Remove(this);
+					}
+					this._LS_Lane.Entity = value;
+					if ((value != null))
+					{
+						value.IN_CheckSmartCards.Add(this);
+						this._LaneID = value.LaneID;
+					}
+					else
+					{
+						this._LaneID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Lane");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_IN_CheckSmartCard", Storage="_LS_Station", ThisKey="StationID", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station
+		{
+			get
+			{
+				return this._LS_Station.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station.Entity = null;
+						previousValue.IN_CheckSmartCards.Remove(this);
+					}
+					this._LS_Station.Entity = value;
+					if ((value != null))
+					{
+						value.IN_CheckSmartCards.Add(this);
+						this._StationID = value.StationID;
+					}
+					else
+					{
+						this._StationID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Station");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_VehicleType_IN_CheckSmartCard", Storage="_LS_VehicleType", ThisKey="VehicleTypeID", OtherKey="VehicleTypeID", IsForeignKey=true)]
+		public LS_VehicleType LS_VehicleType
+		{
+			get
+			{
+				return this._LS_VehicleType.Entity;
+			}
+			set
+			{
+				LS_VehicleType previousValue = this._LS_VehicleType.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_VehicleType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_VehicleType.Entity = null;
+						previousValue.IN_CheckSmartCards.Remove(this);
+					}
+					this._LS_VehicleType.Entity = value;
+					if ((value != null))
+					{
+						value.IN_CheckSmartCards.Add(this);
+						this._VehicleTypeID = value.VehicleTypeID;
+					}
+					else
+					{
+						this._VehicleTypeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_VehicleType");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.IN_CheckSmartCard = this;
+		}
+		
+		private void detach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.IN_CheckSmartCard = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.IN_CheckPrepaidCard")]
+	public partial class IN_CheckPrepaidCard : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _InCheckPrePaidCardID;
+		
+		private string _TransactionID;
+		
+		private string _SmartCardID;
+		
+		private System.DateTime _CheckDate;
+		
+		private System.Nullable<int> _TicketTypeID;
+		
+		private System.Nullable<int> _VehicleTypeID;
+		
+		private System.Nullable<int> _EmployeeID;
+		
+		private System.Nullable<int> _ShiftID;
+		
+		private System.Nullable<int> _LaneID;
+		
+		private System.Nullable<int> _StationID;
+		
+		private string _ImageID;
+		
+		private string _RecogPlateNumber;
+		
+		private System.Nullable<short> _RecogResultType;
+		
+		private System.Nullable<short> _TransactionStatus;
+		
+		private System.Nullable<short> _PrecheckStatus;
+		
+		private System.Nullable<short> _PreSupervisionStatus;
+		
+		private System.Nullable<short> _SupervisionStatus;
+		
+		private System.Nullable<int> _ErrorID;
+		
+		private System.Nullable<System.Guid> _WIMID;
+		
+		private string _Note;
+		
+		private System.Nullable<bool> _IsVehicleInfoManual;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInCheckPrePaidCardIDChanging(System.Guid value);
+    partial void OnInCheckPrePaidCardIDChanged();
+    partial void OnTransactionIDChanging(string value);
+    partial void OnTransactionIDChanged();
+    partial void OnSmartCardIDChanging(string value);
+    partial void OnSmartCardIDChanged();
+    partial void OnCheckDateChanging(System.DateTime value);
+    partial void OnCheckDateChanged();
+    partial void OnTicketTypeIDChanging(System.Nullable<int> value);
+    partial void OnTicketTypeIDChanged();
+    partial void OnVehicleTypeIDChanging(System.Nullable<int> value);
+    partial void OnVehicleTypeIDChanged();
+    partial void OnEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnEmployeeIDChanged();
+    partial void OnShiftIDChanging(System.Nullable<int> value);
+    partial void OnShiftIDChanged();
+    partial void OnLaneIDChanging(System.Nullable<int> value);
+    partial void OnLaneIDChanged();
+    partial void OnStationIDChanging(System.Nullable<int> value);
+    partial void OnStationIDChanged();
+    partial void OnImageIDChanging(string value);
+    partial void OnImageIDChanged();
+    partial void OnRecogPlateNumberChanging(string value);
+    partial void OnRecogPlateNumberChanged();
+    partial void OnRecogResultTypeChanging(System.Nullable<short> value);
+    partial void OnRecogResultTypeChanged();
+    partial void OnTransactionStatusChanging(System.Nullable<short> value);
+    partial void OnTransactionStatusChanged();
+    partial void OnPrecheckStatusChanging(System.Nullable<short> value);
+    partial void OnPrecheckStatusChanged();
+    partial void OnPreSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnPreSupervisionStatusChanged();
+    partial void OnSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnSupervisionStatusChanged();
+    partial void OnErrorIDChanging(System.Nullable<int> value);
+    partial void OnErrorIDChanged();
+    partial void OnWIMIDChanging(System.Nullable<System.Guid> value);
+    partial void OnWIMIDChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnIsVehicleInfoManualChanging(System.Nullable<bool> value);
+    partial void OnIsVehicleInfoManualChanged();
+    #endregion
+		
+		public IN_CheckPrepaidCard()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InCheckPrePaidCardID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid InCheckPrePaidCardID
+		{
+			get
+			{
+				return this._InCheckPrePaidCardID;
+			}
+			set
+			{
+				if ((this._InCheckPrePaidCardID != value))
+				{
+					this.OnInCheckPrePaidCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._InCheckPrePaidCardID = value;
+					this.SendPropertyChanged("InCheckPrePaidCardID");
+					this.OnInCheckPrePaidCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this.OnTransactionIDChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionID = value;
+					this.SendPropertyChanged("TransactionID");
+					this.OnTransactionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmartCardID", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string SmartCardID
+		{
+			get
+			{
+				return this._SmartCardID;
+			}
+			set
+			{
+				if ((this._SmartCardID != value))
+				{
+					this.OnSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._SmartCardID = value;
+					this.SendPropertyChanged("SmartCardID");
+					this.OnSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CheckDate
+		{
+			get
+			{
+				return this._CheckDate;
+			}
+			set
+			{
+				if ((this._CheckDate != value))
+				{
+					this.OnCheckDateChanging(value);
+					this.SendPropertyChanging();
+					this._CheckDate = value;
+					this.SendPropertyChanged("CheckDate");
+					this.OnCheckDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketTypeID", DbType="Int")]
+		public System.Nullable<int> TicketTypeID
+		{
+			get
+			{
+				return this._TicketTypeID;
+			}
+			set
+			{
+				if ((this._TicketTypeID != value))
+				{
+					this.OnTicketTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._TicketTypeID = value;
+					this.SendPropertyChanged("TicketTypeID");
+					this.OnTicketTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehicleTypeID", DbType="Int")]
+		public System.Nullable<int> VehicleTypeID
+		{
+			get
+			{
+				return this._VehicleTypeID;
+			}
+			set
+			{
+				if ((this._VehicleTypeID != value))
+				{
+					this.OnVehicleTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._VehicleTypeID = value;
+					this.SendPropertyChanged("VehicleTypeID");
+					this.OnVehicleTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int")]
+		public System.Nullable<int> EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShiftID", DbType="Int")]
+		public System.Nullable<int> ShiftID
+		{
+			get
+			{
+				return this._ShiftID;
+			}
+			set
+			{
+				if ((this._ShiftID != value))
+				{
+					this.OnShiftIDChanging(value);
+					this.SendPropertyChanging();
+					this._ShiftID = value;
+					this.SendPropertyChanged("ShiftID");
+					this.OnShiftIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneID", DbType="Int")]
+		public System.Nullable<int> LaneID
+		{
+			get
+			{
+				return this._LaneID;
+			}
+			set
+			{
+				if ((this._LaneID != value))
+				{
+					this.OnLaneIDChanging(value);
+					this.SendPropertyChanging();
+					this._LaneID = value;
+					this.SendPropertyChanged("LaneID");
+					this.OnLaneIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int")]
+		public System.Nullable<int> StationID
+		{
+			get
+			{
+				return this._StationID;
+			}
+			set
+			{
+				if ((this._StationID != value))
+				{
+					this.OnStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._StationID = value;
+					this.SendPropertyChanged("StationID");
+					this.OnStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageID", DbType="NVarChar(50)")]
+		public string ImageID
+		{
+			get
+			{
+				return this._ImageID;
+			}
+			set
+			{
+				if ((this._ImageID != value))
+				{
+					this.OnImageIDChanging(value);
+					this.SendPropertyChanging();
+					this._ImageID = value;
+					this.SendPropertyChanged("ImageID");
+					this.OnImageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogPlateNumber", DbType="NVarChar(15)")]
+		public string RecogPlateNumber
+		{
+			get
+			{
+				return this._RecogPlateNumber;
+			}
+			set
+			{
+				if ((this._RecogPlateNumber != value))
+				{
+					this.OnRecogPlateNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RecogPlateNumber = value;
+					this.SendPropertyChanged("RecogPlateNumber");
+					this.OnRecogPlateNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogResultType", DbType="SmallInt")]
+		public System.Nullable<short> RecogResultType
+		{
+			get
+			{
+				return this._RecogResultType;
+			}
+			set
+			{
+				if ((this._RecogResultType != value))
+				{
+					this.OnRecogResultTypeChanging(value);
+					this.SendPropertyChanging();
+					this._RecogResultType = value;
+					this.SendPropertyChanged("RecogResultType");
+					this.OnRecogResultTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionStatus", DbType="SmallInt")]
+		public System.Nullable<short> TransactionStatus
+		{
+			get
+			{
+				return this._TransactionStatus;
+			}
+			set
+			{
+				if ((this._TransactionStatus != value))
+				{
+					this.OnTransactionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionStatus = value;
+					this.SendPropertyChanged("TransactionStatus");
+					this.OnTransactionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecheckStatus", DbType="SmallInt")]
+		public System.Nullable<short> PrecheckStatus
+		{
+			get
+			{
+				return this._PrecheckStatus;
+			}
+			set
+			{
+				if ((this._PrecheckStatus != value))
+				{
+					this.OnPrecheckStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PrecheckStatus = value;
+					this.SendPropertyChanged("PrecheckStatus");
+					this.OnPrecheckStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreSupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> PreSupervisionStatus
+		{
+			get
+			{
+				return this._PreSupervisionStatus;
+			}
+			set
+			{
+				if ((this._PreSupervisionStatus != value))
+				{
+					this.OnPreSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PreSupervisionStatus = value;
+					this.SendPropertyChanged("PreSupervisionStatus");
+					this.OnPreSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> SupervisionStatus
+		{
+			get
+			{
+				return this._SupervisionStatus;
+			}
+			set
+			{
+				if ((this._SupervisionStatus != value))
+				{
+					this.OnSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._SupervisionStatus = value;
+					this.SendPropertyChanged("SupervisionStatus");
+					this.OnSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ErrorID", DbType="Int")]
+		public System.Nullable<int> ErrorID
+		{
+			get
+			{
+				return this._ErrorID;
+			}
+			set
+			{
+				if ((this._ErrorID != value))
+				{
+					this.OnErrorIDChanging(value);
+					this.SendPropertyChanging();
+					this._ErrorID = value;
+					this.SendPropertyChanged("ErrorID");
+					this.OnErrorIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WIMID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> WIMID
+		{
+			get
+			{
+				return this._WIMID;
+			}
+			set
+			{
+				if ((this._WIMID != value))
+				{
+					this.OnWIMIDChanging(value);
+					this.SendPropertyChanging();
+					this._WIMID = value;
+					this.SendPropertyChanged("WIMID");
+					this.OnWIMIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsVehicleInfoManual", DbType="Bit")]
+		public System.Nullable<bool> IsVehicleInfoManual
+		{
+			get
+			{
+				return this._IsVehicleInfoManual;
+			}
+			set
+			{
+				if ((this._IsVehicleInfoManual != value))
+				{
+					this.OnIsVehicleInfoManualChanging(value);
+					this.SendPropertyChanging();
+					this._IsVehicleInfoManual = value;
+					this.SendPropertyChanged("IsVehicleInfoManual");
+					this.OnIsVehicleInfoManualChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OUT_CheckSmartCard")]
+	public partial class OUT_CheckSmartCard : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _OutCheckSmartCardID;
+		
+		private string _TransactionID;
+		
+		private string _ReceiptNo;
+		
+		private string _SmartCardID;
+		
+		private System.Nullable<System.Guid> _InCheckSmartCardID;
+		
+		private System.Nullable<System.Guid> _InCheckSmartCardIDManual;
+		
+		private System.DateTime _CheckDate;
+		
+		private System.Nullable<int> _BeginBalance;
+		
+		private System.Nullable<int> _ChargeAmount;
+		
+		private System.Nullable<int> _Balance;
+		
+		private System.Nullable<int> _TicketTypeID;
+		
+		private System.Nullable<int> _VehicleTypeID;
+		
+		private System.Nullable<int> _RouteID;
+		
+		private System.Nullable<int> _EmployeeID;
+		
+		private System.Nullable<int> _ShiftID;
+		
+		private System.Nullable<int> _LaneID;
+		
+		private System.Nullable<int> _StationID;
+		
+		private string _ImageID;
+		
+		private string _RecogPlateNumber;
+		
+		private System.Nullable<short> _RecogResultType;
+		
+		private System.Nullable<short> _TransactionStatus;
+		
+		private System.Nullable<short> _PrecheckStatus;
+		
+		private System.Nullable<short> _PreSupervisionStatus;
+		
+		private System.Nullable<short> _SupervisionStatus;
+		
+		private System.Nullable<int> _ErrorID;
+		
+		private string _Note;
+		
+		private string _EntryPlateNumber;
+		
+		private System.Nullable<int> _EntryLaneID;
+		
+		private string _F1;
+		
+		private string _F2;
+		
+		private EntityRef<IN_CheckSmartCard> _IN_CheckSmartCard;
+		
+		private EntityRef<LS_Lane> _LS_Lane;
+		
+		private EntityRef<LS_Station> _LS_Station;
+		
+		private EntityRef<LS_Route> _LS_Route;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOutCheckSmartCardIDChanging(System.Guid value);
+    partial void OnOutCheckSmartCardIDChanged();
+    partial void OnTransactionIDChanging(string value);
+    partial void OnTransactionIDChanged();
+    partial void OnReceiptNoChanging(string value);
+    partial void OnReceiptNoChanged();
+    partial void OnSmartCardIDChanging(string value);
+    partial void OnSmartCardIDChanged();
+    partial void OnInCheckSmartCardIDChanging(System.Nullable<System.Guid> value);
+    partial void OnInCheckSmartCardIDChanged();
+    partial void OnInCheckSmartCardIDManualChanging(System.Nullable<System.Guid> value);
+    partial void OnInCheckSmartCardIDManualChanged();
+    partial void OnCheckDateChanging(System.DateTime value);
+    partial void OnCheckDateChanged();
+    partial void OnBeginBalanceChanging(System.Nullable<int> value);
+    partial void OnBeginBalanceChanged();
+    partial void OnChargeAmountChanging(System.Nullable<int> value);
+    partial void OnChargeAmountChanged();
+    partial void OnBalanceChanging(System.Nullable<int> value);
+    partial void OnBalanceChanged();
+    partial void OnTicketTypeIDChanging(System.Nullable<int> value);
+    partial void OnTicketTypeIDChanged();
+    partial void OnVehicleTypeIDChanging(System.Nullable<int> value);
+    partial void OnVehicleTypeIDChanged();
+    partial void OnRouteIDChanging(System.Nullable<int> value);
+    partial void OnRouteIDChanged();
+    partial void OnEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnEmployeeIDChanged();
+    partial void OnShiftIDChanging(System.Nullable<int> value);
+    partial void OnShiftIDChanged();
+    partial void OnLaneIDChanging(System.Nullable<int> value);
+    partial void OnLaneIDChanged();
+    partial void OnStationIDChanging(System.Nullable<int> value);
+    partial void OnStationIDChanged();
+    partial void OnImageIDChanging(string value);
+    partial void OnImageIDChanged();
+    partial void OnRecogPlateNumberChanging(string value);
+    partial void OnRecogPlateNumberChanged();
+    partial void OnRecogResultTypeChanging(System.Nullable<short> value);
+    partial void OnRecogResultTypeChanged();
+    partial void OnTransactionStatusChanging(System.Nullable<short> value);
+    partial void OnTransactionStatusChanged();
+    partial void OnPrecheckStatusChanging(System.Nullable<short> value);
+    partial void OnPrecheckStatusChanged();
+    partial void OnPreSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnPreSupervisionStatusChanged();
+    partial void OnSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnSupervisionStatusChanged();
+    partial void OnErrorIDChanging(System.Nullable<int> value);
+    partial void OnErrorIDChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnEntryPlateNumberChanging(string value);
+    partial void OnEntryPlateNumberChanged();
+    partial void OnEntryLaneIDChanging(System.Nullable<int> value);
+    partial void OnEntryLaneIDChanged();
+    partial void OnF1Changing(string value);
+    partial void OnF1Changed();
+    partial void OnF2Changing(string value);
+    partial void OnF2Changed();
+    #endregion
+		
+		public OUT_CheckSmartCard()
+		{
+			this._IN_CheckSmartCard = default(EntityRef<IN_CheckSmartCard>);
+			this._LS_Lane = default(EntityRef<LS_Lane>);
+			this._LS_Station = default(EntityRef<LS_Station>);
+			this._LS_Route = default(EntityRef<LS_Route>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OutCheckSmartCardID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid OutCheckSmartCardID
+		{
+			get
+			{
+				return this._OutCheckSmartCardID;
+			}
+			set
+			{
+				if ((this._OutCheckSmartCardID != value))
+				{
+					this.OnOutCheckSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._OutCheckSmartCardID = value;
+					this.SendPropertyChanged("OutCheckSmartCardID");
+					this.OnOutCheckSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this.OnTransactionIDChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionID = value;
+					this.SendPropertyChanged("TransactionID");
+					this.OnTransactionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ReceiptNo
+		{
+			get
+			{
+				return this._ReceiptNo;
+			}
+			set
+			{
+				if ((this._ReceiptNo != value))
+				{
+					this.OnReceiptNoChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptNo = value;
+					this.SendPropertyChanged("ReceiptNo");
+					this.OnReceiptNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmartCardID", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string SmartCardID
+		{
+			get
+			{
+				return this._SmartCardID;
+			}
+			set
+			{
+				if ((this._SmartCardID != value))
+				{
+					this.OnSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._SmartCardID = value;
+					this.SendPropertyChanged("SmartCardID");
+					this.OnSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InCheckSmartCardID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> InCheckSmartCardID
+		{
+			get
+			{
+				return this._InCheckSmartCardID;
+			}
+			set
+			{
+				if ((this._InCheckSmartCardID != value))
+				{
+					if (this._IN_CheckSmartCard.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnInCheckSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._InCheckSmartCardID = value;
+					this.SendPropertyChanged("InCheckSmartCardID");
+					this.OnInCheckSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InCheckSmartCardIDManual", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> InCheckSmartCardIDManual
+		{
+			get
+			{
+				return this._InCheckSmartCardIDManual;
+			}
+			set
+			{
+				if ((this._InCheckSmartCardIDManual != value))
+				{
+					this.OnInCheckSmartCardIDManualChanging(value);
+					this.SendPropertyChanging();
+					this._InCheckSmartCardIDManual = value;
+					this.SendPropertyChanged("InCheckSmartCardIDManual");
+					this.OnInCheckSmartCardIDManualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CheckDate
+		{
+			get
+			{
+				return this._CheckDate;
+			}
+			set
+			{
+				if ((this._CheckDate != value))
+				{
+					this.OnCheckDateChanging(value);
+					this.SendPropertyChanging();
+					this._CheckDate = value;
+					this.SendPropertyChanged("CheckDate");
+					this.OnCheckDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeginBalance", DbType="Int")]
+		public System.Nullable<int> BeginBalance
+		{
+			get
+			{
+				return this._BeginBalance;
+			}
+			set
+			{
+				if ((this._BeginBalance != value))
+				{
+					this.OnBeginBalanceChanging(value);
+					this.SendPropertyChanging();
+					this._BeginBalance = value;
+					this.SendPropertyChanged("BeginBalance");
+					this.OnBeginBalanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChargeAmount", DbType="Int")]
+		public System.Nullable<int> ChargeAmount
+		{
+			get
+			{
+				return this._ChargeAmount;
+			}
+			set
+			{
+				if ((this._ChargeAmount != value))
+				{
+					this.OnChargeAmountChanging(value);
+					this.SendPropertyChanging();
+					this._ChargeAmount = value;
+					this.SendPropertyChanged("ChargeAmount");
+					this.OnChargeAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Int")]
+		public System.Nullable<int> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this.OnBalanceChanging(value);
+					this.SendPropertyChanging();
+					this._Balance = value;
+					this.SendPropertyChanged("Balance");
+					this.OnBalanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketTypeID", DbType="Int")]
+		public System.Nullable<int> TicketTypeID
+		{
+			get
+			{
+				return this._TicketTypeID;
+			}
+			set
+			{
+				if ((this._TicketTypeID != value))
+				{
+					this.OnTicketTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._TicketTypeID = value;
+					this.SendPropertyChanged("TicketTypeID");
+					this.OnTicketTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehicleTypeID", DbType="Int")]
+		public System.Nullable<int> VehicleTypeID
+		{
+			get
+			{
+				return this._VehicleTypeID;
+			}
+			set
+			{
+				if ((this._VehicleTypeID != value))
+				{
+					this.OnVehicleTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._VehicleTypeID = value;
+					this.SendPropertyChanged("VehicleTypeID");
+					this.OnVehicleTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int")]
+		public System.Nullable<int> RouteID
+		{
+			get
+			{
+				return this._RouteID;
+			}
+			set
+			{
+				if ((this._RouteID != value))
+				{
+					if (this._LS_Route.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRouteIDChanging(value);
+					this.SendPropertyChanging();
+					this._RouteID = value;
+					this.SendPropertyChanged("RouteID");
+					this.OnRouteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int")]
+		public System.Nullable<int> EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShiftID", DbType="Int")]
+		public System.Nullable<int> ShiftID
+		{
+			get
+			{
+				return this._ShiftID;
+			}
+			set
+			{
+				if ((this._ShiftID != value))
+				{
+					this.OnShiftIDChanging(value);
+					this.SendPropertyChanging();
+					this._ShiftID = value;
+					this.SendPropertyChanged("ShiftID");
+					this.OnShiftIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneID", DbType="Int")]
+		public System.Nullable<int> LaneID
+		{
+			get
+			{
+				return this._LaneID;
+			}
+			set
+			{
+				if ((this._LaneID != value))
+				{
+					if (this._LS_Lane.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLaneIDChanging(value);
+					this.SendPropertyChanging();
+					this._LaneID = value;
+					this.SendPropertyChanged("LaneID");
+					this.OnLaneIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int")]
+		public System.Nullable<int> StationID
+		{
+			get
+			{
+				return this._StationID;
+			}
+			set
+			{
+				if ((this._StationID != value))
+				{
+					if (this._LS_Station.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._StationID = value;
+					this.SendPropertyChanged("StationID");
+					this.OnStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageID", DbType="NVarChar(50)")]
+		public string ImageID
+		{
+			get
+			{
+				return this._ImageID;
+			}
+			set
+			{
+				if ((this._ImageID != value))
+				{
+					this.OnImageIDChanging(value);
+					this.SendPropertyChanging();
+					this._ImageID = value;
+					this.SendPropertyChanged("ImageID");
+					this.OnImageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogPlateNumber", DbType="NVarChar(15)")]
+		public string RecogPlateNumber
+		{
+			get
+			{
+				return this._RecogPlateNumber;
+			}
+			set
+			{
+				if ((this._RecogPlateNumber != value))
+				{
+					this.OnRecogPlateNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RecogPlateNumber = value;
+					this.SendPropertyChanged("RecogPlateNumber");
+					this.OnRecogPlateNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogResultType", DbType="SmallInt")]
+		public System.Nullable<short> RecogResultType
+		{
+			get
+			{
+				return this._RecogResultType;
+			}
+			set
+			{
+				if ((this._RecogResultType != value))
+				{
+					this.OnRecogResultTypeChanging(value);
+					this.SendPropertyChanging();
+					this._RecogResultType = value;
+					this.SendPropertyChanged("RecogResultType");
+					this.OnRecogResultTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionStatus", DbType="SmallInt")]
+		public System.Nullable<short> TransactionStatus
+		{
+			get
+			{
+				return this._TransactionStatus;
+			}
+			set
+			{
+				if ((this._TransactionStatus != value))
+				{
+					this.OnTransactionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionStatus = value;
+					this.SendPropertyChanged("TransactionStatus");
+					this.OnTransactionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecheckStatus", DbType="SmallInt")]
+		public System.Nullable<short> PrecheckStatus
+		{
+			get
+			{
+				return this._PrecheckStatus;
+			}
+			set
+			{
+				if ((this._PrecheckStatus != value))
+				{
+					this.OnPrecheckStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PrecheckStatus = value;
+					this.SendPropertyChanged("PrecheckStatus");
+					this.OnPrecheckStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreSupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> PreSupervisionStatus
+		{
+			get
+			{
+				return this._PreSupervisionStatus;
+			}
+			set
+			{
+				if ((this._PreSupervisionStatus != value))
+				{
+					this.OnPreSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PreSupervisionStatus = value;
+					this.SendPropertyChanged("PreSupervisionStatus");
+					this.OnPreSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> SupervisionStatus
+		{
+			get
+			{
+				return this._SupervisionStatus;
+			}
+			set
+			{
+				if ((this._SupervisionStatus != value))
+				{
+					this.OnSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._SupervisionStatus = value;
+					this.SendPropertyChanged("SupervisionStatus");
+					this.OnSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ErrorID", DbType="Int")]
+		public System.Nullable<int> ErrorID
+		{
+			get
+			{
+				return this._ErrorID;
+			}
+			set
+			{
+				if ((this._ErrorID != value))
+				{
+					this.OnErrorIDChanging(value);
+					this.SendPropertyChanging();
+					this._ErrorID = value;
+					this.SendPropertyChanged("ErrorID");
+					this.OnErrorIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryPlateNumber", DbType="NVarChar(15)")]
+		public string EntryPlateNumber
+		{
+			get
+			{
+				return this._EntryPlateNumber;
+			}
+			set
+			{
+				if ((this._EntryPlateNumber != value))
+				{
+					this.OnEntryPlateNumberChanging(value);
+					this.SendPropertyChanging();
+					this._EntryPlateNumber = value;
+					this.SendPropertyChanged("EntryPlateNumber");
+					this.OnEntryPlateNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryLaneID", DbType="Int")]
+		public System.Nullable<int> EntryLaneID
+		{
+			get
+			{
+				return this._EntryLaneID;
+			}
+			set
+			{
+				if ((this._EntryLaneID != value))
+				{
+					this.OnEntryLaneIDChanging(value);
+					this.SendPropertyChanging();
+					this._EntryLaneID = value;
+					this.SendPropertyChanged("EntryLaneID");
+					this.OnEntryLaneIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_F1", DbType="NVarChar(50)")]
+		public string F1
+		{
+			get
+			{
+				return this._F1;
+			}
+			set
+			{
+				if ((this._F1 != value))
+				{
+					this.OnF1Changing(value);
+					this.SendPropertyChanging();
+					this._F1 = value;
+					this.SendPropertyChanged("F1");
+					this.OnF1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_F2", DbType="NVarChar(50)")]
+		public string F2
+		{
+			get
+			{
+				return this._F2;
+			}
+			set
+			{
+				if ((this._F2 != value))
+				{
+					this.OnF2Changing(value);
+					this.SendPropertyChanging();
+					this._F2 = value;
+					this.SendPropertyChanged("F2");
+					this.OnF2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IN_CheckSmartCard_OUT_CheckSmartCard", Storage="_IN_CheckSmartCard", ThisKey="InCheckSmartCardID", OtherKey="InCheckSmartCardID", IsForeignKey=true)]
+		public IN_CheckSmartCard IN_CheckSmartCard
+		{
+			get
+			{
+				return this._IN_CheckSmartCard.Entity;
+			}
+			set
+			{
+				IN_CheckSmartCard previousValue = this._IN_CheckSmartCard.Entity;
+				if (((previousValue != value) 
+							|| (this._IN_CheckSmartCard.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._IN_CheckSmartCard.Entity = null;
+						previousValue.OUT_CheckSmartCards.Remove(this);
+					}
+					this._IN_CheckSmartCard.Entity = value;
+					if ((value != null))
+					{
+						value.OUT_CheckSmartCards.Add(this);
+						this._InCheckSmartCardID = value.InCheckSmartCardID;
+					}
+					else
+					{
+						this._InCheckSmartCardID = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("IN_CheckSmartCard");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_OUT_CheckSmartCard", Storage="_LS_Lane", ThisKey="LaneID", OtherKey="LaneID", IsForeignKey=true)]
+		public LS_Lane LS_Lane
+		{
+			get
+			{
+				return this._LS_Lane.Entity;
+			}
+			set
+			{
+				LS_Lane previousValue = this._LS_Lane.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Lane.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Lane.Entity = null;
+						previousValue.OUT_CheckSmartCards.Remove(this);
+					}
+					this._LS_Lane.Entity = value;
+					if ((value != null))
+					{
+						value.OUT_CheckSmartCards.Add(this);
+						this._LaneID = value.LaneID;
+					}
+					else
+					{
+						this._LaneID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Lane");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_OUT_CheckSmartCard", Storage="_LS_Station", ThisKey="StationID", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station
+		{
+			get
+			{
+				return this._LS_Station.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station.Entity = null;
+						previousValue.OUT_CheckSmartCards.Remove(this);
+					}
+					this._LS_Station.Entity = value;
+					if ((value != null))
+					{
+						value.OUT_CheckSmartCards.Add(this);
+						this._StationID = value.StationID;
+					}
+					else
+					{
+						this._StationID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Station");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Route_OUT_CheckSmartCard", Storage="_LS_Route", ThisKey="RouteID", OtherKey="RouteID", IsForeignKey=true)]
+		public LS_Route LS_Route
+		{
+			get
+			{
+				return this._LS_Route.Entity;
+			}
+			set
+			{
+				LS_Route previousValue = this._LS_Route.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Route.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Route.Entity = null;
+						previousValue.OUT_CheckSmartCards.Remove(this);
+					}
+					this._LS_Route.Entity = value;
+					if ((value != null))
+					{
+						value.OUT_CheckSmartCards.Add(this);
+						this._RouteID = value.RouteID;
+					}
+					else
+					{
+						this._RouteID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Route");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OUT_CheckPrepaidCard")]
+	public partial class OUT_CheckPrepaidCard : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _OutCheckPrePaidCardID;
+		
+		private string _TransactionID;
+		
+		private string _SmartCardID;
+		
+		private string _IDCard;
+		
+		private string _ReceiptNo;
+		
+		private System.DateTime _CheckDate;
+		
+		private int _TollFee;
+		
+		private System.Nullable<int> _BeginBalance;
+		
+		private System.Nullable<int> _ChargeAmount;
+		
+		private System.Nullable<int> _Balance;
+		
+		private System.Nullable<int> _TopUpAmount;
+		
+		private System.Nullable<int> _CashAmount;
+		
+		private System.Nullable<int> _TicketTypeID;
+		
+		private System.Nullable<int> _VehicleTypeID;
+		
+		private System.Nullable<int> _RouteID;
+		
+		private System.Nullable<int> _EmployeeID;
+		
+		private System.Nullable<int> _ShiftID;
+		
+		private System.Nullable<int> _LaneID;
+		
+		private System.Nullable<int> _StationID;
+		
+		private string _ImageID;
+		
+		private string _RecogPlateNumber;
+		
+		private string _RegisPlateNumber;
+		
+		private System.Nullable<short> _RecogResultType;
+		
+		private System.Nullable<short> _TransactionStatus;
+		
+		private System.Nullable<short> _PrecheckStatus;
+		
+		private System.Nullable<short> _PreSupervisionStatus;
+		
+		private System.Nullable<short> _SupervisionStatus;
+		
+		private System.Nullable<int> _ErrorID;
+		
+		private string _EntryPlateNumber;
+		
+		private System.Nullable<int> _EntryLaneID;
+		
+		private string _Note;
+		
+		private System.Nullable<int> _ChargeType;
+		
+		private System.Nullable<bool> _IsOnlineCheck;
+		
+		private System.Nullable<int> _ChargeSequenceID;
+		
+		private System.Nullable<int> _TopUpSequenceID;
+		
+		private string _SecurityBlock1;
+		
+		private string _SecurityBlock2;
+		
+		private string _SecurityBlock3;
+		
+		private string _F1;
+		
+		private string _F2;
+		
+		private EntityRef<LS_Lane> _LS_Lane;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOutCheckPrePaidCardIDChanging(System.Guid value);
+    partial void OnOutCheckPrePaidCardIDChanged();
+    partial void OnTransactionIDChanging(string value);
+    partial void OnTransactionIDChanged();
+    partial void OnSmartCardIDChanging(string value);
+    partial void OnSmartCardIDChanged();
+    partial void OnIDCardChanging(string value);
+    partial void OnIDCardChanged();
+    partial void OnReceiptNoChanging(string value);
+    partial void OnReceiptNoChanged();
+    partial void OnCheckDateChanging(System.DateTime value);
+    partial void OnCheckDateChanged();
+    partial void OnTollFeeChanging(int value);
+    partial void OnTollFeeChanged();
+    partial void OnBeginBalanceChanging(System.Nullable<int> value);
+    partial void OnBeginBalanceChanged();
+    partial void OnChargeAmountChanging(System.Nullable<int> value);
+    partial void OnChargeAmountChanged();
+    partial void OnBalanceChanging(System.Nullable<int> value);
+    partial void OnBalanceChanged();
+    partial void OnTopUpAmountChanging(System.Nullable<int> value);
+    partial void OnTopUpAmountChanged();
+    partial void OnCashAmountChanging(System.Nullable<int> value);
+    partial void OnCashAmountChanged();
+    partial void OnTicketTypeIDChanging(System.Nullable<int> value);
+    partial void OnTicketTypeIDChanged();
+    partial void OnVehicleTypeIDChanging(System.Nullable<int> value);
+    partial void OnVehicleTypeIDChanged();
+    partial void OnRouteIDChanging(System.Nullable<int> value);
+    partial void OnRouteIDChanged();
+    partial void OnEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnEmployeeIDChanged();
+    partial void OnShiftIDChanging(System.Nullable<int> value);
+    partial void OnShiftIDChanged();
+    partial void OnLaneIDChanging(System.Nullable<int> value);
+    partial void OnLaneIDChanged();
+    partial void OnStationIDChanging(System.Nullable<int> value);
+    partial void OnStationIDChanged();
+    partial void OnImageIDChanging(string value);
+    partial void OnImageIDChanged();
+    partial void OnRecogPlateNumberChanging(string value);
+    partial void OnRecogPlateNumberChanged();
+    partial void OnRegisPlateNumberChanging(string value);
+    partial void OnRegisPlateNumberChanged();
+    partial void OnRecogResultTypeChanging(System.Nullable<short> value);
+    partial void OnRecogResultTypeChanged();
+    partial void OnTransactionStatusChanging(System.Nullable<short> value);
+    partial void OnTransactionStatusChanged();
+    partial void OnPrecheckStatusChanging(System.Nullable<short> value);
+    partial void OnPrecheckStatusChanged();
+    partial void OnPreSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnPreSupervisionStatusChanged();
+    partial void OnSupervisionStatusChanging(System.Nullable<short> value);
+    partial void OnSupervisionStatusChanged();
+    partial void OnErrorIDChanging(System.Nullable<int> value);
+    partial void OnErrorIDChanged();
+    partial void OnEntryPlateNumberChanging(string value);
+    partial void OnEntryPlateNumberChanged();
+    partial void OnEntryLaneIDChanging(System.Nullable<int> value);
+    partial void OnEntryLaneIDChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnChargeTypeChanging(System.Nullable<int> value);
+    partial void OnChargeTypeChanged();
+    partial void OnIsOnlineCheckChanging(System.Nullable<bool> value);
+    partial void OnIsOnlineCheckChanged();
+    partial void OnChargeSequenceIDChanging(System.Nullable<int> value);
+    partial void OnChargeSequenceIDChanged();
+    partial void OnTopUpSequenceIDChanging(System.Nullable<int> value);
+    partial void OnTopUpSequenceIDChanged();
+    partial void OnSecurityBlock1Changing(string value);
+    partial void OnSecurityBlock1Changed();
+    partial void OnSecurityBlock2Changing(string value);
+    partial void OnSecurityBlock2Changed();
+    partial void OnSecurityBlock3Changing(string value);
+    partial void OnSecurityBlock3Changed();
+    partial void OnF1Changing(string value);
+    partial void OnF1Changed();
+    partial void OnF2Changing(string value);
+    partial void OnF2Changed();
+    #endregion
+		
+		public OUT_CheckPrepaidCard()
+		{
+			this._LS_Lane = default(EntityRef<LS_Lane>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OutCheckPrePaidCardID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid OutCheckPrePaidCardID
+		{
+			get
+			{
+				return this._OutCheckPrePaidCardID;
+			}
+			set
+			{
+				if ((this._OutCheckPrePaidCardID != value))
+				{
+					this.OnOutCheckPrePaidCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._OutCheckPrePaidCardID = value;
+					this.SendPropertyChanged("OutCheckPrePaidCardID");
+					this.OnOutCheckPrePaidCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this.OnTransactionIDChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionID = value;
+					this.SendPropertyChanged("TransactionID");
+					this.OnTransactionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmartCardID", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string SmartCardID
+		{
+			get
+			{
+				return this._SmartCardID;
+			}
+			set
+			{
+				if ((this._SmartCardID != value))
+				{
+					this.OnSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._SmartCardID = value;
+					this.SendPropertyChanged("SmartCardID");
+					this.OnSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCard", DbType="VarChar(32)")]
+		public string IDCard
+		{
+			get
+			{
+				return this._IDCard;
+			}
+			set
+			{
+				if ((this._IDCard != value))
+				{
+					this.OnIDCardChanging(value);
+					this.SendPropertyChanging();
+					this._IDCard = value;
+					this.SendPropertyChanged("IDCard");
+					this.OnIDCardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo", DbType="NVarChar(50)")]
+		public string ReceiptNo
+		{
+			get
+			{
+				return this._ReceiptNo;
+			}
+			set
+			{
+				if ((this._ReceiptNo != value))
+				{
+					this.OnReceiptNoChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptNo = value;
+					this.SendPropertyChanged("ReceiptNo");
+					this.OnReceiptNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CheckDate
+		{
+			get
+			{
+				return this._CheckDate;
+			}
+			set
+			{
+				if ((this._CheckDate != value))
+				{
+					this.OnCheckDateChanging(value);
+					this.SendPropertyChanging();
+					this._CheckDate = value;
+					this.SendPropertyChanged("CheckDate");
+					this.OnCheckDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TollFee", DbType="Int NOT NULL")]
+		public int TollFee
+		{
+			get
+			{
+				return this._TollFee;
+			}
+			set
+			{
+				if ((this._TollFee != value))
+				{
+					this.OnTollFeeChanging(value);
+					this.SendPropertyChanging();
+					this._TollFee = value;
+					this.SendPropertyChanged("TollFee");
+					this.OnTollFeeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeginBalance", DbType="Int")]
+		public System.Nullable<int> BeginBalance
+		{
+			get
+			{
+				return this._BeginBalance;
+			}
+			set
+			{
+				if ((this._BeginBalance != value))
+				{
+					this.OnBeginBalanceChanging(value);
+					this.SendPropertyChanging();
+					this._BeginBalance = value;
+					this.SendPropertyChanged("BeginBalance");
+					this.OnBeginBalanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChargeAmount", DbType="Int")]
+		public System.Nullable<int> ChargeAmount
+		{
+			get
+			{
+				return this._ChargeAmount;
+			}
+			set
+			{
+				if ((this._ChargeAmount != value))
+				{
+					this.OnChargeAmountChanging(value);
+					this.SendPropertyChanging();
+					this._ChargeAmount = value;
+					this.SendPropertyChanged("ChargeAmount");
+					this.OnChargeAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Int")]
+		public System.Nullable<int> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this.OnBalanceChanging(value);
+					this.SendPropertyChanging();
+					this._Balance = value;
+					this.SendPropertyChanged("Balance");
+					this.OnBalanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopUpAmount", DbType="Int")]
+		public System.Nullable<int> TopUpAmount
+		{
+			get
+			{
+				return this._TopUpAmount;
+			}
+			set
+			{
+				if ((this._TopUpAmount != value))
+				{
+					this.OnTopUpAmountChanging(value);
+					this.SendPropertyChanging();
+					this._TopUpAmount = value;
+					this.SendPropertyChanged("TopUpAmount");
+					this.OnTopUpAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAmount", DbType="Int")]
+		public System.Nullable<int> CashAmount
+		{
+			get
+			{
+				return this._CashAmount;
+			}
+			set
+			{
+				if ((this._CashAmount != value))
+				{
+					this.OnCashAmountChanging(value);
+					this.SendPropertyChanging();
+					this._CashAmount = value;
+					this.SendPropertyChanged("CashAmount");
+					this.OnCashAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketTypeID", DbType="Int")]
+		public System.Nullable<int> TicketTypeID
+		{
+			get
+			{
+				return this._TicketTypeID;
+			}
+			set
+			{
+				if ((this._TicketTypeID != value))
+				{
+					this.OnTicketTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._TicketTypeID = value;
+					this.SendPropertyChanged("TicketTypeID");
+					this.OnTicketTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehicleTypeID", DbType="Int")]
+		public System.Nullable<int> VehicleTypeID
+		{
+			get
+			{
+				return this._VehicleTypeID;
+			}
+			set
+			{
+				if ((this._VehicleTypeID != value))
+				{
+					this.OnVehicleTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._VehicleTypeID = value;
+					this.SendPropertyChanged("VehicleTypeID");
+					this.OnVehicleTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int")]
+		public System.Nullable<int> RouteID
+		{
+			get
+			{
+				return this._RouteID;
+			}
+			set
+			{
+				if ((this._RouteID != value))
+				{
+					this.OnRouteIDChanging(value);
+					this.SendPropertyChanging();
+					this._RouteID = value;
+					this.SendPropertyChanged("RouteID");
+					this.OnRouteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int")]
+		public System.Nullable<int> EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShiftID", DbType="Int")]
+		public System.Nullable<int> ShiftID
+		{
+			get
+			{
+				return this._ShiftID;
+			}
+			set
+			{
+				if ((this._ShiftID != value))
+				{
+					this.OnShiftIDChanging(value);
+					this.SendPropertyChanging();
+					this._ShiftID = value;
+					this.SendPropertyChanged("ShiftID");
+					this.OnShiftIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneID", DbType="Int")]
+		public System.Nullable<int> LaneID
+		{
+			get
+			{
+				return this._LaneID;
+			}
+			set
+			{
+				if ((this._LaneID != value))
+				{
+					if (this._LS_Lane.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLaneIDChanging(value);
+					this.SendPropertyChanging();
+					this._LaneID = value;
+					this.SendPropertyChanged("LaneID");
+					this.OnLaneIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationID", DbType="Int")]
+		public System.Nullable<int> StationID
+		{
+			get
+			{
+				return this._StationID;
+			}
+			set
+			{
+				if ((this._StationID != value))
+				{
+					this.OnStationIDChanging(value);
+					this.SendPropertyChanging();
+					this._StationID = value;
+					this.SendPropertyChanged("StationID");
+					this.OnStationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageID", DbType="NVarChar(50)")]
+		public string ImageID
+		{
+			get
+			{
+				return this._ImageID;
+			}
+			set
+			{
+				if ((this._ImageID != value))
+				{
+					this.OnImageIDChanging(value);
+					this.SendPropertyChanging();
+					this._ImageID = value;
+					this.SendPropertyChanged("ImageID");
+					this.OnImageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogPlateNumber", DbType="NVarChar(15)")]
+		public string RecogPlateNumber
+		{
+			get
+			{
+				return this._RecogPlateNumber;
+			}
+			set
+			{
+				if ((this._RecogPlateNumber != value))
+				{
+					this.OnRecogPlateNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RecogPlateNumber = value;
+					this.SendPropertyChanged("RecogPlateNumber");
+					this.OnRecogPlateNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegisPlateNumber", DbType="NVarChar(15)")]
+		public string RegisPlateNumber
+		{
+			get
+			{
+				return this._RegisPlateNumber;
+			}
+			set
+			{
+				if ((this._RegisPlateNumber != value))
+				{
+					this.OnRegisPlateNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RegisPlateNumber = value;
+					this.SendPropertyChanged("RegisPlateNumber");
+					this.OnRegisPlateNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecogResultType", DbType="SmallInt")]
+		public System.Nullable<short> RecogResultType
+		{
+			get
+			{
+				return this._RecogResultType;
+			}
+			set
+			{
+				if ((this._RecogResultType != value))
+				{
+					this.OnRecogResultTypeChanging(value);
+					this.SendPropertyChanging();
+					this._RecogResultType = value;
+					this.SendPropertyChanged("RecogResultType");
+					this.OnRecogResultTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionStatus", DbType="SmallInt")]
+		public System.Nullable<short> TransactionStatus
+		{
+			get
+			{
+				return this._TransactionStatus;
+			}
+			set
+			{
+				if ((this._TransactionStatus != value))
+				{
+					this.OnTransactionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._TransactionStatus = value;
+					this.SendPropertyChanged("TransactionStatus");
+					this.OnTransactionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecheckStatus", DbType="SmallInt")]
+		public System.Nullable<short> PrecheckStatus
+		{
+			get
+			{
+				return this._PrecheckStatus;
+			}
+			set
+			{
+				if ((this._PrecheckStatus != value))
+				{
+					this.OnPrecheckStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PrecheckStatus = value;
+					this.SendPropertyChanged("PrecheckStatus");
+					this.OnPrecheckStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreSupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> PreSupervisionStatus
+		{
+			get
+			{
+				return this._PreSupervisionStatus;
+			}
+			set
+			{
+				if ((this._PreSupervisionStatus != value))
+				{
+					this.OnPreSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._PreSupervisionStatus = value;
+					this.SendPropertyChanged("PreSupervisionStatus");
+					this.OnPreSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisionStatus", DbType="SmallInt")]
+		public System.Nullable<short> SupervisionStatus
+		{
+			get
+			{
+				return this._SupervisionStatus;
+			}
+			set
+			{
+				if ((this._SupervisionStatus != value))
+				{
+					this.OnSupervisionStatusChanging(value);
+					this.SendPropertyChanging();
+					this._SupervisionStatus = value;
+					this.SendPropertyChanged("SupervisionStatus");
+					this.OnSupervisionStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ErrorID", DbType="Int")]
+		public System.Nullable<int> ErrorID
+		{
+			get
+			{
+				return this._ErrorID;
+			}
+			set
+			{
+				if ((this._ErrorID != value))
+				{
+					this.OnErrorIDChanging(value);
+					this.SendPropertyChanging();
+					this._ErrorID = value;
+					this.SendPropertyChanged("ErrorID");
+					this.OnErrorIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryPlateNumber", DbType="NVarChar(15)")]
+		public string EntryPlateNumber
+		{
+			get
+			{
+				return this._EntryPlateNumber;
+			}
+			set
+			{
+				if ((this._EntryPlateNumber != value))
+				{
+					this.OnEntryPlateNumberChanging(value);
+					this.SendPropertyChanging();
+					this._EntryPlateNumber = value;
+					this.SendPropertyChanged("EntryPlateNumber");
+					this.OnEntryPlateNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryLaneID", DbType="Int")]
+		public System.Nullable<int> EntryLaneID
+		{
+			get
+			{
+				return this._EntryLaneID;
+			}
+			set
+			{
+				if ((this._EntryLaneID != value))
+				{
+					this.OnEntryLaneIDChanging(value);
+					this.SendPropertyChanging();
+					this._EntryLaneID = value;
+					this.SendPropertyChanged("EntryLaneID");
+					this.OnEntryLaneIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChargeType", DbType="Int")]
+		public System.Nullable<int> ChargeType
+		{
+			get
+			{
+				return this._ChargeType;
+			}
+			set
+			{
+				if ((this._ChargeType != value))
+				{
+					this.OnChargeTypeChanging(value);
+					this.SendPropertyChanging();
+					this._ChargeType = value;
+					this.SendPropertyChanged("ChargeType");
+					this.OnChargeTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsOnlineCheck", DbType="Bit")]
+		public System.Nullable<bool> IsOnlineCheck
+		{
+			get
+			{
+				return this._IsOnlineCheck;
+			}
+			set
+			{
+				if ((this._IsOnlineCheck != value))
+				{
+					this.OnIsOnlineCheckChanging(value);
+					this.SendPropertyChanging();
+					this._IsOnlineCheck = value;
+					this.SendPropertyChanged("IsOnlineCheck");
+					this.OnIsOnlineCheckChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChargeSequenceID", DbType="Int")]
+		public System.Nullable<int> ChargeSequenceID
+		{
+			get
+			{
+				return this._ChargeSequenceID;
+			}
+			set
+			{
+				if ((this._ChargeSequenceID != value))
+				{
+					this.OnChargeSequenceIDChanging(value);
+					this.SendPropertyChanging();
+					this._ChargeSequenceID = value;
+					this.SendPropertyChanged("ChargeSequenceID");
+					this.OnChargeSequenceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopUpSequenceID", DbType="Int")]
+		public System.Nullable<int> TopUpSequenceID
+		{
+			get
+			{
+				return this._TopUpSequenceID;
+			}
+			set
+			{
+				if ((this._TopUpSequenceID != value))
+				{
+					this.OnTopUpSequenceIDChanging(value);
+					this.SendPropertyChanging();
+					this._TopUpSequenceID = value;
+					this.SendPropertyChanged("TopUpSequenceID");
+					this.OnTopUpSequenceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecurityBlock1", DbType="NVarChar(50)")]
+		public string SecurityBlock1
+		{
+			get
+			{
+				return this._SecurityBlock1;
+			}
+			set
+			{
+				if ((this._SecurityBlock1 != value))
+				{
+					this.OnSecurityBlock1Changing(value);
+					this.SendPropertyChanging();
+					this._SecurityBlock1 = value;
+					this.SendPropertyChanged("SecurityBlock1");
+					this.OnSecurityBlock1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecurityBlock2", DbType="NVarChar(50)")]
+		public string SecurityBlock2
+		{
+			get
+			{
+				return this._SecurityBlock2;
+			}
+			set
+			{
+				if ((this._SecurityBlock2 != value))
+				{
+					this.OnSecurityBlock2Changing(value);
+					this.SendPropertyChanging();
+					this._SecurityBlock2 = value;
+					this.SendPropertyChanged("SecurityBlock2");
+					this.OnSecurityBlock2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecurityBlock3", DbType="NVarChar(50)")]
+		public string SecurityBlock3
+		{
+			get
+			{
+				return this._SecurityBlock3;
+			}
+			set
+			{
+				if ((this._SecurityBlock3 != value))
+				{
+					this.OnSecurityBlock3Changing(value);
+					this.SendPropertyChanging();
+					this._SecurityBlock3 = value;
+					this.SendPropertyChanged("SecurityBlock3");
+					this.OnSecurityBlock3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_F1", DbType="NVarChar(50)")]
+		public string F1
+		{
+			get
+			{
+				return this._F1;
+			}
+			set
+			{
+				if ((this._F1 != value))
+				{
+					this.OnF1Changing(value);
+					this.SendPropertyChanging();
+					this._F1 = value;
+					this.SendPropertyChanged("F1");
+					this.OnF1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_F2", DbType="NVarChar(50)")]
+		public string F2
+		{
+			get
+			{
+				return this._F2;
+			}
+			set
+			{
+				if ((this._F2 != value))
+				{
+					this.OnF2Changing(value);
+					this.SendPropertyChanging();
+					this._F2 = value;
+					this.SendPropertyChanged("F2");
+					this.OnF2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_OUT_CheckPrepaidCard", Storage="_LS_Lane", ThisKey="LaneID", OtherKey="LaneID", IsForeignKey=true)]
+		public LS_Lane LS_Lane
+		{
+			get
+			{
+				return this._LS_Lane.Entity;
+			}
+			set
+			{
+				LS_Lane previousValue = this._LS_Lane.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Lane.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Lane.Entity = null;
+						previousValue.OUT_CheckPrepaidCards.Remove(this);
+					}
+					this._LS_Lane.Entity = value;
+					if ((value != null))
+					{
+						value.OUT_CheckPrepaidCards.Add(this);
+						this._LaneID = value.LaneID;
+					}
+					else
+					{
+						this._LaneID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Lane");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -305,11 +5101,15 @@ namespace TollTicketManagement.Model
 		
 		private string _FormatID;
 		
+		private string _VehiclePlateIn;
+		
 		private System.Nullable<int> _StationIDIn;
 		
 		private System.Nullable<int> _LaneIDIn;
 		
 		private System.Nullable<System.DateTime> _LastCheckDateIn;
+		
+		private string _VehiclePlateOut;
 		
 		private System.Nullable<int> _StationIDOut;
 		
@@ -327,9 +5127,31 @@ namespace TollTicketManagement.Model
 		
 		private System.Nullable<int> _Year;
 		
-		private System.Nullable<bool> _IsUsed;
+		private System.Nullable<bool> _IsLock;
+		
+		private System.Nullable<int> _LockEmployeeID;
+		
+		private System.Nullable<System.DateTime> _LockDate;
+		
+		private System.Nullable<int> _UnlockEmployeeID;
+		
+		private System.Nullable<System.DateTime> _UnlockDate;
+		
+		private System.Nullable<bool> _IsLost;
 		
 		private string _Note;
+		
+		private EntityRef<LS_VehicleType> _LS_VehicleType;
+		
+		private EntityRef<LS_Route> _LS_Route;
+		
+		private EntityRef<LS_Lane> _LS_Lane;
+		
+		private EntityRef<LS_Lane> _LS_Lane1;
+		
+		private EntityRef<LS_Station> _LS_Station;
+		
+		private EntityRef<LS_Station> _LS_Station1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -343,12 +5165,16 @@ namespace TollTicketManagement.Model
     partial void OnVehicleTypeIDChanged();
     partial void OnFormatIDChanging(string value);
     partial void OnFormatIDChanged();
+    partial void OnVehiclePlateInChanging(string value);
+    partial void OnVehiclePlateInChanged();
     partial void OnStationIDInChanging(System.Nullable<int> value);
     partial void OnStationIDInChanged();
     partial void OnLaneIDInChanging(System.Nullable<int> value);
     partial void OnLaneIDInChanged();
     partial void OnLastCheckDateInChanging(System.Nullable<System.DateTime> value);
     partial void OnLastCheckDateInChanged();
+    partial void OnVehiclePlateOutChanging(string value);
+    partial void OnVehiclePlateOutChanged();
     partial void OnStationIDOutChanging(System.Nullable<int> value);
     partial void OnStationIDOutChanged();
     partial void OnLaneIDOutChanging(System.Nullable<int> value);
@@ -365,14 +5191,30 @@ namespace TollTicketManagement.Model
     partial void OnMonthChanged();
     partial void OnYearChanging(System.Nullable<int> value);
     partial void OnYearChanged();
-    partial void OnIsUsedChanging(System.Nullable<bool> value);
-    partial void OnIsUsedChanged();
+    partial void OnIsLockChanging(System.Nullable<bool> value);
+    partial void OnIsLockChanged();
+    partial void OnLockEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnLockEmployeeIDChanged();
+    partial void OnLockDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLockDateChanged();
+    partial void OnUnlockEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnUnlockEmployeeIDChanged();
+    partial void OnUnlockDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnUnlockDateChanged();
+    partial void OnIsLostChanging(System.Nullable<bool> value);
+    partial void OnIsLostChanged();
     partial void OnNoteChanging(string value);
     partial void OnNoteChanged();
     #endregion
 		
 		public AC_PPCWhiteList()
 		{
+			this._LS_VehicleType = default(EntityRef<LS_VehicleType>);
+			this._LS_Route = default(EntityRef<LS_Route>);
+			this._LS_Lane = default(EntityRef<LS_Lane>);
+			this._LS_Lane1 = default(EntityRef<LS_Lane>);
+			this._LS_Station = default(EntityRef<LS_Station>);
+			this._LS_Station1 = default(EntityRef<LS_Station>);
 			OnCreated();
 		}
 		
@@ -427,6 +5269,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._VehicleTypeID != value))
 				{
+					if (this._LS_VehicleType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnVehicleTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._VehicleTypeID = value;
@@ -456,6 +5302,26 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehiclePlateIn", DbType="NVarChar(20)")]
+		public string VehiclePlateIn
+		{
+			get
+			{
+				return this._VehiclePlateIn;
+			}
+			set
+			{
+				if ((this._VehiclePlateIn != value))
+				{
+					this.OnVehiclePlateInChanging(value);
+					this.SendPropertyChanging();
+					this._VehiclePlateIn = value;
+					this.SendPropertyChanged("VehiclePlateIn");
+					this.OnVehiclePlateInChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationIDIn", DbType="Int")]
 		public System.Nullable<int> StationIDIn
 		{
@@ -467,6 +5333,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._StationIDIn != value))
 				{
+					if (this._LS_Station.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnStationIDInChanging(value);
 					this.SendPropertyChanging();
 					this._StationIDIn = value;
@@ -487,6 +5357,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._LaneIDIn != value))
 				{
+					if (this._LS_Lane.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnLaneIDInChanging(value);
 					this.SendPropertyChanging();
 					this._LaneIDIn = value;
@@ -516,6 +5390,26 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehiclePlateOut", DbType="NVarChar(20)")]
+		public string VehiclePlateOut
+		{
+			get
+			{
+				return this._VehiclePlateOut;
+			}
+			set
+			{
+				if ((this._VehiclePlateOut != value))
+				{
+					this.OnVehiclePlateOutChanging(value);
+					this.SendPropertyChanging();
+					this._VehiclePlateOut = value;
+					this.SendPropertyChanged("VehiclePlateOut");
+					this.OnVehiclePlateOutChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationIDOut", DbType="Int")]
 		public System.Nullable<int> StationIDOut
 		{
@@ -527,6 +5421,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._StationIDOut != value))
 				{
+					if (this._LS_Station1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnStationIDOutChanging(value);
 					this.SendPropertyChanging();
 					this._StationIDOut = value;
@@ -547,6 +5445,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._LaneIDOut != value))
 				{
+					if (this._LS_Lane1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnLaneIDOutChanging(value);
 					this.SendPropertyChanging();
 					this._LaneIDOut = value;
@@ -587,6 +5489,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._RouteID != value))
 				{
+					if (this._LS_Route.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnRouteIDChanging(value);
 					this.SendPropertyChanging();
 					this._RouteID = value;
@@ -676,22 +5582,122 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsUsed", DbType="Bit")]
-		public System.Nullable<bool> IsUsed
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsLock", DbType="Bit")]
+		public System.Nullable<bool> IsLock
 		{
 			get
 			{
-				return this._IsUsed;
+				return this._IsLock;
 			}
 			set
 			{
-				if ((this._IsUsed != value))
+				if ((this._IsLock != value))
 				{
-					this.OnIsUsedChanging(value);
+					this.OnIsLockChanging(value);
 					this.SendPropertyChanging();
-					this._IsUsed = value;
-					this.SendPropertyChanged("IsUsed");
-					this.OnIsUsedChanged();
+					this._IsLock = value;
+					this.SendPropertyChanged("IsLock");
+					this.OnIsLockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LockEmployeeID", DbType="Int")]
+		public System.Nullable<int> LockEmployeeID
+		{
+			get
+			{
+				return this._LockEmployeeID;
+			}
+			set
+			{
+				if ((this._LockEmployeeID != value))
+				{
+					this.OnLockEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._LockEmployeeID = value;
+					this.SendPropertyChanged("LockEmployeeID");
+					this.OnLockEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LockDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LockDate
+		{
+			get
+			{
+				return this._LockDate;
+			}
+			set
+			{
+				if ((this._LockDate != value))
+				{
+					this.OnLockDateChanging(value);
+					this.SendPropertyChanging();
+					this._LockDate = value;
+					this.SendPropertyChanged("LockDate");
+					this.OnLockDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnlockEmployeeID", DbType="Int")]
+		public System.Nullable<int> UnlockEmployeeID
+		{
+			get
+			{
+				return this._UnlockEmployeeID;
+			}
+			set
+			{
+				if ((this._UnlockEmployeeID != value))
+				{
+					this.OnUnlockEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._UnlockEmployeeID = value;
+					this.SendPropertyChanged("UnlockEmployeeID");
+					this.OnUnlockEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnlockDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UnlockDate
+		{
+			get
+			{
+				return this._UnlockDate;
+			}
+			set
+			{
+				if ((this._UnlockDate != value))
+				{
+					this.OnUnlockDateChanging(value);
+					this.SendPropertyChanging();
+					this._UnlockDate = value;
+					this.SendPropertyChanged("UnlockDate");
+					this.OnUnlockDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsLost", DbType="Bit")]
+		public System.Nullable<bool> IsLost
+		{
+			get
+			{
+				return this._IsLost;
+			}
+			set
+			{
+				if ((this._IsLost != value))
+				{
+					this.OnIsLostChanging(value);
+					this.SendPropertyChanging();
+					this._IsLost = value;
+					this.SendPropertyChanged("IsLost");
+					this.OnIsLostChanged();
 				}
 			}
 		}
@@ -712,6 +5718,1200 @@ namespace TollTicketManagement.Model
 					this._Note = value;
 					this.SendPropertyChanged("Note");
 					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_VehicleType_AC_PPCWhiteList", Storage="_LS_VehicleType", ThisKey="VehicleTypeID", OtherKey="VehicleTypeID", IsForeignKey=true)]
+		public LS_VehicleType LS_VehicleType
+		{
+			get
+			{
+				return this._LS_VehicleType.Entity;
+			}
+			set
+			{
+				LS_VehicleType previousValue = this._LS_VehicleType.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_VehicleType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_VehicleType.Entity = null;
+						previousValue.AC_PPCWhiteLists.Remove(this);
+					}
+					this._LS_VehicleType.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists.Add(this);
+						this._VehicleTypeID = value.VehicleTypeID;
+					}
+					else
+					{
+						this._VehicleTypeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_VehicleType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Route_AC_PPCWhiteList", Storage="_LS_Route", ThisKey="RouteID", OtherKey="RouteID", IsForeignKey=true)]
+		public LS_Route LS_Route
+		{
+			get
+			{
+				return this._LS_Route.Entity;
+			}
+			set
+			{
+				LS_Route previousValue = this._LS_Route.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Route.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Route.Entity = null;
+						previousValue.AC_PPCWhiteLists.Remove(this);
+					}
+					this._LS_Route.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists.Add(this);
+						this._RouteID = value.RouteID;
+					}
+					else
+					{
+						this._RouteID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Route");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_PPCWhiteList", Storage="_LS_Lane", ThisKey="LaneIDIn", OtherKey="LaneID", IsForeignKey=true)]
+		public LS_Lane LS_Lane
+		{
+			get
+			{
+				return this._LS_Lane.Entity;
+			}
+			set
+			{
+				LS_Lane previousValue = this._LS_Lane.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Lane.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Lane.Entity = null;
+						previousValue.AC_PPCWhiteLists.Remove(this);
+					}
+					this._LS_Lane.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists.Add(this);
+						this._LaneIDIn = value.LaneID;
+					}
+					else
+					{
+						this._LaneIDIn = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Lane");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_PPCWhiteList1", Storage="_LS_Lane1", ThisKey="LaneIDOut", OtherKey="LaneID", IsForeignKey=true)]
+		public LS_Lane LS_Lane1
+		{
+			get
+			{
+				return this._LS_Lane1.Entity;
+			}
+			set
+			{
+				LS_Lane previousValue = this._LS_Lane1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Lane1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Lane1.Entity = null;
+						previousValue.AC_PPCWhiteLists1.Remove(this);
+					}
+					this._LS_Lane1.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists1.Add(this);
+						this._LaneIDOut = value.LaneID;
+					}
+					else
+					{
+						this._LaneIDOut = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Lane1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_PPCWhiteList", Storage="_LS_Station", ThisKey="StationIDIn", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station
+		{
+			get
+			{
+				return this._LS_Station.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station.Entity = null;
+						previousValue.AC_PPCWhiteLists.Remove(this);
+					}
+					this._LS_Station.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists.Add(this);
+						this._StationIDIn = value.StationID;
+					}
+					else
+					{
+						this._StationIDIn = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Station");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_PPCWhiteList1", Storage="_LS_Station1", ThisKey="StationIDOut", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station1
+		{
+			get
+			{
+				return this._LS_Station1.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station1.Entity = null;
+						previousValue.AC_PPCWhiteLists1.Remove(this);
+					}
+					this._LS_Station1.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists1.Add(this);
+						this._StationIDOut = value.StationID;
+					}
+					else
+					{
+						this._StationIDOut = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Station1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LS_Card")]
+	public partial class LS_Card : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CardTypeID;
+		
+		private System.Nullable<int> _ProductTypeID;
+		
+		private string _CardTypeCode;
+		
+		private string _Name;
+		
+		private string _Note;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCardTypeIDChanging(int value);
+    partial void OnCardTypeIDChanged();
+    partial void OnProductTypeIDChanging(System.Nullable<int> value);
+    partial void OnProductTypeIDChanged();
+    partial void OnCardTypeCodeChanging(string value);
+    partial void OnCardTypeCodeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public LS_Card()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CardTypeID
+		{
+			get
+			{
+				return this._CardTypeID;
+			}
+			set
+			{
+				if ((this._CardTypeID != value))
+				{
+					this.OnCardTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._CardTypeID = value;
+					this.SendPropertyChanged("CardTypeID");
+					this.OnCardTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductTypeID", DbType="Int")]
+		public System.Nullable<int> ProductTypeID
+		{
+			get
+			{
+				return this._ProductTypeID;
+			}
+			set
+			{
+				if ((this._ProductTypeID != value))
+				{
+					this.OnProductTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductTypeID = value;
+					this.SendPropertyChanged("ProductTypeID");
+					this.OnProductTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardTypeCode", DbType="NVarChar(20)")]
+		public string CardTypeCode
+		{
+			get
+			{
+				return this._CardTypeCode;
+			}
+			set
+			{
+				if ((this._CardTypeCode != value))
+				{
+					this.OnCardTypeCodeChanging(value);
+					this.SendPropertyChanging();
+					this._CardTypeCode = value;
+					this.SendPropertyChanged("CardTypeCode");
+					this.OnCardTypeCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(200)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AC_TollWhiteList")]
+	public partial class AC_TollWhiteList : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _ID;
+		
+		private string _CardID;
+		
+		private System.Nullable<int> _VehicleTypeID;
+		
+		private string _FormatID;
+		
+		private string _VehiclePlateIn;
+		
+		private System.Nullable<int> _StationIDIn;
+		
+		private System.Nullable<int> _LaneIDIn;
+		
+		private System.Nullable<System.DateTime> _LastCheckDateIn;
+		
+		private string _VehiclePlateOut;
+		
+		private System.Nullable<int> _StationIDOut;
+		
+		private System.Nullable<int> _LaneIDOut;
+		
+		private System.Nullable<System.DateTime> _LastCheckDateOut;
+		
+		private System.Nullable<int> _RouteID;
+		
+		private System.Nullable<int> _Day;
+		
+		private System.Nullable<int> _Month;
+		
+		private System.Nullable<int> _Year;
+		
+		private System.Nullable<bool> _IsLock;
+		
+		private System.Nullable<int> _LockEmployeeID;
+		
+		private System.Nullable<System.DateTime> _LockDate;
+		
+		private System.Nullable<int> _UnlockEmployeeID;
+		
+		private System.Nullable<System.DateTime> _UnlockDate;
+		
+		private System.Nullable<bool> _IsLost;
+		
+		private string _Note;
+		
+		private EntityRef<LS_VehicleType> _LS_VehicleType;
+		
+		private EntityRef<LS_Route> _LS_Route;
+		
+		private EntityRef<LS_Lane> _LS_Lane;
+		
+		private EntityRef<LS_Lane> _LS_Lane1;
+		
+		private EntityRef<LS_Station> _LS_Station;
+		
+		private EntityRef<LS_Station> _LS_Station1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(System.Guid value);
+    partial void OnIDChanged();
+    partial void OnCardIDChanging(string value);
+    partial void OnCardIDChanged();
+    partial void OnVehicleTypeIDChanging(System.Nullable<int> value);
+    partial void OnVehicleTypeIDChanged();
+    partial void OnFormatIDChanging(string value);
+    partial void OnFormatIDChanged();
+    partial void OnVehiclePlateInChanging(string value);
+    partial void OnVehiclePlateInChanged();
+    partial void OnStationIDInChanging(System.Nullable<int> value);
+    partial void OnStationIDInChanged();
+    partial void OnLaneIDInChanging(System.Nullable<int> value);
+    partial void OnLaneIDInChanged();
+    partial void OnLastCheckDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastCheckDateInChanged();
+    partial void OnVehiclePlateOutChanging(string value);
+    partial void OnVehiclePlateOutChanged();
+    partial void OnStationIDOutChanging(System.Nullable<int> value);
+    partial void OnStationIDOutChanged();
+    partial void OnLaneIDOutChanging(System.Nullable<int> value);
+    partial void OnLaneIDOutChanged();
+    partial void OnLastCheckDateOutChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastCheckDateOutChanged();
+    partial void OnRouteIDChanging(System.Nullable<int> value);
+    partial void OnRouteIDChanged();
+    partial void OnDayChanging(System.Nullable<int> value);
+    partial void OnDayChanged();
+    partial void OnMonthChanging(System.Nullable<int> value);
+    partial void OnMonthChanged();
+    partial void OnYearChanging(System.Nullable<int> value);
+    partial void OnYearChanged();
+    partial void OnIsLockChanging(System.Nullable<bool> value);
+    partial void OnIsLockChanged();
+    partial void OnLockEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnLockEmployeeIDChanged();
+    partial void OnLockDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLockDateChanged();
+    partial void OnUnlockEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnUnlockEmployeeIDChanged();
+    partial void OnUnlockDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnUnlockDateChanged();
+    partial void OnIsLostChanging(System.Nullable<bool> value);
+    partial void OnIsLostChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public AC_TollWhiteList()
+		{
+			this._LS_VehicleType = default(EntityRef<LS_VehicleType>);
+			this._LS_Route = default(EntityRef<LS_Route>);
+			this._LS_Lane = default(EntityRef<LS_Lane>);
+			this._LS_Lane1 = default(EntityRef<LS_Lane>);
+			this._LS_Station = default(EntityRef<LS_Station>);
+			this._LS_Station1 = default(EntityRef<LS_Station>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardID", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CardID
+		{
+			get
+			{
+				return this._CardID;
+			}
+			set
+			{
+				if ((this._CardID != value))
+				{
+					this.OnCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._CardID = value;
+					this.SendPropertyChanged("CardID");
+					this.OnCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehicleTypeID", DbType="Int")]
+		public System.Nullable<int> VehicleTypeID
+		{
+			get
+			{
+				return this._VehicleTypeID;
+			}
+			set
+			{
+				if ((this._VehicleTypeID != value))
+				{
+					if (this._LS_VehicleType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVehicleTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._VehicleTypeID = value;
+					this.SendPropertyChanged("VehicleTypeID");
+					this.OnVehicleTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FormatID", DbType="VarChar(20)")]
+		public string FormatID
+		{
+			get
+			{
+				return this._FormatID;
+			}
+			set
+			{
+				if ((this._FormatID != value))
+				{
+					this.OnFormatIDChanging(value);
+					this.SendPropertyChanging();
+					this._FormatID = value;
+					this.SendPropertyChanged("FormatID");
+					this.OnFormatIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehiclePlateIn", DbType="NVarChar(20)")]
+		public string VehiclePlateIn
+		{
+			get
+			{
+				return this._VehiclePlateIn;
+			}
+			set
+			{
+				if ((this._VehiclePlateIn != value))
+				{
+					this.OnVehiclePlateInChanging(value);
+					this.SendPropertyChanging();
+					this._VehiclePlateIn = value;
+					this.SendPropertyChanged("VehiclePlateIn");
+					this.OnVehiclePlateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationIDIn", DbType="Int")]
+		public System.Nullable<int> StationIDIn
+		{
+			get
+			{
+				return this._StationIDIn;
+			}
+			set
+			{
+				if ((this._StationIDIn != value))
+				{
+					if (this._LS_Station.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStationIDInChanging(value);
+					this.SendPropertyChanging();
+					this._StationIDIn = value;
+					this.SendPropertyChanged("StationIDIn");
+					this.OnStationIDInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneIDIn", DbType="Int")]
+		public System.Nullable<int> LaneIDIn
+		{
+			get
+			{
+				return this._LaneIDIn;
+			}
+			set
+			{
+				if ((this._LaneIDIn != value))
+				{
+					if (this._LS_Lane.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLaneIDInChanging(value);
+					this.SendPropertyChanging();
+					this._LaneIDIn = value;
+					this.SendPropertyChanged("LaneIDIn");
+					this.OnLaneIDInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastCheckDateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastCheckDateIn
+		{
+			get
+			{
+				return this._LastCheckDateIn;
+			}
+			set
+			{
+				if ((this._LastCheckDateIn != value))
+				{
+					this.OnLastCheckDateInChanging(value);
+					this.SendPropertyChanging();
+					this._LastCheckDateIn = value;
+					this.SendPropertyChanged("LastCheckDateIn");
+					this.OnLastCheckDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehiclePlateOut", DbType="NVarChar(20)")]
+		public string VehiclePlateOut
+		{
+			get
+			{
+				return this._VehiclePlateOut;
+			}
+			set
+			{
+				if ((this._VehiclePlateOut != value))
+				{
+					this.OnVehiclePlateOutChanging(value);
+					this.SendPropertyChanging();
+					this._VehiclePlateOut = value;
+					this.SendPropertyChanged("VehiclePlateOut");
+					this.OnVehiclePlateOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StationIDOut", DbType="Int")]
+		public System.Nullable<int> StationIDOut
+		{
+			get
+			{
+				return this._StationIDOut;
+			}
+			set
+			{
+				if ((this._StationIDOut != value))
+				{
+					this.OnStationIDOutChanging(value);
+					this.SendPropertyChanging();
+					this._StationIDOut = value;
+					this.SendPropertyChanged("StationIDOut");
+					this.OnStationIDOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaneIDOut", DbType="Int")]
+		public System.Nullable<int> LaneIDOut
+		{
+			get
+			{
+				return this._LaneIDOut;
+			}
+			set
+			{
+				if ((this._LaneIDOut != value))
+				{
+					if ((this._LS_Lane1.HasLoadedOrAssignedValue || this._LS_Station1.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLaneIDOutChanging(value);
+					this.SendPropertyChanging();
+					this._LaneIDOut = value;
+					this.SendPropertyChanged("LaneIDOut");
+					this.OnLaneIDOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastCheckDateOut", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastCheckDateOut
+		{
+			get
+			{
+				return this._LastCheckDateOut;
+			}
+			set
+			{
+				if ((this._LastCheckDateOut != value))
+				{
+					this.OnLastCheckDateOutChanging(value);
+					this.SendPropertyChanging();
+					this._LastCheckDateOut = value;
+					this.SendPropertyChanged("LastCheckDateOut");
+					this.OnLastCheckDateOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteID", DbType="Int")]
+		public System.Nullable<int> RouteID
+		{
+			get
+			{
+				return this._RouteID;
+			}
+			set
+			{
+				if ((this._RouteID != value))
+				{
+					if (this._LS_Route.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRouteIDChanging(value);
+					this.SendPropertyChanging();
+					this._RouteID = value;
+					this.SendPropertyChanged("RouteID");
+					this.OnRouteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Day", DbType="Int")]
+		public System.Nullable<int> Day
+		{
+			get
+			{
+				return this._Day;
+			}
+			set
+			{
+				if ((this._Day != value))
+				{
+					this.OnDayChanging(value);
+					this.SendPropertyChanging();
+					this._Day = value;
+					this.SendPropertyChanged("Day");
+					this.OnDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Month", DbType="Int")]
+		public System.Nullable<int> Month
+		{
+			get
+			{
+				return this._Month;
+			}
+			set
+			{
+				if ((this._Month != value))
+				{
+					this.OnMonthChanging(value);
+					this.SendPropertyChanging();
+					this._Month = value;
+					this.SendPropertyChanged("Month");
+					this.OnMonthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="Int")]
+		public System.Nullable<int> Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this.OnYearChanging(value);
+					this.SendPropertyChanging();
+					this._Year = value;
+					this.SendPropertyChanged("Year");
+					this.OnYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsLock", DbType="Bit")]
+		public System.Nullable<bool> IsLock
+		{
+			get
+			{
+				return this._IsLock;
+			}
+			set
+			{
+				if ((this._IsLock != value))
+				{
+					this.OnIsLockChanging(value);
+					this.SendPropertyChanging();
+					this._IsLock = value;
+					this.SendPropertyChanged("IsLock");
+					this.OnIsLockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LockEmployeeID", DbType="Int")]
+		public System.Nullable<int> LockEmployeeID
+		{
+			get
+			{
+				return this._LockEmployeeID;
+			}
+			set
+			{
+				if ((this._LockEmployeeID != value))
+				{
+					this.OnLockEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._LockEmployeeID = value;
+					this.SendPropertyChanged("LockEmployeeID");
+					this.OnLockEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LockDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LockDate
+		{
+			get
+			{
+				return this._LockDate;
+			}
+			set
+			{
+				if ((this._LockDate != value))
+				{
+					this.OnLockDateChanging(value);
+					this.SendPropertyChanging();
+					this._LockDate = value;
+					this.SendPropertyChanged("LockDate");
+					this.OnLockDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnlockEmployeeID", DbType="Int")]
+		public System.Nullable<int> UnlockEmployeeID
+		{
+			get
+			{
+				return this._UnlockEmployeeID;
+			}
+			set
+			{
+				if ((this._UnlockEmployeeID != value))
+				{
+					this.OnUnlockEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._UnlockEmployeeID = value;
+					this.SendPropertyChanged("UnlockEmployeeID");
+					this.OnUnlockEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnlockDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UnlockDate
+		{
+			get
+			{
+				return this._UnlockDate;
+			}
+			set
+			{
+				if ((this._UnlockDate != value))
+				{
+					this.OnUnlockDateChanging(value);
+					this.SendPropertyChanging();
+					this._UnlockDate = value;
+					this.SendPropertyChanged("UnlockDate");
+					this.OnUnlockDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsLost", DbType="Bit")]
+		public System.Nullable<bool> IsLost
+		{
+			get
+			{
+				return this._IsLost;
+			}
+			set
+			{
+				if ((this._IsLost != value))
+				{
+					this.OnIsLostChanging(value);
+					this.SendPropertyChanging();
+					this._IsLost = value;
+					this.SendPropertyChanged("IsLost");
+					this.OnIsLostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(200)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_VehicleType_AC_TollWhiteList", Storage="_LS_VehicleType", ThisKey="VehicleTypeID", OtherKey="VehicleTypeID", IsForeignKey=true)]
+		public LS_VehicleType LS_VehicleType
+		{
+			get
+			{
+				return this._LS_VehicleType.Entity;
+			}
+			set
+			{
+				LS_VehicleType previousValue = this._LS_VehicleType.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_VehicleType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_VehicleType.Entity = null;
+						previousValue.AC_TollWhiteLists.Remove(this);
+					}
+					this._LS_VehicleType.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists.Add(this);
+						this._VehicleTypeID = value.VehicleTypeID;
+					}
+					else
+					{
+						this._VehicleTypeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_VehicleType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Route_AC_TollWhiteList", Storage="_LS_Route", ThisKey="RouteID", OtherKey="RouteID", IsForeignKey=true)]
+		public LS_Route LS_Route
+		{
+			get
+			{
+				return this._LS_Route.Entity;
+			}
+			set
+			{
+				LS_Route previousValue = this._LS_Route.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Route.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Route.Entity = null;
+						previousValue.AC_TollWhiteLists.Remove(this);
+					}
+					this._LS_Route.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists.Add(this);
+						this._RouteID = value.RouteID;
+					}
+					else
+					{
+						this._RouteID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Route");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_TollWhiteList", Storage="_LS_Lane", ThisKey="LaneIDIn", OtherKey="LaneID", IsForeignKey=true)]
+		public LS_Lane LS_Lane
+		{
+			get
+			{
+				return this._LS_Lane.Entity;
+			}
+			set
+			{
+				LS_Lane previousValue = this._LS_Lane.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Lane.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Lane.Entity = null;
+						previousValue.AC_TollWhiteLists.Remove(this);
+					}
+					this._LS_Lane.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists.Add(this);
+						this._LaneIDIn = value.LaneID;
+					}
+					else
+					{
+						this._LaneIDIn = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Lane");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Lane_AC_TollWhiteList1", Storage="_LS_Lane1", ThisKey="LaneIDOut", OtherKey="LaneID", IsForeignKey=true)]
+		public LS_Lane LS_Lane1
+		{
+			get
+			{
+				return this._LS_Lane1.Entity;
+			}
+			set
+			{
+				LS_Lane previousValue = this._LS_Lane1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Lane1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Lane1.Entity = null;
+						previousValue.AC_TollWhiteLists1.Remove(this);
+					}
+					this._LS_Lane1.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists1.Add(this);
+						this._LaneIDOut = value.LaneID;
+					}
+					else
+					{
+						this._LaneIDOut = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Lane1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_TollWhiteList", Storage="_LS_Station", ThisKey="StationIDIn", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station
+		{
+			get
+			{
+				return this._LS_Station.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station.Entity = null;
+						previousValue.AC_TollWhiteLists.Remove(this);
+					}
+					this._LS_Station.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists.Add(this);
+						this._StationIDIn = value.StationID;
+					}
+					else
+					{
+						this._StationIDIn = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Station");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Station_AC_TollWhiteList1", Storage="_LS_Station1", ThisKey="LaneIDOut", OtherKey="StationID", IsForeignKey=true)]
+		public LS_Station LS_Station1
+		{
+			get
+			{
+				return this._LS_Station1.Entity;
+			}
+			set
+			{
+				LS_Station previousValue = this._LS_Station1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Station1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Station1.Entity = null;
+						previousValue.AC_TollWhiteLists1.Remove(this);
+					}
+					this._LS_Station1.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists1.Add(this);
+						this._LaneIDOut = value.StationID;
+					}
+					else
+					{
+						this._LaneIDOut = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Station1");
 				}
 			}
 		}

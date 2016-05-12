@@ -49,7 +49,6 @@ E:\PROJECT\CTS\HPE\trunk\Implementation\DASHBOARD\TollManagement.Common\obj\Rele
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\bin\Release\TollManagement.Common.exe.config
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\bin\Release\TollManagement.Common.exe
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\bin\Release\TollManagement.Common.pdb
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.csprojResolveAssemblyReference.cache
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.Properties.Resources.resources
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.csproj.GenerateResource.Cache
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.exe
