@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TollTicketManagement.Model;
 
 namespace TollTicketManagement.View
 {
@@ -19,9 +20,16 @@ namespace TollTicketManagement.View
     /// </summary>
     public partial class wdnLookup : Window
     {
+        public List<LS_VehicleType> lstVeh { get; set; }
         public wdnLookup()
         {
             InitializeComponent();
+            using (var dc = new QLHPDataContext())
+            {
+                 lstVeh = dc.LS_VehicleTypes.Select(x => x).ToList();
+            }
+            lstVeh.Insert(0, new LS_VehicleType() { Name = "Tất cả", VehicleTypeID = -1 });
+            DataContext = this;
         }
     }
 }
