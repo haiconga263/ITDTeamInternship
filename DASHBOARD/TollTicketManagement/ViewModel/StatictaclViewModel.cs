@@ -12,11 +12,9 @@ using TollTicketManagement.Model;
 
 namespace TollTicketManagement.ViewModel
 {
-    public delegate bool Filter(WhiteList w);
-
-    public class wdnLookupViewModel : INotifyPropertyChanged
+    class StatictaclViewModel : INotifyPropertyChanged
     {
-        public wdnLookupViewModel()
+        public StatictaclViewModel()
         {
             SearchCommand = new RelayCommand(ActionSearch);
             lstVeh = new ObservableCollection<LS_VehicleType>(DatabaseContext.Instance.LS_VehicleTypes.Select(x => x).ToList());
@@ -247,6 +245,5 @@ namespace TollTicketManagement.ViewModel
         }
 
         public ICommand SearchCommand { get; set; }
-        
     }
 }

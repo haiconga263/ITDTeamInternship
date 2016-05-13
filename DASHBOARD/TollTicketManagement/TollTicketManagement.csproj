@@ -79,6 +79,7 @@
     <Compile Include="IntToImageConverter3.cs" />
     <Compile Include="IntToImageConverter2.cs" />
     <Compile Include="IntToImageConverter.cs" />
+    <Compile Include="Model\CardType.cs" />
     <Compile Include="Model\QLHP.cs">
       <DependentUpon>QLHP.dbml</DependentUpon>
     </Compile>
@@ -89,7 +90,8 @@
     </Compile>
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\WhiteList.cs" />
-    <Compile Include="ViewModel\wdnLookupViewModel.cs" />
+    <Compile Include="ViewModel\LookupViewModel.cs" />
+    <Compile Include="ViewModel\StatictaclViewModel.cs" />
     <Compile Include="View\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
@@ -99,11 +101,11 @@
     <Compile Include="View\UpdatePrecheckStatusView.xaml.cs">
       <DependentUpon>UpdatePrecheckStatusView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wdnLookup.xaml.cs">
-      <DependentUpon>wdnLookup.xaml</DependentUpon>
+    <Compile Include="View\Lookup.xaml.cs">
+      <DependentUpon>Lookup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="wdnRoute.xaml.cs">
-      <DependentUpon>wdnRoute.xaml</DependentUpon>
+    <Compile Include="View\Statistical.xaml.cs">
+      <DependentUpon>Statistical.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -157,11 +159,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wdnLookup.xaml">
+    <Page Include="View\Lookup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="wdnRoute.xaml">
+    <Page Include="View\Statistical.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

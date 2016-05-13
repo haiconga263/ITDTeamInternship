@@ -371,13 +371,13 @@ namespace TollTicketManagement
 
         private void btnLookup_Click(object sender, RoutedEventArgs e)
         {
-            var wdn = new wdnLookup();
+            var wdn = new Lookup();
             wdn.ShowDialog();
         }
 
         private void btnStatistics_Click(object sender, RoutedEventArgs e)
         {
-            var wdn = new wdnRoute();
+            var wdn = new Statistical();
             wdn.ShowDialog();
         }
     }

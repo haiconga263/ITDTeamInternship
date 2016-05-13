@@ -26,7 +26,6 @@
       <Column Name="IsUsed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="LS_Lane_IN_CheckSmartCard" Member="IN_CheckSmartCards" ThisKey="LaneID" OtherKey="LaneID" Type="IN_CheckSmartCard" />
       <Association Name="LS_Lane_OUT_CheckSmartCard" Member="OUT_CheckSmartCards" ThisKey="LaneID" OtherKey="LaneID" Type="OUT_CheckSmartCard" />
-      <Association Name="LS_Lane_OUT_CheckPrepaidCard" Member="OUT_CheckPrepaidCards" ThisKey="LaneID" OtherKey="LaneID" Type="OUT_CheckPrepaidCard" />
       <Association Name="LS_Lane_AC_PPCWhiteList" Member="AC_PPCWhiteLists" ThisKey="LaneID" OtherKey="LaneIDIn" Type="AC_PPCWhiteList" />
       <Association Name="LS_Lane_AC_PPCWhiteList1" Member="AC_PPCWhiteLists1" ThisKey="LaneID" OtherKey="LaneIDOut" Type="AC_PPCWhiteList" />
       <Association Name="LS_Lane_AC_TollWhiteList" Member="AC_TollWhiteLists" ThisKey="LaneID" OtherKey="LaneIDIn" Type="AC_TollWhiteList" />
@@ -104,31 +103,6 @@
       <Association Name="LS_VehicleType_IN_CheckSmartCard" Member="LS_VehicleType" ThisKey="VehicleTypeID" OtherKey="VehicleTypeID" Type="LS_VehicleType" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.IN_CheckPrepaidCard" Member="IN_CheckPrepaidCards">
-    <Type Name="IN_CheckPrepaidCard">
-      <Column Name="InCheckPrePaidCardID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TransactionID" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="SmartCardID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="CheckDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TicketTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VehicleTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ShiftID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LaneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ImageID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RecogPlateNumber" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="RecogResultType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="TransactionStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="PrecheckStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="PreSupervisionStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="SupervisionStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="ErrorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="WIMID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="IsVehicleInfoManual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.OUT_CheckSmartCard" Member="OUT_CheckSmartCards">
     <Type Name="OUT_CheckSmartCard">
       <Column Name="OutCheckSmartCardID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -165,51 +139,6 @@
       <Association Name="LS_Lane_OUT_CheckSmartCard" Member="LS_Lane" ThisKey="LaneID" OtherKey="LaneID" Type="LS_Lane" IsForeignKey="true" />
       <Association Name="LS_Station_OUT_CheckSmartCard" Member="LS_Station" ThisKey="StationID" OtherKey="StationID" Type="LS_Station" IsForeignKey="true" />
       <Association Name="LS_Route_OUT_CheckSmartCard" Member="LS_Route" ThisKey="RouteID" OtherKey="RouteID" Type="LS_Route" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.OUT_CheckPrepaidCard" Member="OUT_CheckPrepaidCards">
-    <Type Name="OUT_CheckPrepaidCard">
-      <Column Name="OutCheckPrePaidCardID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TransactionID" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="SmartCardID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="IDCard" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
-      <Column Name="ReceiptNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CheckDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TollFee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BeginBalance" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ChargeAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Balance" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TopUpAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CashAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TicketTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VehicleTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RouteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ShiftID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LaneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ImageID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RecogPlateNumber" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="RegisPlateNumber" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="RecogResultType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="TransactionStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="PrecheckStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="PreSupervisionStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="SupervisionStatus" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="ErrorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EntryPlateNumber" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="EntryLaneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ChargeType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IsOnlineCheck" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ChargeSequenceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TopUpSequenceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SecurityBlock1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SecurityBlock2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SecurityBlock3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="F1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="F2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="LS_Lane_OUT_CheckPrepaidCard" Member="LS_Lane" ThisKey="LaneID" OtherKey="LaneID" Type="LS_Lane" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.AC_PPCWhiteList" Member="AC_PPCWhiteLists">

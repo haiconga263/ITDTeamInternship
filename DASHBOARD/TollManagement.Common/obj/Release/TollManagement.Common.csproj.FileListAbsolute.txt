@@ -53,3 +53,4 @@ D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\T
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.csproj.GenerateResource.Cache
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.exe
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.pdb
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollManagement.Common\obj\Release\TollManagement.Common.csprojResolveAssemblyReference.cache

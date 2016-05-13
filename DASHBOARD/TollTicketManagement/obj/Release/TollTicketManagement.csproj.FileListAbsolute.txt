@@ -373,7 +373,6 @@ D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\Vi
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\OneStation.baml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\UpdateOutCheckInfoView.baml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\UpdatePrecheckStatusView.baml
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\wdnRoute.baml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\App.baml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\MainWindow.g.cs
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\ConfigView.g.cs
@@ -383,8 +382,6 @@ D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\Vi
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\OneStation.g.cs
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\UpdateOutCheckInfoView.g.cs
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\UpdatePrecheckStatusView.g.cs
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\wdnLookup.g.cs
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\wdnRoute.g.cs
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\App.g.cs
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\GeneratedInternalTypeHelper.g.cs
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement_MarkupCompile.cache
@@ -403,7 +400,6 @@ D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\bin\Release\En
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\bin\Release\EntityFramework.SqlServer.xml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\DashboardView.baml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\EquipmentStatusView.baml
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\wdnLookup.baml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.g.resources
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.Properties.Resources.resources
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.Resources.Message.CommonMessage.resources
@@ -415,3 +411,7 @@ D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\To
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.csproj.GenerateResource.Cache
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.exe
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.pdb
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Lookup.g.cs
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Statistical.g.cs
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Lookup.baml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Statistical.baml

@@ -10,11 +10,11 @@ none
 false
 TRACE
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\App.xaml
-10-1418073822
+10967297598
 
-501178652154
+52767495710
 25-818145516
-MainWindow.xaml;View\ConfigView.xaml;View\DashboardView.xaml;View\EquipmentStatusView.xaml;View\ManagementView.xaml;OneStation.xaml;View\UpdateOutCheckInfoView.xaml;View\UpdatePrecheckStatusView.xaml;View\wdnLookup.xaml;wdnRoute.xaml;
+MainWindow.xaml;View\ConfigView.xaml;View\DashboardView.xaml;View\EquipmentStatusView.xaml;View\ManagementView.xaml;OneStation.xaml;View\UpdateOutCheckInfoView.xaml;View\UpdatePrecheckStatusView.xaml;View\Lookup.xaml;View\Statistical.xaml;
 
-False
+True
 

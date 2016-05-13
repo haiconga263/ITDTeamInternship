@@ -67,12 +67,19 @@ namespace TollTicketManagement.Model
             get { return laneOut; }
             set { laneOut = value; OnPropertyChanged(); }
         }
-        private DateTime lastCheck;
+        private string lastCheckIn;
 
-        public DateTime LastCheck
+        public string LastCheckIn
         {
-            get { return lastCheck; }
-            set { lastCheck = value; OnPropertyChanged(); }
+            get { return lastCheckIn; }
+            set { lastCheckIn = value; OnPropertyChanged(); }
+        }
+        private string lastCheckOut;
+
+        public string LastCheckOut
+        {
+            get { return lastCheckOut; }
+            set { lastCheckOut = value; OnPropertyChanged(); }
         }
         private LS_Route route;
 
@@ -81,6 +88,15 @@ namespace TollTicketManagement.Model
             get { return route; }
             set { route = value; OnPropertyChanged(); }
         }
+
+        private string vehiclePlateIn;
+
+        public string VehiclePlateIn
+        {
+            get { return vehiclePlateIn; }
+            set { vehiclePlateIn = value; }
+        }
+
         private string vehiclePlateOut;
 
         public string VehiclePlateOut
@@ -96,18 +112,22 @@ namespace TollTicketManagement.Model
             get { return cardID; }
             set { cardID = value; }
         }
+
+        
         
         public static WhiteList CreateFromPPCWhiteList(AC_PPCWhiteList x)
         {
             WhiteList wl = new WhiteList()
             {
-                TypeCard = "PPC White List",
+                TypeCard = "Thẻ PPC",
                 CardID = x.CardID,
+                VehiclePlateIn = x.VehiclePlateIn,
                 VehiclePlateOut = x.VehiclePlateOut,
                 VehicleType = x.LS_VehicleType,
                 LaneIn = x.LS_Lane,
                 LaneOut = x.LS_Lane1,
-                LastCheck = DateTime.Parse(x.LastCheckDateOut.ToString()),
+                LastCheckIn = x.LastCheckDateIn.ToString(),
+                LastCheckOut = x.LastCheckDateOut.ToString(),
                 Route = x.LS_Route,
                 StationIn = x.LS_Station,
                 StationOut = x.LS_Station1
@@ -118,13 +138,15 @@ namespace TollTicketManagement.Model
         {
             WhiteList wl = new WhiteList()
             {
-                TypeCard = "Toll White List",
+                TypeCard = "Thẻ lượt",
                 CardID = x.CardID,
+                VehiclePlateIn = x.VehiclePlateIn,
                 VehiclePlateOut = x.VehiclePlateOut,
                 VehicleType = x.LS_VehicleType,
                 LaneIn = x.LS_Lane,
                 LaneOut = x.LS_Lane1,
-                LastCheck = DateTime.Parse(x.LastCheckDateOut.ToString()),
+                LastCheckIn = x.LastCheckDateIn.ToString(),
+                LastCheckOut = x.LastCheckDateOut.ToString(),
                 Route = x.LS_Route,
                 StationIn = x.LS_Station,
                 StationOut = x.LS_Station1
