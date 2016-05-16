@@ -19,11 +19,11 @@ namespace TollTicketManagement.View
     /// <summary>
     /// Interaction logic for wdnLookup.xaml
     /// </summary>
-    public partial class Lookup : Window
+    public partial class LookupView : Window
     {
         private LookupViewModel vm = new LookupViewModel();
         
-        public Lookup()
+        public LookupView()
         {
             InitializeComponent();
             DataContext = vm;

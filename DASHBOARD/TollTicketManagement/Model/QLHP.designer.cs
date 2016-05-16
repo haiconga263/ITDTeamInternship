@@ -57,6 +57,9 @@ namespace TollTicketManagement.Model
     partial void InsertAC_TollWhiteList(AC_TollWhiteList instance);
     partial void UpdateAC_TollWhiteList(AC_TollWhiteList instance);
     partial void DeleteAC_TollWhiteList(AC_TollWhiteList instance);
+    partial void InsertLS_Employee(LS_Employee instance);
+    partial void UpdateLS_Employee(LS_Employee instance);
+    partial void DeleteLS_Employee(LS_Employee instance);
     #endregion
 		
 		public QLHPDataContext() : 
@@ -158,6 +161,14 @@ namespace TollTicketManagement.Model
 			get
 			{
 				return this.GetTable<AC_TollWhiteList>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LS_Employee> LS_Employees
+		{
+			get
+			{
+				return this.GetTable<LS_Employee>();
 			}
 		}
 	}
@@ -1897,6 +1908,8 @@ namespace TollTicketManagement.Model
 		
 		private EntityRef<LS_VehicleType> _LS_VehicleType;
 		
+		private EntityRef<LS_Employee> _LS_Employee;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1951,6 +1964,7 @@ namespace TollTicketManagement.Model
 			this._LS_Lane = default(EntityRef<LS_Lane>);
 			this._LS_Station = default(EntityRef<LS_Station>);
 			this._LS_VehicleType = default(EntityRef<LS_VehicleType>);
+			this._LS_Employee = default(EntityRef<LS_Employee>);
 			OnCreated();
 		}
 		
@@ -2089,6 +2103,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._EmployeeID != value))
 				{
+					if (this._LS_Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnEmployeeIDChanging(value);
 					this.SendPropertyChanging();
 					this._EmployeeID = value;
@@ -2501,6 +2519,40 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_IN_CheckSmartCard", Storage="_LS_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public LS_Employee LS_Employee
+		{
+			get
+			{
+				return this._LS_Employee.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee.Entity = null;
+						previousValue.IN_CheckSmartCards.Remove(this);
+					}
+					this._LS_Employee.Entity = value;
+					if ((value != null))
+					{
+						value.IN_CheckSmartCards.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Employee");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2608,6 +2660,8 @@ namespace TollTicketManagement.Model
 		
 		private EntityRef<LS_Route> _LS_Route;
 		
+		private EntityRef<LS_Employee> _LS_Employee;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2680,6 +2734,7 @@ namespace TollTicketManagement.Model
 			this._LS_Lane = default(EntityRef<LS_Lane>);
 			this._LS_Station = default(EntityRef<LS_Station>);
 			this._LS_Route = default(EntityRef<LS_Route>);
+			this._LS_Employee = default(EntityRef<LS_Employee>);
 			OnCreated();
 		}
 		
@@ -2962,6 +3017,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._EmployeeID != value))
 				{
+					if (this._LS_Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnEmployeeIDChanging(value);
 					this.SendPropertyChanging();
 					this._EmployeeID = value;
@@ -3435,6 +3494,40 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_OUT_CheckSmartCard", Storage="_LS_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public LS_Employee LS_Employee
+		{
+			get
+			{
+				return this._LS_Employee.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee.Entity = null;
+						previousValue.OUT_CheckSmartCards.Remove(this);
+					}
+					this._LS_Employee.Entity = value;
+					if ((value != null))
+					{
+						value.OUT_CheckSmartCards.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Employee");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3522,6 +3615,10 @@ namespace TollTicketManagement.Model
 		
 		private EntityRef<LS_Station> _LS_Station1;
 		
+		private EntityRef<LS_Employee> _LS_Employee;
+		
+		private EntityRef<LS_Employee> _LS_Employee1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3584,6 +3681,8 @@ namespace TollTicketManagement.Model
 			this._LS_Lane1 = default(EntityRef<LS_Lane>);
 			this._LS_Station = default(EntityRef<LS_Station>);
 			this._LS_Station1 = default(EntityRef<LS_Station>);
+			this._LS_Employee = default(EntityRef<LS_Employee>);
+			this._LS_Employee1 = default(EntityRef<LS_Employee>);
 			OnCreated();
 		}
 		
@@ -3982,6 +4081,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._LockEmployeeID != value))
 				{
+					if (this._LS_Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnLockEmployeeIDChanging(value);
 					this.SendPropertyChanging();
 					this._LockEmployeeID = value;
@@ -4022,6 +4125,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._UnlockEmployeeID != value))
 				{
+					if (this._LS_Employee1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnUnlockEmployeeIDChanging(value);
 					this.SendPropertyChanging();
 					this._UnlockEmployeeID = value;
@@ -4295,6 +4402,74 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_PPCWhiteList", Storage="_LS_Employee", ThisKey="LockEmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public LS_Employee LS_Employee
+		{
+			get
+			{
+				return this._LS_Employee.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee.Entity = null;
+						previousValue.AC_PPCWhiteLists.Remove(this);
+					}
+					this._LS_Employee.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists.Add(this);
+						this._LockEmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._LockEmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_PPCWhiteList1", Storage="_LS_Employee1", ThisKey="UnlockEmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public LS_Employee LS_Employee1
+		{
+			get
+			{
+				return this._LS_Employee1.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee1.Entity = null;
+						previousValue.AC_PPCWhiteLists1.Remove(this);
+					}
+					this._LS_Employee1.Entity = value;
+					if ((value != null))
+					{
+						value.AC_PPCWhiteLists1.Add(this);
+						this._UnlockEmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._UnlockEmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Employee1");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4538,6 +4713,10 @@ namespace TollTicketManagement.Model
 		
 		private EntityRef<LS_Station> _LS_Station1;
 		
+		private EntityRef<LS_Employee> _LS_Employee;
+		
+		private EntityRef<LS_Employee> _LS_Employee1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4598,6 +4777,8 @@ namespace TollTicketManagement.Model
 			this._LS_Lane1 = default(EntityRef<LS_Lane>);
 			this._LS_Station = default(EntityRef<LS_Station>);
 			this._LS_Station1 = default(EntityRef<LS_Station>);
+			this._LS_Employee = default(EntityRef<LS_Employee>);
+			this._LS_Employee1 = default(EntityRef<LS_Employee>);
 			OnCreated();
 		}
 		
@@ -4972,6 +5153,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._LockEmployeeID != value))
 				{
+					if (this._LS_Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnLockEmployeeIDChanging(value);
 					this.SendPropertyChanging();
 					this._LockEmployeeID = value;
@@ -5012,6 +5197,10 @@ namespace TollTicketManagement.Model
 			{
 				if ((this._UnlockEmployeeID != value))
 				{
+					if (this._LS_Employee1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnUnlockEmployeeIDChanging(value);
 					this.SendPropertyChanging();
 					this._UnlockEmployeeID = value;
@@ -5285,6 +5474,74 @@ namespace TollTicketManagement.Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_TollWhiteList", Storage="_LS_Employee", ThisKey="LockEmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public LS_Employee LS_Employee
+		{
+			get
+			{
+				return this._LS_Employee.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee.Entity = null;
+						previousValue.AC_TollWhiteLists.Remove(this);
+					}
+					this._LS_Employee.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists.Add(this);
+						this._LockEmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._LockEmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_TollWhiteList1", Storage="_LS_Employee1", ThisKey="UnlockEmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public LS_Employee LS_Employee1
+		{
+			get
+			{
+				return this._LS_Employee1.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee1.Entity = null;
+						previousValue.AC_TollWhiteLists1.Remove(this);
+					}
+					this._LS_Employee1.Entity = value;
+					if ((value != null))
+					{
+						value.AC_TollWhiteLists1.Add(this);
+						this._UnlockEmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._UnlockEmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LS_Employee1");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -5303,6 +5560,765 @@ namespace TollTicketManagement.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LS_Employee")]
+	public partial class LS_Employee : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EmployeeID;
+		
+		private string _EmployeeCode;
+		
+		private int _PositionID;
+		
+		private int _TeamID;
+		
+		private string _IDNo;
+		
+		private string _ManagerID;
+		
+		private string _UserName;
+		
+		private string _Password;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _NickName;
+		
+		private System.Nullable<short> _Gender;
+		
+		private System.Nullable<System.DateTime> _Birthday;
+		
+		private string _Address;
+		
+		private string _Email;
+		
+		private string _Mobile;
+		
+		private string _Note;
+		
+		private bool _IsUsed;
+		
+		private System.Nullable<bool> _IsTeamLeader;
+		
+		private string _SmartCardID;
+		
+		private EntitySet<IN_CheckSmartCard> _IN_CheckSmartCards;
+		
+		private EntitySet<OUT_CheckSmartCard> _OUT_CheckSmartCards;
+		
+		private EntityRef<LS_Employee> _LS_Employee2;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists;
+		
+		private EntitySet<AC_TollWhiteList> _AC_TollWhiteLists1;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists;
+		
+		private EntitySet<AC_PPCWhiteList> _AC_PPCWhiteLists1;
+		
+		private EntityRef<LS_Employee> _LS_Employee1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnEmployeeCodeChanging(string value);
+    partial void OnEmployeeCodeChanged();
+    partial void OnPositionIDChanging(int value);
+    partial void OnPositionIDChanged();
+    partial void OnTeamIDChanging(int value);
+    partial void OnTeamIDChanged();
+    partial void OnIDNoChanging(string value);
+    partial void OnIDNoChanged();
+    partial void OnManagerIDChanging(string value);
+    partial void OnManagerIDChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    partial void OnNickNameChanging(string value);
+    partial void OnNickNameChanged();
+    partial void OnGenderChanging(System.Nullable<short> value);
+    partial void OnGenderChanged();
+    partial void OnBirthdayChanging(System.Nullable<System.DateTime> value);
+    partial void OnBirthdayChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnMobileChanging(string value);
+    partial void OnMobileChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnIsUsedChanging(bool value);
+    partial void OnIsUsedChanged();
+    partial void OnIsTeamLeaderChanging(System.Nullable<bool> value);
+    partial void OnIsTeamLeaderChanged();
+    partial void OnSmartCardIDChanging(string value);
+    partial void OnSmartCardIDChanged();
+    #endregion
+		
+		public LS_Employee()
+		{
+			this._IN_CheckSmartCards = new EntitySet<IN_CheckSmartCard>(new Action<IN_CheckSmartCard>(this.attach_IN_CheckSmartCards), new Action<IN_CheckSmartCard>(this.detach_IN_CheckSmartCards));
+			this._OUT_CheckSmartCards = new EntitySet<OUT_CheckSmartCard>(new Action<OUT_CheckSmartCard>(this.attach_OUT_CheckSmartCards), new Action<OUT_CheckSmartCard>(this.detach_OUT_CheckSmartCards));
+			this._LS_Employee2 = default(EntityRef<LS_Employee>);
+			this._AC_TollWhiteLists = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists));
+			this._AC_TollWhiteLists1 = new EntitySet<AC_TollWhiteList>(new Action<AC_TollWhiteList>(this.attach_AC_TollWhiteLists1), new Action<AC_TollWhiteList>(this.detach_AC_TollWhiteLists1));
+			this._AC_PPCWhiteLists = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists));
+			this._AC_PPCWhiteLists1 = new EntitySet<AC_PPCWhiteList>(new Action<AC_PPCWhiteList>(this.attach_AC_PPCWhiteLists1), new Action<AC_PPCWhiteList>(this.detach_AC_PPCWhiteLists1));
+			this._LS_Employee1 = default(EntityRef<LS_Employee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._LS_Employee1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeCode", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string EmployeeCode
+		{
+			get
+			{
+				return this._EmployeeCode;
+			}
+			set
+			{
+				if ((this._EmployeeCode != value))
+				{
+					this.OnEmployeeCodeChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeCode = value;
+					this.SendPropertyChanged("EmployeeCode");
+					this.OnEmployeeCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionID", DbType="Int NOT NULL")]
+		public int PositionID
+		{
+			get
+			{
+				return this._PositionID;
+			}
+			set
+			{
+				if ((this._PositionID != value))
+				{
+					this.OnPositionIDChanging(value);
+					this.SendPropertyChanging();
+					this._PositionID = value;
+					this.SendPropertyChanged("PositionID");
+					this.OnPositionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamID", DbType="Int NOT NULL")]
+		public int TeamID
+		{
+			get
+			{
+				return this._TeamID;
+			}
+			set
+			{
+				if ((this._TeamID != value))
+				{
+					this.OnTeamIDChanging(value);
+					this.SendPropertyChanging();
+					this._TeamID = value;
+					this.SendPropertyChanged("TeamID");
+					this.OnTeamIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNo", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string IDNo
+		{
+			get
+			{
+				return this._IDNo;
+			}
+			set
+			{
+				if ((this._IDNo != value))
+				{
+					this.OnIDNoChanging(value);
+					this.SendPropertyChanging();
+					this._IDNo = value;
+					this.SendPropertyChanged("IDNo");
+					this.OnIDNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerID", DbType="NVarChar(20)")]
+		public string ManagerID
+		{
+			get
+			{
+				return this._ManagerID;
+			}
+			set
+			{
+				if ((this._ManagerID != value))
+				{
+					this.OnManagerIDChanging(value);
+					this.SendPropertyChanging();
+					this._ManagerID = value;
+					this.SendPropertyChanged("ManagerID");
+					this.OnManagerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this.OnFirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this.OnLastNameChanging(value);
+					this.SendPropertyChanging();
+					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NickName", DbType="NVarChar(50)")]
+		public string NickName
+		{
+			get
+			{
+				return this._NickName;
+			}
+			set
+			{
+				if ((this._NickName != value))
+				{
+					this.OnNickNameChanging(value);
+					this.SendPropertyChanging();
+					this._NickName = value;
+					this.SendPropertyChanged("NickName");
+					this.OnNickNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="SmallInt")]
+		public System.Nullable<short> Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birthday", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Birthday
+		{
+			get
+			{
+				return this._Birthday;
+			}
+			set
+			{
+				if ((this._Birthday != value))
+				{
+					this.OnBirthdayChanging(value);
+					this.SendPropertyChanging();
+					this._Birthday = value;
+					this.SendPropertyChanged("Birthday");
+					this.OnBirthdayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(200)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="NVarChar(20)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this.OnMobileChanging(value);
+					this.SendPropertyChanging();
+					this._Mobile = value;
+					this.SendPropertyChanged("Mobile");
+					this.OnMobileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(500)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsUsed", DbType="Bit NOT NULL")]
+		public bool IsUsed
+		{
+			get
+			{
+				return this._IsUsed;
+			}
+			set
+			{
+				if ((this._IsUsed != value))
+				{
+					this.OnIsUsedChanging(value);
+					this.SendPropertyChanging();
+					this._IsUsed = value;
+					this.SendPropertyChanged("IsUsed");
+					this.OnIsUsedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsTeamLeader", DbType="Bit")]
+		public System.Nullable<bool> IsTeamLeader
+		{
+			get
+			{
+				return this._IsTeamLeader;
+			}
+			set
+			{
+				if ((this._IsTeamLeader != value))
+				{
+					this.OnIsTeamLeaderChanging(value);
+					this.SendPropertyChanging();
+					this._IsTeamLeader = value;
+					this.SendPropertyChanged("IsTeamLeader");
+					this.OnIsTeamLeaderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmartCardID", DbType="NVarChar(20)")]
+		public string SmartCardID
+		{
+			get
+			{
+				return this._SmartCardID;
+			}
+			set
+			{
+				if ((this._SmartCardID != value))
+				{
+					this.OnSmartCardIDChanging(value);
+					this.SendPropertyChanging();
+					this._SmartCardID = value;
+					this.SendPropertyChanged("SmartCardID");
+					this.OnSmartCardIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_IN_CheckSmartCard", Storage="_IN_CheckSmartCards", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<IN_CheckSmartCard> IN_CheckSmartCards
+		{
+			get
+			{
+				return this._IN_CheckSmartCards;
+			}
+			set
+			{
+				this._IN_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_OUT_CheckSmartCard", Storage="_OUT_CheckSmartCards", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<OUT_CheckSmartCard> OUT_CheckSmartCards
+		{
+			get
+			{
+				return this._OUT_CheckSmartCards;
+			}
+			set
+			{
+				this._OUT_CheckSmartCards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_LS_Employee", Storage="_LS_Employee2", ThisKey="EmployeeID", OtherKey="EmployeeID", IsUnique=true, IsForeignKey=false)]
+		public LS_Employee LS_Employee2
+		{
+			get
+			{
+				return this._LS_Employee2.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee2.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee2.Entity = null;
+						previousValue.LS_Employee1 = null;
+					}
+					this._LS_Employee2.Entity = value;
+					if ((value != null))
+					{
+						value.LS_Employee1 = this;
+					}
+					this.SendPropertyChanged("LS_Employee2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_TollWhiteList", Storage="_AC_TollWhiteLists", ThisKey="EmployeeID", OtherKey="LockEmployeeID")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists
+		{
+			get
+			{
+				return this._AC_TollWhiteLists;
+			}
+			set
+			{
+				this._AC_TollWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_TollWhiteList1", Storage="_AC_TollWhiteLists1", ThisKey="EmployeeID", OtherKey="UnlockEmployeeID")]
+		public EntitySet<AC_TollWhiteList> AC_TollWhiteLists1
+		{
+			get
+			{
+				return this._AC_TollWhiteLists1;
+			}
+			set
+			{
+				this._AC_TollWhiteLists1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_PPCWhiteList", Storage="_AC_PPCWhiteLists", ThisKey="EmployeeID", OtherKey="LockEmployeeID")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_AC_PPCWhiteList1", Storage="_AC_PPCWhiteLists1", ThisKey="EmployeeID", OtherKey="UnlockEmployeeID")]
+		public EntitySet<AC_PPCWhiteList> AC_PPCWhiteLists1
+		{
+			get
+			{
+				return this._AC_PPCWhiteLists1;
+			}
+			set
+			{
+				this._AC_PPCWhiteLists1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LS_Employee_LS_Employee", Storage="_LS_Employee1", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public LS_Employee LS_Employee1
+		{
+			get
+			{
+				return this._LS_Employee1.Entity;
+			}
+			set
+			{
+				LS_Employee previousValue = this._LS_Employee1.Entity;
+				if (((previousValue != value) 
+							|| (this._LS_Employee1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LS_Employee1.Entity = null;
+						previousValue.LS_Employee2 = null;
+					}
+					this._LS_Employee1.Entity = value;
+					if ((value != null))
+					{
+						value.LS_Employee2 = this;
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(int);
+					}
+					this.SendPropertyChanged("LS_Employee1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = this;
+		}
+		
+		private void detach_IN_CheckSmartCards(IN_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = null;
+		}
+		
+		private void attach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = this;
+		}
+		
+		private void detach_OUT_CheckSmartCards(OUT_CheckSmartCard entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = null;
+		}
+		
+		private void attach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = this;
+		}
+		
+		private void detach_AC_TollWhiteLists(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = null;
+		}
+		
+		private void attach_AC_TollWhiteLists1(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee1 = this;
+		}
+		
+		private void detach_AC_TollWhiteLists1(AC_TollWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee1 = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee = null;
+		}
+		
+		private void attach_AC_PPCWhiteLists1(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee1 = this;
+		}
+		
+		private void detach_AC_PPCWhiteLists1(AC_PPCWhiteList entity)
+		{
+			this.SendPropertyChanging();
+			entity.LS_Employee1 = null;
 		}
 	}
 }

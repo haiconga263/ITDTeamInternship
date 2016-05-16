@@ -371,7 +371,7 @@ namespace TollTicketManagement
 
         private void btnLookup_Click(object sender, RoutedEventArgs e)
         {
-            var wdn = new Lookup();
+            var wdn = new LookupView();
             wdn.ShowDialog();
         }
 

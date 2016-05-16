@@ -9,29 +9,36 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TollTicketManagement.CommandHelper;
 using TollTicketManagement.Model;
+using TollTicketManagement.View;
 
 namespace TollTicketManagement.ViewModel
 {
-    class StatictaclViewModel : INotifyPropertyChanged
+    public delegate bool Filter(WhiteList w);
+
+    public class LookupViewModel : INotifyPropertyChanged
     {
-        public StatictaclViewModel()
+        public LookupViewModel()
         {
             SearchCommand = new RelayCommand(ActionSearch);
+            DataResults = new ObservableCollection<WhiteList>();
             lstVeh = new ObservableCollection<LS_VehicleType>(DatabaseContext.Instance.LS_VehicleTypes.Select(x => x).ToList());
             lstStation = new ObservableCollection<LS_Station>(DatabaseContext.Instance.LS_Stations.Select(x => x).ToList());
+            lstCardType = new ObservableCollection<CardType>(new CardTypeList());
 
-            lstVeh.Insert(0, new LS_VehicleType() { Name = "-Tất cả-", VehicleTypeID = 0 });
+            lstVeh.Insert(0, new LS_VehicleType() { ShortName = "-Tất cả-", VehicleTypeID = 0 });
             SelectedItemVehicleType = lstVeh[0];
 
             lstStation.Insert(0, new LS_Station() { Name = "-Tất cả-", LS_Lanes = null });
             SelectedItemStationIn = lstStation[0];
             SelectedItemStationOut = lstStation[0];
 
-            SelectedItemLaneIn = new LS_Lane() { Name = "-Tất cả-", LaneID = 0 };
+            lstCardType.Insert(0, new CardType() { Name = "-Tất cả-", ID = 0 });
+            SelectedItemCardType = lstCardType[0];
 
-            DataResults = new ObservableCollection<WhiteList>(DatabaseContext.Instance.AC_PPCWhiteLists.Select(x => WhiteList.CreateFromPPCWhiteList(x)).ToList().Concat(DatabaseContext.Instance.AC_TollWhiteLists.Select(x => WhiteList.CreateFromTollWhiteList(x)).ToList()));
+            SelectedItemLaneIn = new LS_Lane() { Name = "-Tất cả-", LaneID = 0 };
         }
 
+        #region search tool 
         private List<Filter> filters;
         private bool IsFilter(WhiteList w)
         {
@@ -48,16 +55,16 @@ namespace TollTicketManagement.ViewModel
             }
             return true;
         }
+
         #region Filter
         private bool MaTheFilter(WhiteList w)
         {
-            return (w.CardID == keySoXe);
+            return (w.CardID == keyBienSo);
         }
-        private bool SoXeFilter(WhiteList w)
+        private bool BienSoFilter(WhiteList w)
         {
-            return (w.VehiclePlateOut == keySoXe);
+            return (w.VehiclePlateIn == keyBienSo) || (w.VehiclePlateOut == keyBienSo);
         }
-
         private bool VehicleTypeFilter(WhiteList w)
         {
             return (w.VehicleType.VehicleTypeID == selectedItemVehicleType.VehicleTypeID);
@@ -78,6 +85,22 @@ namespace TollTicketManagement.ViewModel
         {
             return (w.LaneOut.LaneID == selectedItemLaneOut.LaneID);
         }
+        private bool DateInFilter(WhiteList w)
+        {
+            return DateTime.Parse(w.LastCheckDateIn).Date == DateTime.Parse(keyTimeIn).Date;
+        }
+        private bool DateOutFilter(WhiteList w)
+        {
+            return DateTime.Parse(w.LastCheckDateOut).Date == DateTime.Parse(keyTimeOut).Date;
+        }
+        private bool TimeInFilter(WhiteList w)
+        {
+            return DateTime.Parse(w.LastCheckDateIn).TimeOfDay == DateTime.Parse(keyTimeIn).TimeOfDay;
+        }
+        private bool TimeOutFilter(WhiteList w)
+        {
+            return DateTime.Parse(w.LastCheckDateOut).TimeOfDay == DateTime.Parse(keyTimeOut).TimeOfDay;
+        }
         #endregion
         private void ActionSearch()
         {
@@ -94,13 +117,14 @@ namespace TollTicketManagement.ViewModel
             }
 
             // Search by num car
-            if (!string.IsNullOrWhiteSpace(keySoXe) && !string.IsNullOrEmpty(keySoXe))
+            if (!string.IsNullOrWhiteSpace(keyBienSo) && !string.IsNullOrEmpty(keyBienSo))
             {
-                filters.Add(SoXeFilter);
+                filters.Add(BienSoFilter);
             }
 
             // Search by Vehicle type
-            if (selectedItemVehicleType != null && selectedItemVehicleType.VehicleTypeID != 0)
+            if (selectedItemVehicleType != null && (selectedItemVehicleType.VehicleTypeID != 0 
+                ||(!string.IsNullOrEmpty(selectedItemVehicleType.Name) && !string.IsNullOrWhiteSpace(selectedItemVehicleType.Name))))
             {
                 filters.Add(VehicleTypeFilter);
             }
@@ -129,12 +153,40 @@ namespace TollTicketManagement.ViewModel
                 }
             }
 
-            lst = lst.Concat(new List<WhiteList>(lstPCC.Where(x => IsFilter(WhiteList.CreateFromPPCWhiteList(x))).Select(x => WhiteList.CreateFromPPCWhiteList(x)))).ToList();
-            lst = lst.Concat(new List<WhiteList>(lstToll.Where(x => IsFilter(WhiteList.CreateFromTollWhiteList(x))).Select(x => WhiteList.CreateFromTollWhiteList(x)))).ToList();
+            // Search by datetime In
+            if (!string.IsNullOrEmpty(keyDateIn) && !string.IsNullOrWhiteSpace(keyDateIn))
+            {
+                filters.Add(DateInFilter);
+
+                // Search by LaneOut
+                if (!string.IsNullOrEmpty(keyTimeIn) && !string.IsNullOrWhiteSpace(keyTimeIn))
+                {
+                    filters.Add(TimeInFilter);
+                }
+            }
+
+            // Search by datetime Out
+            if (!string.IsNullOrEmpty(keyDateOut) && !string.IsNullOrWhiteSpace(keyDateOut))
+            {
+                filters.Add(DateOutFilter);
+
+                // Search by LaneOut
+                if (!string.IsNullOrEmpty(keyTimeOut) && !string.IsNullOrWhiteSpace(keyTimeOut))
+                {
+                    filters.Add(TimeOutFilter);
+                }
+            }
+
+            if (selectedItemCardType.ID == 0 || selectedItemCardType.ID == 1)
+                lst = lst.Concat(new List<WhiteList>(lstPCC.Where(x => IsFilter(WhiteList.CreateFromPPCWhiteList(x))).Select(x => WhiteList.CreateFromPPCWhiteList(x)))).ToList();
+            if (selectedItemCardType.ID == 0 || selectedItemCardType.ID == 2)
+                lst = lst.Concat(new List<WhiteList>(lstToll.Where(x => IsFilter(WhiteList.CreateFromTollWhiteList(x))).Select(x => WhiteList.CreateFromTollWhiteList(x)))).ToList();
 
             DataResults.Clear();
             DataResults = new ObservableCollection<WhiteList>(lst);
         }
+        #endregion
+
         #region Notify property changed
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -146,11 +198,12 @@ namespace TollTicketManagement.ViewModel
             }
         }
         #endregion
+
         public ObservableCollection<LS_VehicleType> lstVeh { get; set; }
         public ObservableCollection<LS_Station> lstStation { get; set; }
+        public ObservableCollection<CardType> lstCardType { get; set; }
 
         private LS_Lane selectedItemLaneIn;
-
         public LS_Lane SelectedItemLaneIn
         {
             get { return selectedItemLaneIn; }
@@ -158,7 +211,6 @@ namespace TollTicketManagement.ViewModel
         }
 
         private LS_Lane selectedItemLaneOut;
-
         public LS_Lane SelectedItemLaneOut
         {
             get { return selectedItemLaneOut; }
@@ -166,7 +218,6 @@ namespace TollTicketManagement.ViewModel
         }
 
         private LS_Station selectedItemStationIn;
-
         public LS_Station SelectedItemStationIn
         {
             get { return selectedItemStationIn; }
@@ -174,7 +225,6 @@ namespace TollTicketManagement.ViewModel
         }
 
         private LS_Station selectedItemStationOut;
-
         public LS_Station SelectedItemStationOut
         {
             get { return selectedItemStationOut; }
@@ -182,68 +232,86 @@ namespace TollTicketManagement.ViewModel
         }
 
         private LS_VehicleType selectedItemVehicleType;
-
         public LS_VehicleType SelectedItemVehicleType
         {
             get { return selectedItemVehicleType; }
             set { selectedItemVehicleType = value; }
         }
 
-        private ObservableCollection<WhiteList> dataResults;
+        private CardType selectedItemCardType;
+        public CardType SelectedItemCardType
+        {
+            get { return selectedItemCardType; }
+            set { selectedItemCardType = value; }
+        }
 
+        private ObservableCollection<WhiteList> dataResults;
         public ObservableCollection<WhiteList> DataResults
         {
             get { return dataResults; }
             set { dataResults = value; OnPropertyChanged(); }
         }
+        
         private string keyMaThe;
-
         public string KeyMaThe
         {
             get { return keyMaThe; }
             set { keyMaThe = value; OnPropertyChanged(); }
         }
 
-        private string keySoXe;
-
-        public string KeySoXe
+        private string keyBienSo;
+        public string KeyBienSo
         {
-            get { return keySoXe; }
-            set { keySoXe = value; }
+            get { return keyBienSo; }
+            set { keyBienSo = value; }
         }
 
-        private DateTime keyDateIn;
-
-        public DateTime KeyDateIn
+        private string keyDateIn;
+        public string KeyDateIn
         {
             get { return keyDateIn; }
             set { keyDateIn = value; }
         }
 
-        private DateTime keyDateOut;
-
-        public DateTime KeyDateOut
+        private string keyDateOut;
+        public string KeyDateOut
         {
             get { return keyDateOut; }
             set { keyDateOut = value; }
         }
 
-        private DateTime keyTimeIn;
-
-        public DateTime KeyTimeIn
+        private string keyTimeIn;
+        public string KeyTimeIn
         {
             get { return keyTimeIn; }
             set { keyTimeIn = value; }
         }
 
-        private DateTime keyTimeOut;
-
-        public DateTime KeyTimeOut
+        private string keyTimeOut;
+        public string KeyTimeOut
         {
             get { return keyTimeOut; }
             set { keyTimeOut = value; }
         }
 
+        private int selectedIndexDataGrid;
+
+        public int SelectedIndexDataGrid
+        {
+            get { return selectedIndexDataGrid; }
+            set 
+            { 
+                selectedIndexDataGrid = value; 
+                OnPropertyChanged();
+                if (value > -1)
+                {
+                    var wdn = new TransDetailsView(dataResults[value]);
+                    wdn.ShowDialog();
+                }
+            }
+        }
+        
         public ICommand SearchCommand { get; set; }
+        
     }
 }

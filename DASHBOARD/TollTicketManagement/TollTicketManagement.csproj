@@ -80,6 +80,8 @@
     <Compile Include="IntToImageConverter2.cs" />
     <Compile Include="IntToImageConverter.cs" />
     <Compile Include="Model\CardType.cs" />
+    <Compile Include="Model\Converter\BoolToStringConverter.cs" />
+    <Compile Include="Model\Converter\StringToPathImageConverter.cs" />
     <Compile Include="Model\QLHP.cs">
       <DependentUpon>QLHP.dbml</DependentUpon>
     </Compile>
@@ -91,9 +93,12 @@
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\WhiteList.cs" />
     <Compile Include="ViewModel\LookupViewModel.cs" />
-    <Compile Include="ViewModel\StatictaclViewModel.cs" />
+    <Compile Include="ViewModel\TransDetailsViewModel.cs" />
     <Compile Include="View\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransDetailsView.xaml.cs">
+      <DependentUpon>TransDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateOutCheckInfoView.xaml.cs">
       <DependentUpon>UpdateOutCheckInfoView.xaml</DependentUpon>
@@ -101,8 +106,8 @@
     <Compile Include="View\UpdatePrecheckStatusView.xaml.cs">
       <DependentUpon>UpdatePrecheckStatusView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Lookup.xaml.cs">
-      <DependentUpon>Lookup.xaml</DependentUpon>
+    <Compile Include="View\LookupView.xaml.cs">
+      <DependentUpon>LookupView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Statistical.xaml.cs">
       <DependentUpon>Statistical.xaml</DependentUpon>
@@ -151,6 +156,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\TransDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UpdateOutCheckInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -159,7 +168,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Lookup.xaml">
+    <Page Include="View\LookupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -473,6 +482,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\car.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

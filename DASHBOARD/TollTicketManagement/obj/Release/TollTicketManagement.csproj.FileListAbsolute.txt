@@ -411,7 +411,9 @@ D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\To
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.csproj.GenerateResource.Cache
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.exe
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\TollTicketManagement.pdb
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Lookup.g.cs
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Statistical.g.cs
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Lookup.baml
 D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\Statistical.baml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\LookupView.g.cs
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\LookupView.baml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\TransDetailsView.baml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\View\TransDetailsView.g.cs

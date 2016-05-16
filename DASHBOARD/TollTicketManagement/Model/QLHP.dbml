@@ -101,6 +101,7 @@
       <Association Name="LS_Lane_IN_CheckSmartCard" Member="LS_Lane" ThisKey="LaneID" OtherKey="LaneID" Type="LS_Lane" IsForeignKey="true" />
       <Association Name="LS_Station_IN_CheckSmartCard" Member="LS_Station" ThisKey="StationID" OtherKey="StationID" Type="LS_Station" IsForeignKey="true" />
       <Association Name="LS_VehicleType_IN_CheckSmartCard" Member="LS_VehicleType" ThisKey="VehicleTypeID" OtherKey="VehicleTypeID" Type="LS_VehicleType" IsForeignKey="true" />
+      <Association Name="LS_Employee_IN_CheckSmartCard" Member="LS_Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="LS_Employee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.OUT_CheckSmartCard" Member="OUT_CheckSmartCards">
@@ -139,6 +140,7 @@
       <Association Name="LS_Lane_OUT_CheckSmartCard" Member="LS_Lane" ThisKey="LaneID" OtherKey="LaneID" Type="LS_Lane" IsForeignKey="true" />
       <Association Name="LS_Station_OUT_CheckSmartCard" Member="LS_Station" ThisKey="StationID" OtherKey="StationID" Type="LS_Station" IsForeignKey="true" />
       <Association Name="LS_Route_OUT_CheckSmartCard" Member="LS_Route" ThisKey="RouteID" OtherKey="RouteID" Type="LS_Route" IsForeignKey="true" />
+      <Association Name="LS_Employee_OUT_CheckSmartCard" Member="LS_Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="LS_Employee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.AC_PPCWhiteList" Member="AC_PPCWhiteLists">
@@ -173,6 +175,8 @@
       <Association Name="LS_Lane_AC_PPCWhiteList1" Member="LS_Lane1" ThisKey="LaneIDOut" OtherKey="LaneID" Type="LS_Lane" IsForeignKey="true" />
       <Association Name="LS_Station_AC_PPCWhiteList" Member="LS_Station" ThisKey="StationIDIn" OtherKey="StationID" Type="LS_Station" IsForeignKey="true" />
       <Association Name="LS_Station_AC_PPCWhiteList1" Member="LS_Station1" ThisKey="StationIDOut" OtherKey="StationID" Type="LS_Station" IsForeignKey="true" />
+      <Association Name="LS_Employee_AC_PPCWhiteList" Member="LS_Employee" ThisKey="LockEmployeeID" OtherKey="EmployeeID" Type="LS_Employee" IsForeignKey="true" />
+      <Association Name="LS_Employee_AC_PPCWhiteList1" Member="LS_Employee1" ThisKey="UnlockEmployeeID" OtherKey="EmployeeID" Type="LS_Employee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LS_Card" Member="LS_Cards">
@@ -215,6 +219,40 @@
       <Association Name="LS_Lane_AC_TollWhiteList1" Member="LS_Lane1" ThisKey="LaneIDOut" OtherKey="LaneID" Type="LS_Lane" IsForeignKey="true" />
       <Association Name="LS_Station_AC_TollWhiteList" Member="LS_Station" ThisKey="StationIDIn" OtherKey="StationID" Type="LS_Station" IsForeignKey="true" />
       <Association Name="LS_Station_AC_TollWhiteList1" Member="LS_Station1" ThisKey="LaneIDOut" OtherKey="StationID" Type="LS_Station" IsForeignKey="true" />
+      <Association Name="LS_Employee_AC_TollWhiteList" Member="LS_Employee" ThisKey="LockEmployeeID" OtherKey="EmployeeID" Type="LS_Employee" IsForeignKey="true" />
+      <Association Name="LS_Employee_AC_TollWhiteList1" Member="LS_Employee1" ThisKey="UnlockEmployeeID" OtherKey="EmployeeID" Type="LS_Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LS_Employee" Member="LS_Employees">
+    <Type Name="LS_Employee">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeCode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ManagerID" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NickName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsUsed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsTeamLeader" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SmartCardID" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="LS_Employee_IN_CheckSmartCard" Member="IN_CheckSmartCards" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="IN_CheckSmartCard" />
+      <Association Name="LS_Employee_OUT_CheckSmartCard" Member="OUT_CheckSmartCards" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="OUT_CheckSmartCard" />
+      <Association Name="LS_Employee_LS_Employee" Member="LS_Employee2" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="LS_Employee" Cardinality="One" />
+      <Association Name="LS_Employee_AC_TollWhiteList" Member="AC_TollWhiteLists" ThisKey="EmployeeID" OtherKey="LockEmployeeID" Type="AC_TollWhiteList" />
+      <Association Name="LS_Employee_AC_TollWhiteList1" Member="AC_TollWhiteLists1" ThisKey="EmployeeID" OtherKey="UnlockEmployeeID" Type="AC_TollWhiteList" />
+      <Association Name="LS_Employee_AC_PPCWhiteList" Member="AC_PPCWhiteLists" ThisKey="EmployeeID" OtherKey="LockEmployeeID" Type="AC_PPCWhiteList" />
+      <Association Name="LS_Employee_AC_PPCWhiteList1" Member="AC_PPCWhiteLists1" ThisKey="EmployeeID" OtherKey="UnlockEmployeeID" Type="AC_PPCWhiteList" />
+      <Association Name="LS_Employee_LS_Employee" Member="LS_Employee1" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="LS_Employee" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
