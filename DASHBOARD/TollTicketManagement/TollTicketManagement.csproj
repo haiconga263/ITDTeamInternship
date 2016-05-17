@@ -112,6 +112,12 @@
       <DependentUpon>rpTKTheMat_PPC.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\rpTKTheWhiteList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpTKTheWhiteList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ViewModel\LookupViewModel.cs" />
     <Compile Include="ViewModel\TransDetailsViewModel.cs" />
     <Compile Include="View\DashboardView.xaml.cs">
@@ -252,6 +258,10 @@
     <EmbeddedResource Include="Report\rpTKTheMat_PPC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpTKTheMat_PPC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpTKTheWhiteList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpTKTheWhiteList.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Message\CommonMessage.resx" />
     <EmbeddedResource Include="Resources\Message\ConfigMessage.resx" />
