@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HPEModelRP" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AC_PPCWhiteList">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="CardID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="FormatID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VehiclePlateIn" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StationIDIn" Type="Int32" />
+    <Property Name="LaneIDIn" Type="Int32" />
+    <Property Name="LastCheckDateIn" Type="DateTime" Precision="3" />
+    <Property Name="VehiclePlateOut" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StationIDOut" Type="Int32" />
+    <Property Name="LaneIDOut" Type="Int32" />
+    <Property Name="LastCheckDateOut" Type="DateTime" Precision="3" />
+    <Property Name="RouteID" Type="Int32" />
+    <Property Name="Hour" Type="Int32" />
+    <Property Name="Day" Type="Int32" />
+    <Property Name="Month" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="IsLock" Type="Boolean" />
+    <Property Name="LockEmployeeID" Type="Int32" />
+    <Property Name="LockDate" Type="DateTime" Precision="3" />
+    <Property Name="UnlockEmployeeID" Type="Int32" />
+    <Property Name="UnlockDate" Type="DateTime" Precision="3" />
+    <Property Name="IsLost" Type="Boolean" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionIDIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionIDOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImageIDIn" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AC_TollWhiteList">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="CardID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="FormatID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VehiclePlateIn" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StationIDIn" Type="Int32" />
+    <Property Name="LaneIDIn" Type="Int32" />
+    <Property Name="LastCheckDateIn" Type="DateTime" Precision="3" />
+    <Property Name="VehiclePlateOut" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StationIDOut" Type="Int32" />
+    <Property Name="LaneIDOut" Type="Int32" />
+    <Property Name="LastCheckDateOut" Type="DateTime" Precision="3" />
+    <Property Name="RouteID" Type="Int32" />
+    <Property Name="Day" Type="Int32" />
+    <Property Name="Month" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="IsLock" Type="Boolean" />
+    <Property Name="LockEmployeeID" Type="Int32" />
+    <Property Name="LockDate" Type="DateTime" Precision="3" />
+    <Property Name="UnlockEmployeeID" Type="Int32" />
+    <Property Name="UnlockDate" Type="DateTime" Precision="3" />
+    <Property Name="IsLost" Type="Boolean" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionIDIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionIDOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IN_CheckPrepaidCard">
+    <Key>
+      <PropertyRef Name="InCheckPrePaidCardID" />
+    </Key>
+    <Property Name="InCheckPrePaidCardID" Type="Guid" Nullable="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SmartCardID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CheckDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TicketTypeID" Type="Int32" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ShiftID" Type="Int32" />
+    <Property Name="LaneID" Type="Int32" />
+    <Property Name="StationID" Type="Int32" />
+    <Property Name="ImageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecogPlateNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="RecogResultType" Type="Int16" />
+    <Property Name="TransactionStatus" Type="Int16" />
+    <Property Name="PrecheckStatus" Type="Int16" />
+    <Property Name="PreSupervisionStatus" Type="Int16" />
+    <Property Name="SupervisionStatus" Type="Int16" />
+    <Property Name="ErrorID" Type="Int32" />
+    <Property Name="WIMID" Type="Guid" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsVehicleInfoManual" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="IN_CheckSmartCard">
+    <Key>
+      <PropertyRef Name="InCheckSmartCardID" />
+    </Key>
+    <Property Name="InCheckSmartCardID" Type="Guid" Nullable="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SmartCardID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CheckDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TicketTypeID" Type="Int32" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ShiftID" Type="Int32" />
+    <Property Name="LaneID" Type="Int32" />
+    <Property Name="StationID" Type="Int32" />
+    <Property Name="ImageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecogPlateNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="RecogResultType" Type="Int16" />
+    <Property Name="TransactionStatus" Type="Int16" />
+    <Property Name="PrecheckStatus" Type="Int16" />
+    <Property Name="PreSupervisionStatus" Type="Int16" />
+    <Property Name="SupervisionStatus" Type="Int16" />
+    <Property Name="ErrorID" Type="Int32" />
+    <Property Name="WIMID" Type="Guid" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsVehicleInfoManual" Type="Boolean" />
+    <NavigationProperty Name="LS_Lane" Relationship="Self.FK_IN_CheckSmartCard_LS_Lane" FromRole="IN_CheckSmartCard" ToRole="LS_Lane" />
+    <NavigationProperty Name="LS_Station" Relationship="Self.FK_IN_CheckSmartCard_LS_Station" FromRole="IN_CheckSmartCard" ToRole="LS_Station" />
+    <NavigationProperty Name="LS_VehicleType" Relationship="Self.FK_IN_CheckSmartCard_LS_VehicleType" FromRole="IN_CheckSmartCard" ToRole="LS_VehicleType" />
+    <NavigationProperty Name="OUT_CheckSmartCard" Relationship="Self.FK_OUT_CheckSmartCard_IN_CheckSmartCard" FromRole="IN_CheckSmartCard" ToRole="OUT_CheckSmartCard" />
+  </EntityType>
+  <EntityType Name="LS_Lane">
+    <Key>
+      <PropertyRef Name="LaneID" />
+    </Key>
+    <Property Name="LaneID" Type="Int32" Nullable="false" />
+    <Property Name="StationID" Type="Int32" Nullable="false" />
+    <Property Name="LaneCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DirectionType" Type="Int16" Nullable="false" />
+    <Property Name="LaneType" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="IN_CheckSmartCard" Relationship="Self.FK_IN_CheckSmartCard_LS_Lane" FromRole="LS_Lane" ToRole="IN_CheckSmartCard" />
+    <NavigationProperty Name="LS_Station" Relationship="Self.FK_LS_Lane_LS_Station" FromRole="LS_Lane" ToRole="LS_Station" />
+    <NavigationProperty Name="OUT_CheckPrepaidCard" Relationship="Self.FK_OUT_CheckPrepaidCard_LS_Lane" FromRole="LS_Lane" ToRole="OUT_CheckPrepaidCard" />
+    <NavigationProperty Name="OUT_CheckSmartCard" Relationship="Self.FK_OUT_CheckSmartCard_LS_Lane" FromRole="LS_Lane" ToRole="OUT_CheckSmartCard" />
+  </EntityType>
+  <EntityType Name="LS_Route">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="RouteCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FromStationID" Type="Int32" Nullable="false" />
+    <Property Name="ToStationID" Type="Int32" Nullable="false" />
+    <Property Name="Length" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsMaxLength" Type="Boolean" />
+    <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LS_Station" Relationship="Self.FK_LS_Route_LS_Station" FromRole="LS_Route" ToRole="LS_Station" />
+    <NavigationProperty Name="LS_Station1" Relationship="Self.FK_LS_Route_LS_Station1" FromRole="LS_Route" ToRole="LS_Station" />
+  </EntityType>
+  <EntityType Name="LS_Station">
+    <Key>
+      <PropertyRef Name="StationID" />
+    </Key>
+    <Property Name="StationID" Type="Int32" Nullable="false" />
+    <Property Name="StationCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StationType" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="IN_CheckSmartCard" Relationship="Self.FK_IN_CheckSmartCard_LS_Station" FromRole="LS_Station" ToRole="IN_CheckSmartCard" />
+    <NavigationProperty Name="LS_Lane" Relationship="Self.FK_LS_Lane_LS_Station" FromRole="LS_Station" ToRole="LS_Lane" />
+    <NavigationProperty Name="LS_Route" Relationship="Self.FK_LS_Route_LS_Station" FromRole="LS_Station" ToRole="LS_Route" />
+    <NavigationProperty Name="LS_Route1" Relationship="Self.FK_LS_Route_LS_Station1" FromRole="LS_Station" ToRole="LS_Route" />
+  </EntityType>
+  <EntityType Name="LS_VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleTypeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShortName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AmountPerKm" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="IN_CheckSmartCard" Relationship="Self.FK_IN_CheckSmartCard_LS_VehicleType" FromRole="LS_VehicleType" ToRole="IN_CheckSmartCard" />
+  </EntityType>
+  <EntityType Name="OUT_CheckPrepaidCard">
+    <Key>
+      <PropertyRef Name="OutCheckPrePaidCardID" />
+    </Key>
+    <Property Name="OutCheckPrePaidCardID" Type="Guid" Nullable="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SmartCardID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IDCard" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiptNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CheckDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TollFee" Type="Int32" Nullable="false" />
+    <Property Name="BeginBalance" Type="Int32" />
+    <Property Name="ChargeAmount" Type="Int32" />
+    <Property Name="Balance" Type="Int32" />
+    <Property Name="TopUpAmount" Type="Int32" />
+    <Property Name="CashAmount" Type="Int32" />
+    <Property Name="TicketTypeID" Type="Int32" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="RouteID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ShiftID" Type="Int32" />
+    <Property Name="LaneID" Type="Int32" />
+    <Property Name="StationID" Type="Int32" />
+    <Property Name="ImageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecogPlateNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="RegisPlateNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="RecogResultType" Type="Int16" />
+    <Property Name="TransactionStatus" Type="Int16" />
+    <Property Name="PrecheckStatus" Type="Int16" />
+    <Property Name="PreSupervisionStatus" Type="Int16" />
+    <Property Name="SupervisionStatus" Type="Int16" />
+    <Property Name="ErrorID" Type="Int32" />
+    <Property Name="EntryPlateNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="EntryLaneID" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ChargeType" Type="Int32" />
+    <Property Name="IsOnlineCheck" Type="Boolean" />
+    <Property Name="ChargeSequenceID" Type="Int32" />
+    <Property Name="TopUpSequenceID" Type="Int32" />
+    <Property Name="SecurityBlock1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityBlock2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityBlock3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="F1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="F2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LS_Lane" Relationship="Self.FK_OUT_CheckPrepaidCard_LS_Lane" FromRole="OUT_CheckPrepaidCard" ToRole="LS_Lane" />
+  </EntityType>
+  <EntityType Name="OUT_CheckSmartCard">
+    <Key>
+      <PropertyRef Name="OutCheckSmartCardID" />
+    </Key>
+    <Property Name="OutCheckSmartCardID" Type="Guid" Nullable="false" />
+    <Property Name="TransactionID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReceiptNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SmartCardID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InCheckSmartCardID" Type="Guid" />
+    <Property Name="InCheckSmartCardIDManual" Type="Guid" />
+    <Property Name="CheckDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BeginBalance" Type="Int32" />
+    <Property Name="ChargeAmount" Type="Int32" />
+    <Property Name="Balance" Type="Int32" />
+    <Property Name="TicketTypeID" Type="Int32" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="RouteID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ShiftID" Type="Int32" />
+    <Property Name="LaneID" Type="Int32" />
+    <Property Name="StationID" Type="Int32" />
+    <Property Name="ImageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecogPlateNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="RecogResultType" Type="Int16" />
+    <Property Name="TransactionStatus" Type="Int16" />
+    <Property Name="PrecheckStatus" Type="Int16" />
+    <Property Name="PreSupervisionStatus" Type="Int16" />
+    <Property Name="SupervisionStatus" Type="Int16" />
+    <Property Name="ErrorID" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EntryPlateNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="EntryLaneID" Type="Int32" />
+    <Property Name="F1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="F2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="IN_CheckSmartCard" Relationship="Self.FK_OUT_CheckSmartCard_IN_CheckSmartCard" FromRole="OUT_CheckSmartCard" ToRole="IN_CheckSmartCard" />
+    <NavigationProperty Name="LS_Lane" Relationship="Self.FK_OUT_CheckSmartCard_LS_Lane" FromRole="OUT_CheckSmartCard" ToRole="LS_Lane" />
+  </EntityType>
+  <Association Name="FK_IN_CheckSmartCard_LS_Lane">
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="0..1" />
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Lane">
+        <PropertyRef Name="LaneID" />
+      </Principal>
+      <Dependent Role="IN_CheckSmartCard">
+        <PropertyRef Name="LaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IN_CheckSmartCard_LS_Station">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="0..1" />
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="IN_CheckSmartCard">
+        <PropertyRef Name="StationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IN_CheckSmartCard_LS_VehicleType">
+    <End Role="LS_VehicleType" Type="Self.LS_VehicleType" Multiplicity="0..1" />
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="IN_CheckSmartCard">
+        <PropertyRef Name="VehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUT_CheckSmartCard_IN_CheckSmartCard">
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="0..1" />
+    <End Role="OUT_CheckSmartCard" Type="Self.OUT_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IN_CheckSmartCard">
+        <PropertyRef Name="InCheckSmartCardID" />
+      </Principal>
+      <Dependent Role="OUT_CheckSmartCard">
+        <PropertyRef Name="InCheckSmartCardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LS_Lane_LS_Station">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="1" />
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="LS_Lane">
+        <PropertyRef Name="StationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUT_CheckPrepaidCard_LS_Lane">
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="0..1" />
+    <End Role="OUT_CheckPrepaidCard" Type="Self.OUT_CheckPrepaidCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Lane">
+        <PropertyRef Name="LaneID" />
+      </Principal>
+      <Dependent Role="OUT_CheckPrepaidCard">
+        <PropertyRef Name="LaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUT_CheckSmartCard_LS_Lane">
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="0..1" />
+    <End Role="OUT_CheckSmartCard" Type="Self.OUT_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Lane">
+        <PropertyRef Name="LaneID" />
+      </Principal>
+      <Dependent Role="OUT_CheckSmartCard">
+        <PropertyRef Name="LaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LS_Route_LS_Station">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="1" />
+    <End Role="LS_Route" Type="Self.LS_Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="LS_Route">
+        <PropertyRef Name="ToStationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LS_Route_LS_Station1">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="1" />
+    <End Role="LS_Route" Type="Self.LS_Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="LS_Route">
+        <PropertyRef Name="FromStationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HPEEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AC_PPCWhiteList" EntityType="Self.AC_PPCWhiteList" />
+    <EntitySet Name="AC_TollWhiteList" EntityType="Self.AC_TollWhiteList" />
+    <EntitySet Name="IN_CheckPrepaidCard" EntityType="Self.IN_CheckPrepaidCard" />
+    <EntitySet Name="IN_CheckSmartCard" EntityType="Self.IN_CheckSmartCard" />
+    <EntitySet Name="LS_Lane" EntityType="Self.LS_Lane" />
+    <EntitySet Name="LS_Route" EntityType="Self.LS_Route" />
+    <EntitySet Name="LS_Station" EntityType="Self.LS_Station" />
+    <EntitySet Name="LS_VehicleType" EntityType="Self.LS_VehicleType" />
+    <EntitySet Name="OUT_CheckPrepaidCard" EntityType="Self.OUT_CheckPrepaidCard" />
+    <EntitySet Name="OUT_CheckSmartCard" EntityType="Self.OUT_CheckSmartCard" />
+    <AssociationSet Name="FK_IN_CheckSmartCard_LS_Lane" Association="Self.FK_IN_CheckSmartCard_LS_Lane">
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IN_CheckSmartCard_LS_Station" Association="Self.FK_IN_CheckSmartCard_LS_Station">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IN_CheckSmartCard_LS_VehicleType" Association="Self.FK_IN_CheckSmartCard_LS_VehicleType">
+      <End Role="LS_VehicleType" EntitySet="LS_VehicleType" />
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUT_CheckSmartCard_IN_CheckSmartCard" Association="Self.FK_OUT_CheckSmartCard_IN_CheckSmartCard">
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+      <End Role="OUT_CheckSmartCard" EntitySet="OUT_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LS_Lane_LS_Station" Association="Self.FK_LS_Lane_LS_Station">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUT_CheckPrepaidCard_LS_Lane" Association="Self.FK_OUT_CheckPrepaidCard_LS_Lane">
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+      <End Role="OUT_CheckPrepaidCard" EntitySet="OUT_CheckPrepaidCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUT_CheckSmartCard_LS_Lane" Association="Self.FK_OUT_CheckSmartCard_LS_Lane">
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+      <End Role="OUT_CheckSmartCard" EntitySet="OUT_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LS_Route_LS_Station" Association="Self.FK_LS_Route_LS_Station">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="LS_Route" EntitySet="LS_Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LS_Route_LS_Station1" Association="Self.FK_LS_Route_LS_Station1">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="LS_Route" EntitySet="LS_Route" />
+    </AssociationSet>
+    <FunctionImport Name="f_sp_IN_CheckSmartCard_GetByCardIDAndSortTransactionID" ReturnType="Collection(HPEModelRP.f_sp_IN_CheckSmartCard_GetByCardIDAndSortTransactionID_Result)">
+      <Parameter Name="CardID" Mode="In" Type="String" />
+      <Parameter Name="TransactionID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TKCardSuDung" ReturnType="Collection(HPEModelRP.TKCardSuDung_Result)">
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TKCardSuDung1" ReturnType="Collection(HPEModelRP.TKCardSuDung1_Result)">
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="f_sp_IN_CheckSmartCard_GetByCardIDAndSortTransactionID_Result">
+    <Property Type="Guid" Name="InCheckSmartCardID" Nullable="false" />
+    <Property Type="String" Name="TransactionID" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="SmartCardID" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="CheckDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="TicketTypeID" Nullable="true" />
+    <Property Type="Int32" Name="VehicleTypeID" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+    <Property Type="Int32" Name="ShiftID" Nullable="true" />
+    <Property Type="Int32" Name="LaneID" Nullable="true" />
+    <Property Type="Int32" Name="StationID" Nullable="true" />
+    <Property Type="String" Name="ImageID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RecogPlateNumber" Nullable="true" MaxLength="15" />
+    <Property Type="Int16" Name="RecogResultType" Nullable="true" />
+    <Property Type="Int16" Name="TransactionStatus" Nullable="true" />
+    <Property Type="Int16" Name="PrecheckStatus" Nullable="true" />
+    <Property Type="Int16" Name="PreSupervisionStatus" Nullable="true" />
+    <Property Type="Int16" Name="SupervisionStatus" Nullable="true" />
+    <Property Type="Int32" Name="ErrorID" Nullable="true" />
+    <Property Type="Guid" Name="WIMID" Nullable="true" />
+    <Property Type="String" Name="Note" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsVehicleInfoManual" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TKCardSuDung_Result">
+    <Property Type="Guid" Name="OutCheckSmartCardID" Nullable="false" />
+    <Property Type="String" Name="TransactionID" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ReceiptNo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SmartCardID" Nullable="false" MaxLength="20" />
+    <Property Type="Guid" Name="InCheckSmartCardID" Nullable="true" />
+    <Property Type="Guid" Name="InCheckSmartCardIDManual" Nullable="true" />
+    <Property Type="DateTime" Name="CheckDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="BeginBalance" Nullable="true" />
+    <Property Type="Int32" Name="ChargeAmount" Nullable="true" />
+    <Property Type="Int32" Name="Balance" Nullable="true" />
+    <Property Type="Int32" Name="TicketTypeID" Nullable="true" />
+    <Property Type="Int32" Name="VehicleTypeID" Nullable="true" />
+    <Property Type="Int32" Name="RouteID" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+    <Property Type="Int32" Name="ShiftID" Nullable="true" />
+    <Property Type="Int32" Name="LaneID" Nullable="true" />
+    <Property Type="Int32" Name="StationID" Nullable="true" />
+    <Property Type="String" Name="ImageID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RecogPlateNumber" Nullable="true" MaxLength="15" />
+    <Property Type="Int16" Name="RecogResultType" Nullable="true" />
+    <Property Type="Int16" Name="TransactionStatus" Nullable="true" />
+    <Property Type="Int16" Name="PrecheckStatus" Nullable="true" />
+    <Property Type="Int16" Name="PreSupervisionStatus" Nullable="true" />
+    <Property Type="Int16" Name="SupervisionStatus" Nullable="true" />
+    <Property Type="Int32" Name="ErrorID" Nullable="true" />
+    <Property Type="String" Name="Note" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EntryPlateNumber" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="EntryLaneID" Nullable="true" />
+    <Property Type="String" Name="F1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="F2" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="RouteID1" Nullable="false" />
+    <Property Type="String" Name="RouteCode" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="FromStationID" Nullable="false" />
+    <Property Type="Int32" Name="ToStationID" Nullable="false" />
+    <Property Type="Int32" Name="Length" Nullable="true" />
+    <Property Type="String" Name="Note1" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsMaxLength" Nullable="true" />
+    <Property Type="Boolean" Name="IsUsed" Nullable="false" />
+    <Property Type="Int32" Name="LaneID1" Nullable="false" />
+    <Property Type="Int32" Name="StationID1" Nullable="false" />
+    <Property Type="String" Name="LaneCode" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Name1" Nullable="false" MaxLength="200" />
+    <Property Type="Int16" Name="DirectionType" Nullable="false" />
+    <Property Type="Int32" Name="LaneType" Nullable="false" />
+    <Property Type="String" Name="Note2" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsUsed1" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="TKCardSuDung1_Result">
+    <Property Type="Guid" Name="OutCheckSmartCardID" Nullable="false" />
+    <Property Type="String" Name="TransactionID" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ReceiptNo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SmartCardID" Nullable="false" MaxLength="20" />
+    <Property Type="Guid" Name="InCheckSmartCardID" Nullable="true" />
+    <Property Type="Guid" Name="InCheckSmartCardIDManual" Nullable="true" />
+    <Property Type="DateTime" Name="CheckDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="BeginBalance" Nullable="true" />
+    <Property Type="Int32" Name="ChargeAmount" Nullable="true" />
+    <Property Type="Int32" Name="Balance" Nullable="true" />
+    <Property Type="Int32" Name="TicketTypeID" Nullable="true" />
+    <Property Type="Int32" Name="VehicleTypeID" Nullable="true" />
+    <Property Type="Int32" Name="RouteID" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+    <Property Type="Int32" Name="ShiftID" Nullable="true" />
+    <Property Type="Int32" Name="LaneID" Nullable="true" />
+    <Property Type="Int32" Name="StationID" Nullable="true" />
+    <Property Type="String" Name="ImageID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RecogPlateNumber" Nullable="true" MaxLength="15" />
+    <Property Type="Int16" Name="RecogResultType" Nullable="true" />
+    <Property Type="Int16" Name="TransactionStatus" Nullable="true" />
+    <Property Type="Int16" Name="PrecheckStatus" Nullable="true" />
+    <Property Type="Int16" Name="PreSupervisionStatus" Nullable="true" />
+    <Property Type="Int16" Name="SupervisionStatus" Nullable="true" />
+    <Property Type="Int32" Name="ErrorID" Nullable="true" />
+    <Property Type="String" Name="Note" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EntryPlateNumber" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="EntryLaneID" Nullable="true" />
+    <Property Type="String" Name="F1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="F2" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="RouteID1" Nullable="false" />
+    <Property Type="String" Name="RouteCode" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="FromStationID" Nullable="false" />
+    <Property Type="Int32" Name="ToStationID" Nullable="false" />
+    <Property Type="Int32" Name="Length" Nullable="true" />
+    <Property Type="String" Name="Note1" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsMaxLength" Nullable="true" />
+    <Property Type="Boolean" Name="IsUsed" Nullable="false" />
+    <Property Type="Int32" Name="LaneID1" Nullable="false" />
+    <Property Type="Int32" Name="StationID1" Nullable="false" />
+    <Property Type="String" Name="LaneCode" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Name1" Nullable="false" MaxLength="200" />
+    <Property Type="Int16" Name="DirectionType" Nullable="false" />
+    <Property Type="Int32" Name="LaneType" Nullable="false" />
+    <Property Type="String" Name="Note2" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsUsed1" Nullable="false" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="TollTicketManagement.View.Reportview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TollTicketManagement.View"
+       xmlns:rp="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+       xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                Style="{StaticResource CustomWindow}"
+                Title="ITD - TRUNG TÂM QUẢN LÝ" Width="1280" Height="auto" Icon="/Resources/Images/itd.ico"
+                WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanMinimize">
+    <StackPanel>
+        <Grid>
+            <Button x:Name="button" Content="Button" Click="button_Click_1"/>
+        </Grid>
+        <Grid>
+            <rp:CrystalReportsViewer x:Name="rpView" Height="200" Margin="349,170,176.6,-170"/>
+        </Grid>
+
+    </StackPanel>
+</Window>

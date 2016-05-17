@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="3e323aa0-cf8b-4d55-a708-3b165c185bae" absoluteBounds="2, 1.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataClasses1DataContext/LS_Route" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ccc70b1-604c-47df-bc72-0ba720ed4654" absoluteBounds="2.015, 2.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a591bf3d-cdd8-47d8-b464-452e501f7f32" absoluteBounds="7.375, 2.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClasses1DataContext/LS_Lane" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8e70797-cb83-45ef-b6a2-eac898493a14" absoluteBounds="7.39, 2.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d62a4272-1340-41c2-bfcb-9dfafe590dfc" absoluteBounds="4.375, 0.5, 2, 6.5784326171875">
+      <DataClassMoniker Name="/DataClasses1DataContext/OUT_CheckSmartCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae0951f1-1457-44b4-a3e4-8453560d332c" absoluteBounds="4.39, 0.96, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.375 : 3.42390055338542); (6.375 : 3.42390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/LS_Lane/LS_Lane_OUT_CheckSmartCard" />
+      <nodes>
+        <classShapeMoniker Id="a591bf3d-cdd8-47d8-b464-452e501f7f32" />
+        <classShapeMoniker Id="d62a4272-1340-41c2-bfcb-9dfafe590dfc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 2.89505126953125); (4.375 : 2.89505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/LS_Route/LS_Route_OUT_CheckSmartCard" />
+      <nodes>
+        <classShapeMoniker Id="3e323aa0-cf8b-4d55-a708-3b165c185bae" />
+        <classShapeMoniker Id="d62a4272-1340-41c2-bfcb-9dfafe590dfc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

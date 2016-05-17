@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HPEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HPEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TollTicketManagement.Properties.Settings.GlobalReference.Default.HPEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OUT_CheckSmartCardTableAdapter" GeneratorDataComponentClassName="OUT_CheckSmartCardTableAdapter" Name="OUT_CheckSmartCard" UserDataComponentName="OUT_CheckSmartCardTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HPEConnectionString (Settings)" DbObjectName="HPE.dbo.OUT_CheckSmartCard" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[OUT_CheckSmartCard] WHERE (([OutCheckSmartCardID] = @Original_OutCheckSmartCardID) AND ([TransactionID] = @Original_TransactionID) AND ([ReceiptNo] = @Original_ReceiptNo) AND ([SmartCardID] = @Original_SmartCardID) AND ((@IsNull_InCheckSmartCardID = 1 AND [InCheckSmartCardID] IS NULL) OR ([InCheckSmartCardID] = @Original_InCheckSmartCardID)) AND ((@IsNull_InCheckSmartCardIDManual = 1 AND [InCheckSmartCardIDManual] IS NULL) OR ([InCheckSmartCardIDManual] = @Original_InCheckSmartCardIDManual)) AND ([CheckDate] = @Original_CheckDate) AND ((@IsNull_BeginBalance = 1 AND [BeginBalance] IS NULL) OR ([BeginBalance] = @Original_BeginBalance)) AND ((@IsNull_ChargeAmount = 1 AND [ChargeAmount] IS NULL) OR ([ChargeAmount] = @Original_ChargeAmount)) AND ((@IsNull_Balance = 1 AND [Balance] IS NULL) OR ([Balance] = @Original_Balance)) AND ((@IsNull_TicketTypeID = 1 AND [TicketTypeID] IS NULL) OR ([TicketTypeID] = @Original_TicketTypeID)) AND ((@IsNull_VehicleTypeID = 1 AND [VehicleTypeID] IS NULL) OR ([VehicleTypeID] = @Original_VehicleTypeID)) AND ((@IsNull_RouteID = 1 AND [RouteID] IS NULL) OR ([RouteID] = @Original_RouteID)) AND ((@IsNull_EmployeeID = 1 AND [EmployeeID] IS NULL) OR ([EmployeeID] = @Original_EmployeeID)) AND ((@IsNull_ShiftID = 1 AND [ShiftID] IS NULL) OR ([ShiftID] = @Original_ShiftID)) AND ((@IsNull_LaneID = 1 AND [LaneID] IS NULL) OR ([LaneID] = @Original_LaneID)) AND ((@IsNull_StationID = 1 AND [StationID] IS NULL) OR ([StationID] = @Original_StationID)) AND ((@IsNull_ImageID = 1 AND [ImageID] IS NULL) OR ([ImageID] = @Original_ImageID)) AND ((@IsNull_RecogPlateNumber = 1 AND [RecogPlateNumber] IS NULL) OR ([RecogPlateNumber] = @Original_RecogPlateNumber)) AND ((@IsNull_RecogResultType = 1 AND [RecogResultType] IS NULL) OR ([RecogResultType] = @Original_RecogResultType)) AND ((@IsNull_TransactionStatus = 1 AND [TransactionStatus] IS NULL) OR ([TransactionStatus] = @Original_TransactionStatus)) AND ((@IsNull_PrecheckStatus = 1 AND [PrecheckStatus] IS NULL) OR ([PrecheckStatus] = @Original_PrecheckStatus)) AND ((@IsNull_PreSupervisionStatus = 1 AND [PreSupervisionStatus] IS NULL) OR ([PreSupervisionStatus] = @Original_PreSupervisionStatus)) AND ((@IsNull_SupervisionStatus = 1 AND [SupervisionStatus] IS NULL) OR ([SupervisionStatus] = @Original_SupervisionStatus)) AND ((@IsNull_ErrorID = 1 AND [ErrorID] IS NULL) OR ([ErrorID] = @Original_ErrorID)) AND ((@IsNull_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_EntryPlateNumber = 1 AND [EntryPlateNumber] IS NULL) OR ([EntryPlateNumber] = @Original_EntryPlateNumber)) AND ((@IsNull_EntryLaneID = 1 AND [EntryLaneID] IS NULL) OR ([EntryLaneID] = @Original_EntryLaneID)) AND ((@IsNull_F1 = 1 AND [F1] IS NULL) OR ([F1] = @Original_F1)) AND ((@IsNull_F2 = 1 AND [F2] IS NULL) OR ([F2] = @Original_F2)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@Original_OutCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="OutCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TransactionID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TransactionID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ReceiptNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SmartCardID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SmartCardID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InCheckSmartCardID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InCheckSmartCardID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@Original_InCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InCheckSmartCardIDManual" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InCheckSmartCardIDManual" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@Original_InCheckSmartCardIDManual" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardIDManual" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CheckDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CheckDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BeginBalance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BeginBalance" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_BeginBalance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BeginBalance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ChargeAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ChargeAmount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ChargeAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ChargeAmount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Balance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Balance" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Balance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Balance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TicketTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TicketTypeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TicketTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TicketTypeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VehicleTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VehicleTypeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_VehicleTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VehicleTypeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ShiftID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShiftID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ShiftID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShiftID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ImageID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ImageID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ImageID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ImageID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RecogPlateNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RecogPlateNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RecogPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RecogPlateNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RecogResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RecogResultType" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_RecogResultType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="RecogResultType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TransactionStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TransactionStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_TransactionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="TransactionStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PrecheckStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrecheckStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_PrecheckStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PrecheckStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PreSupervisionStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PreSupervisionStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_PreSupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PreSupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SupervisionStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupervisionStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_SupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ErrorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ErrorID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ErrorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ErrorID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Note" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EntryPlateNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryPlateNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EntryPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EntryPlateNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EntryLaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryLaneID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EntryLaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryLaneID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_F1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="F1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_F1" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_F2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="F2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_F2" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[OUT_CheckSmartCard] ([OutCheckSmartCardID], [TransactionID], [ReceiptNo], [SmartCardID], [InCheckSmartCardID], [InCheckSmartCardIDManual], [CheckDate], [BeginBalance], [ChargeAmount], [Balance], [TicketTypeID], [VehicleTypeID], [RouteID], [EmployeeID], [ShiftID], [LaneID], [StationID], [ImageID], [RecogPlateNumber], [RecogResultType], [TransactionStatus], [PrecheckStatus], [PreSupervisionStatus], [SupervisionStatus], [ErrorID], [Note], [EntryPlateNumber], [EntryLaneID], [F1], [F2]) VALUES (@OutCheckSmartCardID, @TransactionID, @ReceiptNo, @SmartCardID, @InCheckSmartCardID, @InCheckSmartCardIDManual, @CheckDate, @BeginBalance, @ChargeAmount, @Balance, @TicketTypeID, @VehicleTypeID, @RouteID, @EmployeeID, @ShiftID, @LaneID, @StationID, @ImageID, @RecogPlateNumber, @RecogResultType, @TransactionStatus, @PrecheckStatus, @PreSupervisionStatus, @SupervisionStatus, @ErrorID, @Note, @EntryPlateNumber, @EntryLaneID, @F1, @F2);
+SELECT OutCheckSmartCardID, TransactionID, ReceiptNo, SmartCardID, InCheckSmartCardID, InCheckSmartCardIDManual, CheckDate, BeginBalance, ChargeAmount, Balance, TicketTypeID, VehicleTypeID, RouteID, EmployeeID, ShiftID, LaneID, StationID, ImageID, RecogPlateNumber, RecogResultType, TransactionStatus, PrecheckStatus, PreSupervisionStatus, SupervisionStatus, ErrorID, Note, EntryPlateNumber, EntryLaneID, F1, F2 FROM OUT_CheckSmartCard WHERE (OutCheckSmartCardID = @OutCheckSmartCardID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@OutCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="OutCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TransactionID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TransactionID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ReceiptNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SmartCardID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SmartCardID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@InCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@InCheckSmartCardIDManual" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardIDManual" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CheckDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CheckDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@BeginBalance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BeginBalance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ChargeAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ChargeAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Balance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Balance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TicketTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TicketTypeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@VehicleTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VehicleTypeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ShiftID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShiftID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ImageID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ImageID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RecogPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RecogPlateNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@RecogResultType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="RecogResultType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@TransactionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="TransactionStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@PrecheckStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PrecheckStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@PreSupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PreSupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@SupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ErrorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ErrorID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EntryPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EntryPlateNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EntryLaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryLaneID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@F1" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@F2" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT OutCheckSmartCardID, TransactionID, ReceiptNo, SmartCardID, InCheckSmartCardID, InCheckSmartCardIDManual, CheckDate, BeginBalance, ChargeAmount, Balance, TicketTypeID, VehicleTypeID, RouteID, EmployeeID, ShiftID, LaneID, StationID, ImageID, RecogPlateNumber, RecogResultType, TransactionStatus, PrecheckStatus, PreSupervisionStatus, SupervisionStatus, ErrorID, Note, EntryPlateNumber, EntryLaneID, F1, F2 FROM dbo.OUT_CheckSmartCard</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[OUT_CheckSmartCard] SET [OutCheckSmartCardID] = @OutCheckSmartCardID, [TransactionID] = @TransactionID, [ReceiptNo] = @ReceiptNo, [SmartCardID] = @SmartCardID, [InCheckSmartCardID] = @InCheckSmartCardID, [InCheckSmartCardIDManual] = @InCheckSmartCardIDManual, [CheckDate] = @CheckDate, [BeginBalance] = @BeginBalance, [ChargeAmount] = @ChargeAmount, [Balance] = @Balance, [TicketTypeID] = @TicketTypeID, [VehicleTypeID] = @VehicleTypeID, [RouteID] = @RouteID, [EmployeeID] = @EmployeeID, [ShiftID] = @ShiftID, [LaneID] = @LaneID, [StationID] = @StationID, [ImageID] = @ImageID, [RecogPlateNumber] = @RecogPlateNumber, [RecogResultType] = @RecogResultType, [TransactionStatus] = @TransactionStatus, [PrecheckStatus] = @PrecheckStatus, [PreSupervisionStatus] = @PreSupervisionStatus, [SupervisionStatus] = @SupervisionStatus, [ErrorID] = @ErrorID, [Note] = @Note, [EntryPlateNumber] = @EntryPlateNumber, [EntryLaneID] = @EntryLaneID, [F1] = @F1, [F2] = @F2 WHERE (([OutCheckSmartCardID] = @Original_OutCheckSmartCardID) AND ([TransactionID] = @Original_TransactionID) AND ([ReceiptNo] = @Original_ReceiptNo) AND ([SmartCardID] = @Original_SmartCardID) AND ((@IsNull_InCheckSmartCardID = 1 AND [InCheckSmartCardID] IS NULL) OR ([InCheckSmartCardID] = @Original_InCheckSmartCardID)) AND ((@IsNull_InCheckSmartCardIDManual = 1 AND [InCheckSmartCardIDManual] IS NULL) OR ([InCheckSmartCardIDManual] = @Original_InCheckSmartCardIDManual)) AND ([CheckDate] = @Original_CheckDate) AND ((@IsNull_BeginBalance = 1 AND [BeginBalance] IS NULL) OR ([BeginBalance] = @Original_BeginBalance)) AND ((@IsNull_ChargeAmount = 1 AND [ChargeAmount] IS NULL) OR ([ChargeAmount] = @Original_ChargeAmount)) AND ((@IsNull_Balance = 1 AND [Balance] IS NULL) OR ([Balance] = @Original_Balance)) AND ((@IsNull_TicketTypeID = 1 AND [TicketTypeID] IS NULL) OR ([TicketTypeID] = @Original_TicketTypeID)) AND ((@IsNull_VehicleTypeID = 1 AND [VehicleTypeID] IS NULL) OR ([VehicleTypeID] = @Original_VehicleTypeID)) AND ((@IsNull_RouteID = 1 AND [RouteID] IS NULL) OR ([RouteID] = @Original_RouteID)) AND ((@IsNull_EmployeeID = 1 AND [EmployeeID] IS NULL) OR ([EmployeeID] = @Original_EmployeeID)) AND ((@IsNull_ShiftID = 1 AND [ShiftID] IS NULL) OR ([ShiftID] = @Original_ShiftID)) AND ((@IsNull_LaneID = 1 AND [LaneID] IS NULL) OR ([LaneID] = @Original_LaneID)) AND ((@IsNull_StationID = 1 AND [StationID] IS NULL) OR ([StationID] = @Original_StationID)) AND ((@IsNull_ImageID = 1 AND [ImageID] IS NULL) OR ([ImageID] = @Original_ImageID)) AND ((@IsNull_RecogPlateNumber = 1 AND [RecogPlateNumber] IS NULL) OR ([RecogPlateNumber] = @Original_RecogPlateNumber)) AND ((@IsNull_RecogResultType = 1 AND [RecogResultType] IS NULL) OR ([RecogResultType] = @Original_RecogResultType)) AND ((@IsNull_TransactionStatus = 1 AND [TransactionStatus] IS NULL) OR ([TransactionStatus] = @Original_TransactionStatus)) AND ((@IsNull_PrecheckStatus = 1 AND [PrecheckStatus] IS NULL) OR ([PrecheckStatus] = @Original_PrecheckStatus)) AND ((@IsNull_PreSupervisionStatus = 1 AND [PreSupervisionStatus] IS NULL) OR ([PreSupervisionStatus] = @Original_PreSupervisionStatus)) AND ((@IsNull_SupervisionStatus = 1 AND [SupervisionStatus] IS NULL) OR ([SupervisionStatus] = @Original_SupervisionStatus)) AND ((@IsNull_ErrorID = 1 AND [ErrorID] IS NULL) OR ([ErrorID] = @Original_ErrorID)) AND ((@IsNull_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_EntryPlateNumber = 1 AND [EntryPlateNumber] IS NULL) OR ([EntryPlateNumber] = @Original_EntryPlateNumber)) AND ((@IsNull_EntryLaneID = 1 AND [EntryLaneID] IS NULL) OR ([EntryLaneID] = @Original_EntryLaneID)) AND ((@IsNull_F1 = 1 AND [F1] IS NULL) OR ([F1] = @Original_F1)) AND ((@IsNull_F2 = 1 AND [F2] IS NULL) OR ([F2] = @Original_F2)));
+SELECT OutCheckSmartCardID, TransactionID, ReceiptNo, SmartCardID, InCheckSmartCardID, InCheckSmartCardIDManual, CheckDate, BeginBalance, ChargeAmount, Balance, TicketTypeID, VehicleTypeID, RouteID, EmployeeID, ShiftID, LaneID, StationID, ImageID, RecogPlateNumber, RecogResultType, TransactionStatus, PrecheckStatus, PreSupervisionStatus, SupervisionStatus, ErrorID, Note, EntryPlateNumber, EntryLaneID, F1, F2 FROM OUT_CheckSmartCard WHERE (OutCheckSmartCardID = @OutCheckSmartCardID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@OutCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="OutCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TransactionID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TransactionID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ReceiptNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SmartCardID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SmartCardID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@InCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@InCheckSmartCardIDManual" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardIDManual" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CheckDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CheckDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@BeginBalance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BeginBalance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ChargeAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ChargeAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Balance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Balance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TicketTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TicketTypeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@VehicleTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VehicleTypeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ShiftID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShiftID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ImageID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ImageID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RecogPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RecogPlateNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@RecogResultType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="RecogResultType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@TransactionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="TransactionStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@PrecheckStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PrecheckStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@PreSupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PreSupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@SupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ErrorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ErrorID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EntryPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EntryPlateNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EntryLaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryLaneID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@F1" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@F2" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@Original_OutCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="OutCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TransactionID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TransactionID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ReceiptNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SmartCardID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SmartCardID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InCheckSmartCardID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InCheckSmartCardID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@Original_InCheckSmartCardID" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InCheckSmartCardIDManual" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InCheckSmartCardIDManual" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Guid" Direction="Input" ParameterName="@Original_InCheckSmartCardIDManual" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="0" SourceColumn="InCheckSmartCardIDManual" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CheckDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CheckDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BeginBalance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BeginBalance" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_BeginBalance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BeginBalance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ChargeAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ChargeAmount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ChargeAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ChargeAmount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Balance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Balance" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Balance" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Balance" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TicketTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TicketTypeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TicketTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TicketTypeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VehicleTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VehicleTypeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_VehicleTypeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VehicleTypeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ShiftID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShiftID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ShiftID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShiftID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ImageID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ImageID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ImageID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ImageID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RecogPlateNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RecogPlateNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RecogPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RecogPlateNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RecogResultType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RecogResultType" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_RecogResultType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="RecogResultType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TransactionStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TransactionStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_TransactionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="TransactionStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PrecheckStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrecheckStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_PrecheckStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PrecheckStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PreSupervisionStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PreSupervisionStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_PreSupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="PreSupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SupervisionStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SupervisionStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_SupervisionStatus" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="SupervisionStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ErrorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ErrorID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ErrorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ErrorID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Note" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EntryPlateNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryPlateNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EntryPlateNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EntryPlateNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EntryLaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryLaneID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EntryLaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryLaneID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_F1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="F1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_F1" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_F2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="F2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_F2" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="F2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OutCheckSmartCardID" DataSetColumn="OutCheckSmartCardID" />
+              <Mapping SourceColumn="TransactionID" DataSetColumn="TransactionID" />
+              <Mapping SourceColumn="ReceiptNo" DataSetColumn="ReceiptNo" />
+              <Mapping SourceColumn="SmartCardID" DataSetColumn="SmartCardID" />
+              <Mapping SourceColumn="InCheckSmartCardID" DataSetColumn="InCheckSmartCardID" />
+              <Mapping SourceColumn="InCheckSmartCardIDManual" DataSetColumn="InCheckSmartCardIDManual" />
+              <Mapping SourceColumn="CheckDate" DataSetColumn="CheckDate" />
+              <Mapping SourceColumn="BeginBalance" DataSetColumn="BeginBalance" />
+              <Mapping SourceColumn="ChargeAmount" DataSetColumn="ChargeAmount" />
+              <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
+              <Mapping SourceColumn="TicketTypeID" DataSetColumn="TicketTypeID" />
+              <Mapping SourceColumn="VehicleTypeID" DataSetColumn="VehicleTypeID" />
+              <Mapping SourceColumn="RouteID" DataSetColumn="RouteID" />
+              <Mapping SourceColumn="EmployeeID" DataSetColumn="EmployeeID" />
+              <Mapping SourceColumn="ShiftID" DataSetColumn="ShiftID" />
+              <Mapping SourceColumn="LaneID" DataSetColumn="LaneID" />
+              <Mapping SourceColumn="StationID" DataSetColumn="StationID" />
+              <Mapping SourceColumn="ImageID" DataSetColumn="ImageID" />
+              <Mapping SourceColumn="RecogPlateNumber" DataSetColumn="RecogPlateNumber" />
+              <Mapping SourceColumn="RecogResultType" DataSetColumn="RecogResultType" />
+              <Mapping SourceColumn="TransactionStatus" DataSetColumn="TransactionStatus" />
+              <Mapping SourceColumn="PrecheckStatus" DataSetColumn="PrecheckStatus" />
+              <Mapping SourceColumn="PreSupervisionStatus" DataSetColumn="PreSupervisionStatus" />
+              <Mapping SourceColumn="SupervisionStatus" DataSetColumn="SupervisionStatus" />
+              <Mapping SourceColumn="ErrorID" DataSetColumn="ErrorID" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+              <Mapping SourceColumn="EntryPlateNumber" DataSetColumn="EntryPlateNumber" />
+              <Mapping SourceColumn="EntryLaneID" DataSetColumn="EntryLaneID" />
+              <Mapping SourceColumn="F1" DataSetColumn="F1" />
+              <Mapping SourceColumn="F2" DataSetColumn="F2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LS_LaneTableAdapter" GeneratorDataComponentClassName="LS_LaneTableAdapter" Name="LS_Lane" UserDataComponentName="LS_LaneTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HPEConnectionString (Settings)" DbObjectName="HPE.dbo.LS_Lane" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[LS_Lane] WHERE (([LaneID] = @Original_LaneID) AND ([StationID] = @Original_StationID) AND ([LaneCode] = @Original_LaneCode) AND ([Name] = @Original_Name) AND ([DirectionType] = @Original_DirectionType) AND ([LaneType] = @Original_LaneType) AND ((@IsNull_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ([IsUsed] = @Original_IsUsed))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LaneCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LaneCode" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_DirectionType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="DirectionType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_LaneType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Note" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[LS_Lane] ([LaneID], [StationID], [LaneCode], [Name], [DirectionType], [LaneType], [Note], [IsUsed]) VALUES (@LaneID, @StationID, @LaneCode, @Name, @DirectionType, @LaneType, @Note, @IsUsed);
+SELECT LaneID, StationID, LaneCode, Name, DirectionType, LaneType, Note, IsUsed FROM LS_Lane WHERE (LaneID = @LaneID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LaneCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LaneCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@DirectionType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="DirectionType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LaneType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT LaneID, StationID, LaneCode, Name, DirectionType, LaneType, Note, IsUsed FROM dbo.LS_Lane</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[LS_Lane] SET [LaneID] = @LaneID, [StationID] = @StationID, [LaneCode] = @LaneCode, [Name] = @Name, [DirectionType] = @DirectionType, [LaneType] = @LaneType, [Note] = @Note, [IsUsed] = @IsUsed WHERE (([LaneID] = @Original_LaneID) AND ([StationID] = @Original_StationID) AND ([LaneCode] = @Original_LaneCode) AND ([Name] = @Original_Name) AND ([DirectionType] = @Original_DirectionType) AND ([LaneType] = @Original_LaneType) AND ((@IsNull_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ([IsUsed] = @Original_IsUsed));
+SELECT LaneID, StationID, LaneCode, Name, DirectionType, LaneType, Note, IsUsed FROM LS_Lane WHERE (LaneID = @LaneID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LaneCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LaneCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@DirectionType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="DirectionType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LaneType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_LaneID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LaneCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LaneCode" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_DirectionType" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="DirectionType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_LaneType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LaneType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Note" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LaneID" DataSetColumn="LaneID" />
+              <Mapping SourceColumn="StationID" DataSetColumn="StationID" />
+              <Mapping SourceColumn="LaneCode" DataSetColumn="LaneCode" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="DirectionType" DataSetColumn="DirectionType" />
+              <Mapping SourceColumn="LaneType" DataSetColumn="LaneType" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+              <Mapping SourceColumn="IsUsed" DataSetColumn="IsUsed" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LS_RouteTableAdapter" GeneratorDataComponentClassName="LS_RouteTableAdapter" Name="LS_Route" UserDataComponentName="LS_RouteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HPEConnectionString (Settings)" DbObjectName="HPE.dbo.LS_Route" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[LS_Route] WHERE (([RouteID] = @Original_RouteID) AND ([RouteCode] = @Original_RouteCode) AND ([Name] = @Original_Name) AND ([FromStationID] = @Original_FromStationID) AND ([ToStationID] = @Original_ToStationID) AND ((@IsNull_Length = 1 AND [Length] IS NULL) OR ([Length] = @Original_Length)) AND ((@IsNull_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_IsMaxLength = 1 AND [IsMaxLength] IS NULL) OR ([IsMaxLength] = @Original_IsMaxLength)) AND ([IsUsed] = @Original_IsUsed))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RouteCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RouteCode" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_FromStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FromStationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ToStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ToStationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Length" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Length" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Length" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Length" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Note" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IsMaxLength" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IsMaxLength" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsMaxLength" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsMaxLength" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[LS_Route] ([RouteID], [RouteCode], [Name], [FromStationID], [ToStationID], [Length], [Note], [IsMaxLength], [IsUsed]) VALUES (@RouteID, @RouteCode, @Name, @FromStationID, @ToStationID, @Length, @Note, @IsMaxLength, @IsUsed);
+SELECT RouteID, RouteCode, Name, FromStationID, ToStationID, Length, Note, IsMaxLength, IsUsed FROM LS_Route WHERE (RouteID = @RouteID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RouteCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RouteCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@FromStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FromStationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ToStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ToStationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Length" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Length" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsMaxLength" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsMaxLength" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT RouteID, RouteCode, Name, FromStationID, ToStationID, Length, Note, IsMaxLength, IsUsed FROM dbo.LS_Route</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[LS_Route] SET [RouteID] = @RouteID, [RouteCode] = @RouteCode, [Name] = @Name, [FromStationID] = @FromStationID, [ToStationID] = @ToStationID, [Length] = @Length, [Note] = @Note, [IsMaxLength] = @IsMaxLength, [IsUsed] = @IsUsed WHERE (([RouteID] = @Original_RouteID) AND ([RouteCode] = @Original_RouteCode) AND ([Name] = @Original_Name) AND ([FromStationID] = @Original_FromStationID) AND ([ToStationID] = @Original_ToStationID) AND ((@IsNull_Length = 1 AND [Length] IS NULL) OR ([Length] = @Original_Length)) AND ((@IsNull_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_IsMaxLength = 1 AND [IsMaxLength] IS NULL) OR ([IsMaxLength] = @Original_IsMaxLength)) AND ([IsUsed] = @Original_IsUsed));
+SELECT RouteID, RouteCode, Name, FromStationID, ToStationID, Length, Note, IsMaxLength, IsUsed FROM LS_Route WHERE (RouteID = @RouteID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RouteCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RouteCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@FromStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FromStationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ToStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ToStationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Length" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Length" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsMaxLength" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsMaxLength" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_RouteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RouteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RouteCode" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RouteCode" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_FromStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FromStationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ToStationID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ToStationID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Length" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Length" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Length" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Length" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Note" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IsMaxLength" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IsMaxLength" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsMaxLength" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsMaxLength" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_IsUsed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsUsed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RouteID" DataSetColumn="RouteID" />
+              <Mapping SourceColumn="RouteCode" DataSetColumn="RouteCode" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="FromStationID" DataSetColumn="FromStationID" />
+              <Mapping SourceColumn="ToStationID" DataSetColumn="ToStationID" />
+              <Mapping SourceColumn="Length" DataSetColumn="Length" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+              <Mapping SourceColumn="IsMaxLength" DataSetColumn="IsMaxLength" />
+              <Mapping SourceColumn="IsUsed" DataSetColumn="IsUsed" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OUT_CheckSmartCard" msprop:Generator_TableClassName="OUT_CheckSmartCardDataTable" msprop:Generator_TableVarName="tableOUT_CheckSmartCard" msprop:Generator_RowChangedName="OUT_CheckSmartCardRowChanged" msprop:Generator_TablePropName="OUT_CheckSmartCard" msprop:Generator_RowDeletingName="OUT_CheckSmartCardRowDeleting" msprop:Generator_RowChangingName="OUT_CheckSmartCardRowChanging" msprop:Generator_RowEvHandlerName="OUT_CheckSmartCardRowChangeEventHandler" msprop:Generator_RowDeletedName="OUT_CheckSmartCardRowDeleted" msprop:Generator_RowClassName="OUT_CheckSmartCardRow" msprop:Generator_UserTableName="OUT_CheckSmartCard" msprop:Generator_RowEvArgName="OUT_CheckSmartCardRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OutCheckSmartCardID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnOutCheckSmartCardID" msprop:Generator_ColumnPropNameInRow="OutCheckSmartCardID" msprop:Generator_ColumnPropNameInTable="OutCheckSmartCardIDColumn" msprop:Generator_UserColumnName="OutCheckSmartCardID" type="xs:string" />
+              <xs:element name="TransactionID" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_UserColumnName="TransactionID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReceiptNo" msprop:Generator_ColumnVarNameInTable="columnReceiptNo" msprop:Generator_ColumnPropNameInRow="ReceiptNo" msprop:Generator_ColumnPropNameInTable="ReceiptNoColumn" msprop:Generator_UserColumnName="ReceiptNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SmartCardID" msprop:Generator_ColumnVarNameInTable="columnSmartCardID" msprop:Generator_ColumnPropNameInRow="SmartCardID" msprop:Generator_ColumnPropNameInTable="SmartCardIDColumn" msprop:Generator_UserColumnName="SmartCardID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InCheckSmartCardID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnInCheckSmartCardID" msprop:Generator_ColumnPropNameInRow="InCheckSmartCardID" msprop:Generator_ColumnPropNameInTable="InCheckSmartCardIDColumn" msprop:Generator_UserColumnName="InCheckSmartCardID" type="xs:string" minOccurs="0" />
+              <xs:element name="InCheckSmartCardIDManual" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnInCheckSmartCardIDManual" msprop:Generator_ColumnPropNameInRow="InCheckSmartCardIDManual" msprop:Generator_ColumnPropNameInTable="InCheckSmartCardIDManualColumn" msprop:Generator_UserColumnName="InCheckSmartCardIDManual" type="xs:string" minOccurs="0" />
+              <xs:element name="CheckDate" msprop:Generator_ColumnVarNameInTable="columnCheckDate" msprop:Generator_ColumnPropNameInRow="CheckDate" msprop:Generator_ColumnPropNameInTable="CheckDateColumn" msprop:Generator_UserColumnName="CheckDate" type="xs:dateTime" />
+              <xs:element name="BeginBalance" msprop:Generator_ColumnVarNameInTable="columnBeginBalance" msprop:Generator_ColumnPropNameInRow="BeginBalance" msprop:Generator_ColumnPropNameInTable="BeginBalanceColumn" msprop:Generator_UserColumnName="BeginBalance" type="xs:int" minOccurs="0" />
+              <xs:element name="ChargeAmount" msprop:Generator_ColumnVarNameInTable="columnChargeAmount" msprop:Generator_ColumnPropNameInRow="ChargeAmount" msprop:Generator_ColumnPropNameInTable="ChargeAmountColumn" msprop:Generator_UserColumnName="ChargeAmount" type="xs:int" minOccurs="0" />
+              <xs:element name="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:int" minOccurs="0" />
+              <xs:element name="TicketTypeID" msprop:Generator_ColumnVarNameInTable="columnTicketTypeID" msprop:Generator_ColumnPropNameInRow="TicketTypeID" msprop:Generator_ColumnPropNameInTable="TicketTypeIDColumn" msprop:Generator_UserColumnName="TicketTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="VehicleTypeID" msprop:Generator_ColumnVarNameInTable="columnVehicleTypeID" msprop:Generator_ColumnPropNameInRow="VehicleTypeID" msprop:Generator_ColumnPropNameInTable="VehicleTypeIDColumn" msprop:Generator_UserColumnName="VehicleTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="RouteID" msprop:Generator_ColumnVarNameInTable="columnRouteID" msprop:Generator_ColumnPropNameInRow="RouteID" msprop:Generator_ColumnPropNameInTable="RouteIDColumn" msprop:Generator_UserColumnName="RouteID" type="xs:int" minOccurs="0" />
+              <xs:element name="EmployeeID" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:int" minOccurs="0" />
+              <xs:element name="ShiftID" msprop:Generator_ColumnVarNameInTable="columnShiftID" msprop:Generator_ColumnPropNameInRow="ShiftID" msprop:Generator_ColumnPropNameInTable="ShiftIDColumn" msprop:Generator_UserColumnName="ShiftID" type="xs:int" minOccurs="0" />
+              <xs:element name="LaneID" msprop:Generator_ColumnVarNameInTable="columnLaneID" msprop:Generator_ColumnPropNameInRow="LaneID" msprop:Generator_ColumnPropNameInTable="LaneIDColumn" msprop:Generator_UserColumnName="LaneID" type="xs:int" minOccurs="0" />
+              <xs:element name="StationID" msprop:Generator_ColumnVarNameInTable="columnStationID" msprop:Generator_ColumnPropNameInRow="StationID" msprop:Generator_ColumnPropNameInTable="StationIDColumn" msprop:Generator_UserColumnName="StationID" type="xs:int" minOccurs="0" />
+              <xs:element name="ImageID" msprop:Generator_ColumnVarNameInTable="columnImageID" msprop:Generator_ColumnPropNameInRow="ImageID" msprop:Generator_ColumnPropNameInTable="ImageIDColumn" msprop:Generator_UserColumnName="ImageID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RecogPlateNumber" msprop:Generator_ColumnVarNameInTable="columnRecogPlateNumber" msprop:Generator_ColumnPropNameInRow="RecogPlateNumber" msprop:Generator_ColumnPropNameInTable="RecogPlateNumberColumn" msprop:Generator_UserColumnName="RecogPlateNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RecogResultType" msprop:Generator_ColumnVarNameInTable="columnRecogResultType" msprop:Generator_ColumnPropNameInRow="RecogResultType" msprop:Generator_ColumnPropNameInTable="RecogResultTypeColumn" msprop:Generator_UserColumnName="RecogResultType" type="xs:short" minOccurs="0" />
+              <xs:element name="TransactionStatus" msprop:Generator_ColumnVarNameInTable="columnTransactionStatus" msprop:Generator_ColumnPropNameInRow="TransactionStatus" msprop:Generator_ColumnPropNameInTable="TransactionStatusColumn" msprop:Generator_UserColumnName="TransactionStatus" type="xs:short" minOccurs="0" />
+              <xs:element name="PrecheckStatus" msprop:Generator_ColumnVarNameInTable="columnPrecheckStatus" msprop:Generator_ColumnPropNameInRow="PrecheckStatus" msprop:Generator_ColumnPropNameInTable="PrecheckStatusColumn" msprop:Generator_UserColumnName="PrecheckStatus" type="xs:short" minOccurs="0" />
+              <xs:element name="PreSupervisionStatus" msprop:Generator_ColumnVarNameInTable="columnPreSupervisionStatus" msprop:Generator_ColumnPropNameInRow="PreSupervisionStatus" msprop:Generator_ColumnPropNameInTable="PreSupervisionStatusColumn" msprop:Generator_UserColumnName="PreSupervisionStatus" type="xs:short" minOccurs="0" />
+              <xs:element name="SupervisionStatus" msprop:Generator_ColumnVarNameInTable="columnSupervisionStatus" msprop:Generator_ColumnPropNameInRow="SupervisionStatus" msprop:Generator_ColumnPropNameInTable="SupervisionStatusColumn" msprop:Generator_UserColumnName="SupervisionStatus" type="xs:short" minOccurs="0" />
+              <xs:element name="ErrorID" msprop:Generator_ColumnVarNameInTable="columnErrorID" msprop:Generator_ColumnPropNameInRow="ErrorID" msprop:Generator_ColumnPropNameInTable="ErrorIDColumn" msprop:Generator_UserColumnName="ErrorID" type="xs:int" minOccurs="0" />
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EntryPlateNumber" msprop:Generator_ColumnVarNameInTable="columnEntryPlateNumber" msprop:Generator_ColumnPropNameInRow="EntryPlateNumber" msprop:Generator_ColumnPropNameInTable="EntryPlateNumberColumn" msprop:Generator_UserColumnName="EntryPlateNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EntryLaneID" msprop:Generator_ColumnVarNameInTable="columnEntryLaneID" msprop:Generator_ColumnPropNameInRow="EntryLaneID" msprop:Generator_ColumnPropNameInTable="EntryLaneIDColumn" msprop:Generator_UserColumnName="EntryLaneID" type="xs:int" minOccurs="0" />
+              <xs:element name="F1" msprop:Generator_ColumnVarNameInTable="columnF1" msprop:Generator_ColumnPropNameInRow="F1" msprop:Generator_ColumnPropNameInTable="F1Column" msprop:Generator_UserColumnName="F1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="F2" msprop:Generator_ColumnVarNameInTable="columnF2" msprop:Generator_ColumnPropNameInRow="F2" msprop:Generator_ColumnPropNameInTable="F2Column" msprop:Generator_UserColumnName="F2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LS_Lane" msprop:Generator_TableClassName="LS_LaneDataTable" msprop:Generator_TableVarName="tableLS_Lane" msprop:Generator_RowChangedName="LS_LaneRowChanged" msprop:Generator_TablePropName="LS_Lane" msprop:Generator_RowDeletingName="LS_LaneRowDeleting" msprop:Generator_RowChangingName="LS_LaneRowChanging" msprop:Generator_RowEvHandlerName="LS_LaneRowChangeEventHandler" msprop:Generator_RowDeletedName="LS_LaneRowDeleted" msprop:Generator_RowClassName="LS_LaneRow" msprop:Generator_UserTableName="LS_Lane" msprop:Generator_RowEvArgName="LS_LaneRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LaneID" msprop:Generator_ColumnVarNameInTable="columnLaneID" msprop:Generator_ColumnPropNameInRow="LaneID" msprop:Generator_ColumnPropNameInTable="LaneIDColumn" msprop:Generator_UserColumnName="LaneID" type="xs:int" />
+              <xs:element name="StationID" msprop:Generator_ColumnVarNameInTable="columnStationID" msprop:Generator_ColumnPropNameInRow="StationID" msprop:Generator_ColumnPropNameInTable="StationIDColumn" msprop:Generator_UserColumnName="StationID" type="xs:int" />
+              <xs:element name="LaneCode" msprop:Generator_ColumnVarNameInTable="columnLaneCode" msprop:Generator_ColumnPropNameInRow="LaneCode" msprop:Generator_ColumnPropNameInTable="LaneCodeColumn" msprop:Generator_UserColumnName="LaneCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DirectionType" msprop:Generator_ColumnVarNameInTable="columnDirectionType" msprop:Generator_ColumnPropNameInRow="DirectionType" msprop:Generator_ColumnPropNameInTable="DirectionTypeColumn" msprop:Generator_UserColumnName="DirectionType" type="xs:short" />
+              <xs:element name="LaneType" msprop:Generator_ColumnVarNameInTable="columnLaneType" msprop:Generator_ColumnPropNameInRow="LaneType" msprop:Generator_ColumnPropNameInTable="LaneTypeColumn" msprop:Generator_UserColumnName="LaneType" type="xs:int" />
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsUsed" msprop:Generator_ColumnVarNameInTable="columnIsUsed" msprop:Generator_ColumnPropNameInRow="IsUsed" msprop:Generator_ColumnPropNameInTable="IsUsedColumn" msprop:Generator_UserColumnName="IsUsed" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LS_Route" msprop:Generator_TableClassName="LS_RouteDataTable" msprop:Generator_TableVarName="tableLS_Route" msprop:Generator_RowChangedName="LS_RouteRowChanged" msprop:Generator_TablePropName="LS_Route" msprop:Generator_RowDeletingName="LS_RouteRowDeleting" msprop:Generator_RowChangingName="LS_RouteRowChanging" msprop:Generator_RowEvHandlerName="LS_RouteRowChangeEventHandler" msprop:Generator_RowDeletedName="LS_RouteRowDeleted" msprop:Generator_RowClassName="LS_RouteRow" msprop:Generator_UserTableName="LS_Route" msprop:Generator_RowEvArgName="LS_RouteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RouteID" msprop:Generator_ColumnVarNameInTable="columnRouteID" msprop:Generator_ColumnPropNameInRow="RouteID" msprop:Generator_ColumnPropNameInTable="RouteIDColumn" msprop:Generator_UserColumnName="RouteID" type="xs:int" />
+              <xs:element name="RouteCode" msprop:Generator_ColumnVarNameInTable="columnRouteCode" msprop:Generator_ColumnPropNameInRow="RouteCode" msprop:Generator_ColumnPropNameInTable="RouteCodeColumn" msprop:Generator_UserColumnName="RouteCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FromStationID" msprop:Generator_ColumnVarNameInTable="columnFromStationID" msprop:Generator_ColumnPropNameInRow="FromStationID" msprop:Generator_ColumnPropNameInTable="FromStationIDColumn" msprop:Generator_UserColumnName="FromStationID" type="xs:int" />
+              <xs:element name="ToStationID" msprop:Generator_ColumnVarNameInTable="columnToStationID" msprop:Generator_ColumnPropNameInRow="ToStationID" msprop:Generator_ColumnPropNameInTable="ToStationIDColumn" msprop:Generator_UserColumnName="ToStationID" type="xs:int" />
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:int" minOccurs="0" />
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsMaxLength" msprop:Generator_ColumnVarNameInTable="columnIsMaxLength" msprop:Generator_ColumnPropNameInRow="IsMaxLength" msprop:Generator_ColumnPropNameInTable="IsMaxLengthColumn" msprop:Generator_UserColumnName="IsMaxLength" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsUsed" msprop:Generator_ColumnVarNameInTable="columnIsUsed" msprop:Generator_ColumnPropNameInRow="IsUsed" msprop:Generator_ColumnPropNameInTable="IsUsedColumn" msprop:Generator_UserColumnName="IsUsed" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OUT_CheckSmartCard" />
+      <xs:field xpath="mstns:OutCheckSmartCardID" />
+    </xs:unique>
+    <xs:unique name="LS_Lane_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LS_Lane" />
+      <xs:field xpath="mstns:LaneID" />
+    </xs:unique>
+    <xs:unique name="LS_Route_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LS_Route" />
+      <xs:field xpath="mstns:RouteID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_OUT_CheckSmartCard_LS_Lane" msdata:parent="LS_Lane" msdata:child="OUT_CheckSmartCard" msdata:parentkey="LaneID" msdata:childkey="LaneID" msprop:Generator_UserChildTable="OUT_CheckSmartCard" msprop:Generator_ChildPropName="GetOUT_CheckSmartCardRows" msprop:Generator_UserRelationName="FK_OUT_CheckSmartCard_LS_Lane" msprop:Generator_ParentPropName="LS_LaneRow" msprop:Generator_RelationVarName="relationFK_OUT_CheckSmartCard_LS_Lane" msprop:Generator_UserParentTable="LS_Lane" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

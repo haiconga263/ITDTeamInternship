@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5be78bc00a64a3b98877a750f018a2f" Name="Diagram1" ZoomLevel="90">
+        <EntityTypeShape EntityType="HPEModelRP.AC_PPCWhiteList" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.AC_TollWhiteList" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.IN_CheckPrepaidCard" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.IN_CheckSmartCard" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.LS_Lane" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.LS_Route" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.LS_Station" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.LS_VehicleType" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.OUT_CheckPrepaidCard" Width="2.375" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HPEModelRP.OUT_CheckSmartCard" Width="1.5" PointX="11.375" PointY="11.375" IsExpanded="true" />
+        <AssociationConnector Association="HPEModelRP.FK_IN_CheckSmartCard_LS_Lane" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_IN_CheckSmartCard_LS_Station" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_IN_CheckSmartCard_LS_VehicleType" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_OUT_CheckSmartCard_IN_CheckSmartCard" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_LS_Lane_LS_Station" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_OUT_CheckPrepaidCard_LS_Lane" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_OUT_CheckSmartCard_LS_Lane" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_LS_Route_LS_Station" ManuallyRouted="false" />
+        <AssociationConnector Association="HPEModelRP.FK_LS_Route_LS_Station1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\
+E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\obj\Release\
 TollTicketManagement
 none
 false
 TRACE
-D:\Project\Repos\ITDTeamInternship\DASHBOARD\TollTicketManagement\App.xaml
-9675134007
+E:\ITD_Team\ITDTeamInternship\DASHBOARD\TollTicketManagement\App.xaml
+11-239372479
 
-44-896656909
-19-857519194
-MainWindow.xaml;View\ConfigView.xaml;View\DashboardView.xaml;View\EquipmentStatusView.xaml;View\ManagementView.xaml;OneStation.xaml;View\UpdateOutCheckInfoView.xaml;View\UpdatePrecheckStatusView.xaml;View\wdnLookup.xaml;
+59-1318150448
+262026125298
+MainWindow.xaml;View\ConfigView.xaml;View\DashboardView.xaml;View\EquipmentStatusView.xaml;View\ManagementView.xaml;OneStation.xaml;View\TransDetailsView.xaml;View\UpdateOutCheckInfoView.xaml;View\UpdatePrecheckStatusView.xaml;View\LookupView.xaml;View\Statistical.xaml;
 
-False
+True
 

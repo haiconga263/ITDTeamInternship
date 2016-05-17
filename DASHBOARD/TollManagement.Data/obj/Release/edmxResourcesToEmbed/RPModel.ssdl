@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HPEModelRP.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AC_PPCWhiteList">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CardID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="FormatID" Type="varchar" MaxLength="20" />
+    <Property Name="VehiclePlateIn" Type="nvarchar" MaxLength="20" />
+    <Property Name="StationIDIn" Type="int" />
+    <Property Name="LaneIDIn" Type="int" />
+    <Property Name="LastCheckDateIn" Type="datetime" />
+    <Property Name="TransactionIDIn" Type="varchar" MaxLength="50" />
+    <Property Name="VehiclePlateOut" Type="nvarchar" MaxLength="20" />
+    <Property Name="StationIDOut" Type="int" />
+    <Property Name="LaneIDOut" Type="int" />
+    <Property Name="LastCheckDateOut" Type="datetime" />
+    <Property Name="TransactionIDOut" Type="varchar" MaxLength="50" />
+    <Property Name="RouteID" Type="int" />
+    <Property Name="Hour" Type="int" />
+    <Property Name="Day" Type="int" />
+    <Property Name="Month" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="IsLock" Type="bit" />
+    <Property Name="LockEmployeeID" Type="int" />
+    <Property Name="LockDate" Type="datetime" />
+    <Property Name="UnlockEmployeeID" Type="int" />
+    <Property Name="UnlockDate" Type="datetime" />
+    <Property Name="IsLost" Type="bit" />
+    <Property Name="Note" Type="nvarchar" MaxLength="200" />
+    <Property Name="ImageIDIn" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="AC_TollWhiteList">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CardID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="FormatID" Type="varchar" MaxLength="20" />
+    <Property Name="VehiclePlateIn" Type="nvarchar" MaxLength="20" />
+    <Property Name="StationIDIn" Type="int" />
+    <Property Name="LaneIDIn" Type="int" />
+    <Property Name="LastCheckDateIn" Type="datetime" />
+    <Property Name="TransactionIDIn" Type="varchar" MaxLength="50" />
+    <Property Name="VehiclePlateOut" Type="nvarchar" MaxLength="20" />
+    <Property Name="StationIDOut" Type="int" />
+    <Property Name="LaneIDOut" Type="int" />
+    <Property Name="LastCheckDateOut" Type="datetime" />
+    <Property Name="TransactionIDOut" Type="varchar" MaxLength="50" />
+    <Property Name="RouteID" Type="int" />
+    <Property Name="Day" Type="int" />
+    <Property Name="Month" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="IsLock" Type="bit" />
+    <Property Name="LockEmployeeID" Type="int" />
+    <Property Name="LockDate" Type="datetime" />
+    <Property Name="UnlockEmployeeID" Type="int" />
+    <Property Name="UnlockDate" Type="datetime" />
+    <Property Name="IsLost" Type="bit" />
+    <Property Name="Note" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="IN_CheckPrepaidCard">
+    <Key>
+      <PropertyRef Name="InCheckPrePaidCardID" />
+    </Key>
+    <Property Name="InCheckPrePaidCardID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SmartCardID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CheckDate" Type="datetime" Nullable="false" />
+    <Property Name="TicketTypeID" Type="int" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ShiftID" Type="int" />
+    <Property Name="LaneID" Type="int" />
+    <Property Name="StationID" Type="int" />
+    <Property Name="ImageID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecogPlateNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="RecogResultType" Type="smallint" />
+    <Property Name="TransactionStatus" Type="smallint" />
+    <Property Name="PrecheckStatus" Type="smallint" />
+    <Property Name="PreSupervisionStatus" Type="smallint" />
+    <Property Name="SupervisionStatus" Type="smallint" />
+    <Property Name="ErrorID" Type="int" />
+    <Property Name="WIMID" Type="uniqueidentifier" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsVehicleInfoManual" Type="bit" />
+  </EntityType>
+  <EntityType Name="IN_CheckSmartCard">
+    <Key>
+      <PropertyRef Name="InCheckSmartCardID" />
+    </Key>
+    <Property Name="InCheckSmartCardID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SmartCardID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CheckDate" Type="datetime" Nullable="false" />
+    <Property Name="TicketTypeID" Type="int" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ShiftID" Type="int" />
+    <Property Name="LaneID" Type="int" />
+    <Property Name="StationID" Type="int" />
+    <Property Name="ImageID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecogPlateNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="RecogResultType" Type="smallint" />
+    <Property Name="TransactionStatus" Type="smallint" />
+    <Property Name="PrecheckStatus" Type="smallint" />
+    <Property Name="PreSupervisionStatus" Type="smallint" />
+    <Property Name="SupervisionStatus" Type="smallint" />
+    <Property Name="ErrorID" Type="int" />
+    <Property Name="WIMID" Type="uniqueidentifier" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsVehicleInfoManual" Type="bit" />
+  </EntityType>
+  <EntityType Name="LS_Lane">
+    <Key>
+      <PropertyRef Name="LaneID" />
+    </Key>
+    <Property Name="LaneID" Type="int" Nullable="false" />
+    <Property Name="StationID" Type="int" Nullable="false" />
+    <Property Name="LaneCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DirectionType" Type="smallint" Nullable="false" />
+    <Property Name="LaneType" Type="int" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsUsed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LS_Route">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="int" Nullable="false" />
+    <Property Name="RouteCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FromStationID" Type="int" Nullable="false" />
+    <Property Name="ToStationID" Type="int" Nullable="false" />
+    <Property Name="Length" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsMaxLength" Type="bit" />
+    <Property Name="IsUsed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LS_Station">
+    <Key>
+      <PropertyRef Name="StationID" />
+    </Key>
+    <Property Name="StationID" Type="int" Nullable="false" />
+    <Property Name="StationCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StationType" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsUsed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LS_VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleTypeCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="200" />
+    <Property Name="AmountPerKm" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsUsed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OUT_CheckPrepaidCard">
+    <Key>
+      <PropertyRef Name="OutCheckPrePaidCardID" />
+    </Key>
+    <Property Name="OutCheckPrePaidCardID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SmartCardID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="IDCard" Type="varchar" MaxLength="32" />
+    <Property Name="ReceiptNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckDate" Type="datetime" Nullable="false" />
+    <Property Name="TollFee" Type="int" Nullable="false" />
+    <Property Name="BeginBalance" Type="int" />
+    <Property Name="ChargeAmount" Type="int" />
+    <Property Name="Balance" Type="int" />
+    <Property Name="TopUpAmount" Type="int" />
+    <Property Name="CashAmount" Type="int" />
+    <Property Name="TicketTypeID" Type="int" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="RouteID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ShiftID" Type="int" />
+    <Property Name="LaneID" Type="int" />
+    <Property Name="StationID" Type="int" />
+    <Property Name="ImageID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecogPlateNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="RegisPlateNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="RecogResultType" Type="smallint" />
+    <Property Name="TransactionStatus" Type="smallint" />
+    <Property Name="PrecheckStatus" Type="smallint" />
+    <Property Name="PreSupervisionStatus" Type="smallint" />
+    <Property Name="SupervisionStatus" Type="smallint" />
+    <Property Name="ErrorID" Type="int" />
+    <Property Name="EntryPlateNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="EntryLaneID" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="ChargeType" Type="int" />
+    <Property Name="IsOnlineCheck" Type="bit" />
+    <Property Name="ChargeSequenceID" Type="int" />
+    <Property Name="TopUpSequenceID" Type="int" />
+    <Property Name="SecurityBlock1" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecurityBlock2" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecurityBlock3" Type="nvarchar" MaxLength="50" />
+    <Property Name="F1" Type="nvarchar" MaxLength="50" />
+    <Property Name="F2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OUT_CheckSmartCard">
+    <Key>
+      <PropertyRef Name="OutCheckSmartCardID" />
+    </Key>
+    <Property Name="OutCheckSmartCardID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ReceiptNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SmartCardID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="InCheckSmartCardID" Type="uniqueidentifier" />
+    <Property Name="InCheckSmartCardIDManual" Type="uniqueidentifier" />
+    <Property Name="CheckDate" Type="datetime" Nullable="false" />
+    <Property Name="BeginBalance" Type="int" />
+    <Property Name="ChargeAmount" Type="int" />
+    <Property Name="Balance" Type="int" />
+    <Property Name="TicketTypeID" Type="int" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="RouteID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ShiftID" Type="int" />
+    <Property Name="LaneID" Type="int" />
+    <Property Name="StationID" Type="int" />
+    <Property Name="ImageID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecogPlateNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="RecogResultType" Type="smallint" />
+    <Property Name="TransactionStatus" Type="smallint" />
+    <Property Name="PrecheckStatus" Type="smallint" />
+    <Property Name="PreSupervisionStatus" Type="smallint" />
+    <Property Name="SupervisionStatus" Type="smallint" />
+    <Property Name="ErrorID" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="EntryPlateNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="EntryLaneID" Type="int" />
+    <Property Name="F1" Type="nvarchar" MaxLength="50" />
+    <Property Name="F2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_IN_CheckSmartCard_LS_Lane">
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="0..1" />
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Lane">
+        <PropertyRef Name="LaneID" />
+      </Principal>
+      <Dependent Role="IN_CheckSmartCard">
+        <PropertyRef Name="LaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IN_CheckSmartCard_LS_Station">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="0..1" />
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="IN_CheckSmartCard">
+        <PropertyRef Name="StationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IN_CheckSmartCard_LS_VehicleType">
+    <End Role="LS_VehicleType" Type="Self.LS_VehicleType" Multiplicity="0..1" />
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="IN_CheckSmartCard">
+        <PropertyRef Name="VehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LS_Lane_LS_Station">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="1" />
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="LS_Lane">
+        <PropertyRef Name="StationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LS_Route_LS_Station">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="1" />
+    <End Role="LS_Route" Type="Self.LS_Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="LS_Route">
+        <PropertyRef Name="ToStationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LS_Route_LS_Station1">
+    <End Role="LS_Station" Type="Self.LS_Station" Multiplicity="1" />
+    <End Role="LS_Route" Type="Self.LS_Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Station">
+        <PropertyRef Name="StationID" />
+      </Principal>
+      <Dependent Role="LS_Route">
+        <PropertyRef Name="FromStationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUT_CheckPrepaidCard_LS_Lane">
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="0..1" />
+    <End Role="OUT_CheckPrepaidCard" Type="Self.OUT_CheckPrepaidCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Lane">
+        <PropertyRef Name="LaneID" />
+      </Principal>
+      <Dependent Role="OUT_CheckPrepaidCard">
+        <PropertyRef Name="LaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUT_CheckSmartCard_IN_CheckSmartCard">
+    <End Role="IN_CheckSmartCard" Type="Self.IN_CheckSmartCard" Multiplicity="0..1" />
+    <End Role="OUT_CheckSmartCard" Type="Self.OUT_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IN_CheckSmartCard">
+        <PropertyRef Name="InCheckSmartCardID" />
+      </Principal>
+      <Dependent Role="OUT_CheckSmartCard">
+        <PropertyRef Name="InCheckSmartCardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OUT_CheckSmartCard_LS_Lane">
+    <End Role="LS_Lane" Type="Self.LS_Lane" Multiplicity="0..1" />
+    <End Role="OUT_CheckSmartCard" Type="Self.OUT_CheckSmartCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LS_Lane">
+        <PropertyRef Name="LaneID" />
+      </Principal>
+      <Dependent Role="OUT_CheckSmartCard">
+        <PropertyRef Name="LaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HPEModelRPStoreContainer">
+    <EntitySet Name="AC_PPCWhiteList" EntityType="Self.AC_PPCWhiteList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AC_TollWhiteList" EntityType="Self.AC_TollWhiteList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_CheckPrepaidCard" EntityType="Self.IN_CheckPrepaidCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_CheckSmartCard" EntityType="Self.IN_CheckSmartCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LS_Lane" EntityType="Self.LS_Lane" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LS_Route" EntityType="Self.LS_Route" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LS_Station" EntityType="Self.LS_Station" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LS_VehicleType" EntityType="Self.LS_VehicleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OUT_CheckPrepaidCard" EntityType="Self.OUT_CheckPrepaidCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OUT_CheckSmartCard" EntityType="Self.OUT_CheckSmartCard" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_IN_CheckSmartCard_LS_Lane" Association="Self.FK_IN_CheckSmartCard_LS_Lane">
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IN_CheckSmartCard_LS_Station" Association="Self.FK_IN_CheckSmartCard_LS_Station">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IN_CheckSmartCard_LS_VehicleType" Association="Self.FK_IN_CheckSmartCard_LS_VehicleType">
+      <End Role="LS_VehicleType" EntitySet="LS_VehicleType" />
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LS_Lane_LS_Station" Association="Self.FK_LS_Lane_LS_Station">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LS_Route_LS_Station" Association="Self.FK_LS_Route_LS_Station">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="LS_Route" EntitySet="LS_Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LS_Route_LS_Station1" Association="Self.FK_LS_Route_LS_Station1">
+      <End Role="LS_Station" EntitySet="LS_Station" />
+      <End Role="LS_Route" EntitySet="LS_Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUT_CheckPrepaidCard_LS_Lane" Association="Self.FK_OUT_CheckPrepaidCard_LS_Lane">
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+      <End Role="OUT_CheckPrepaidCard" EntitySet="OUT_CheckPrepaidCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUT_CheckSmartCard_IN_CheckSmartCard" Association="Self.FK_OUT_CheckSmartCard_IN_CheckSmartCard">
+      <End Role="IN_CheckSmartCard" EntitySet="IN_CheckSmartCard" />
+      <End Role="OUT_CheckSmartCard" EntitySet="OUT_CheckSmartCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OUT_CheckSmartCard_LS_Lane" Association="Self.FK_OUT_CheckSmartCard_LS_Lane">
+      <End Role="LS_Lane" EntitySet="LS_Lane" />
+      <End Role="OUT_CheckSmartCard" EntitySet="OUT_CheckSmartCard" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

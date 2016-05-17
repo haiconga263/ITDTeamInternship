@@ -34,15 +34,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,16 +76,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommandHelper\RelayCommand.cs" />
     <Compile Include="IntToImageConverter3.cs" />
     <Compile Include="IntToImageConverter2.cs" />
     <Compile Include="IntToImageConverter.cs" />
+    <Compile Include="Model\CardType.cs" />
+    <Compile Include="Model\Converter\BoolToStringConverter.cs" />
+    <Compile Include="Model\Converter\StringToPathImageConverter.cs" />
+    <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\QLHP.cs">
+      <DependentUpon>QLHP.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Model\QLHP.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLHP.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Model\DatabaseContext.cs" />
+    <Compile Include="Model\WhiteList.cs" />
+    <Compile Include="Report\rpTKLoTrinhDiNhieuNhat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpTKLoTrinhDiNhieuNhat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rpTKTheMatToll.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpTKTheMatToll.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rpTKTheMat_PPC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpTKTheMat_PPC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\LookupViewModel.cs" />
+    <Compile Include="ViewModel\TransDetailsViewModel.cs" />
     <Compile Include="View\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransDetailsView.xaml.cs">
+      <DependentUpon>TransDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateOutCheckInfoView.xaml.cs">
       <DependentUpon>UpdateOutCheckInfoView.xaml</DependentUpon>
@@ -80,8 +126,11 @@
     <Compile Include="View\UpdatePrecheckStatusView.xaml.cs">
       <DependentUpon>UpdatePrecheckStatusView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wdnLookup.xaml.cs">
-      <DependentUpon>wdnLookup.xaml</DependentUpon>
+    <Compile Include="View\LookupView.xaml.cs">
+      <DependentUpon>LookupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Statistical.xaml.cs">
+      <DependentUpon>Statistical.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +176,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\TransDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UpdateOutCheckInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,7 +188,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wdnLookup.xaml">
+    <Page Include="View\LookupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Statistical.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +240,18 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpTKLoTrinhDiNhieuNhat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpTKLoTrinhDiNhieuNhat.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpTKTheMatToll.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpTKTheMatToll.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpTKTheMat_PPC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpTKTheMat_PPC.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Message\CommonMessage.resx" />
     <EmbeddedResource Include="Resources\Message\ConfigMessage.resx" />
@@ -441,6 +510,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\car.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

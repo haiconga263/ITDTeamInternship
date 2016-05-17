@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HPEModelRPStoreContainer" CdmEntityContainer="HPEEntitiesRP">
+    <EntitySetMapping Name="AC_PPCWhiteList">
+      <EntityTypeMapping TypeName="HPEModelRP.AC_PPCWhiteList">
+        <MappingFragment StoreEntitySet="AC_PPCWhiteList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="FormatID" ColumnName="FormatID" />
+          <ScalarProperty Name="VehiclePlateIn" ColumnName="VehiclePlateIn" />
+          <ScalarProperty Name="StationIDIn" ColumnName="StationIDIn" />
+          <ScalarProperty Name="LaneIDIn" ColumnName="LaneIDIn" />
+          <ScalarProperty Name="LastCheckDateIn" ColumnName="LastCheckDateIn" />
+          <ScalarProperty Name="VehiclePlateOut" ColumnName="VehiclePlateOut" />
+          <ScalarProperty Name="StationIDOut" ColumnName="StationIDOut" />
+          <ScalarProperty Name="LaneIDOut" ColumnName="LaneIDOut" />
+          <ScalarProperty Name="LastCheckDateOut" ColumnName="LastCheckDateOut" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Hour" ColumnName="Hour" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+          <ScalarProperty Name="LockEmployeeID" ColumnName="LockEmployeeID" />
+          <ScalarProperty Name="LockDate" ColumnName="LockDate" />
+          <ScalarProperty Name="UnlockEmployeeID" ColumnName="UnlockEmployeeID" />
+          <ScalarProperty Name="UnlockDate" ColumnName="UnlockDate" />
+          <ScalarProperty Name="IsLost" ColumnName="IsLost" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AC_TollWhiteList">
+      <EntityTypeMapping TypeName="HPEModelRP.AC_TollWhiteList">
+        <MappingFragment StoreEntitySet="AC_TollWhiteList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="FormatID" ColumnName="FormatID" />
+          <ScalarProperty Name="VehiclePlateIn" ColumnName="VehiclePlateIn" />
+          <ScalarProperty Name="StationIDIn" ColumnName="StationIDIn" />
+          <ScalarProperty Name="LaneIDIn" ColumnName="LaneIDIn" />
+          <ScalarProperty Name="LastCheckDateIn" ColumnName="LastCheckDateIn" />
+          <ScalarProperty Name="VehiclePlateOut" ColumnName="VehiclePlateOut" />
+          <ScalarProperty Name="StationIDOut" ColumnName="StationIDOut" />
+          <ScalarProperty Name="LaneIDOut" ColumnName="LaneIDOut" />
+          <ScalarProperty Name="LastCheckDateOut" ColumnName="LastCheckDateOut" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+          <ScalarProperty Name="LockEmployeeID" ColumnName="LockEmployeeID" />
+          <ScalarProperty Name="LockDate" ColumnName="LockDate" />
+          <ScalarProperty Name="UnlockEmployeeID" ColumnName="UnlockEmployeeID" />
+          <ScalarProperty Name="UnlockDate" ColumnName="UnlockDate" />
+          <ScalarProperty Name="IsLost" ColumnName="IsLost" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_CheckPrepaidCard">
+      <EntityTypeMapping TypeName="HPEModelRP.IN_CheckPrepaidCard">
+        <MappingFragment StoreEntitySet="IN_CheckPrepaidCard">
+          <ScalarProperty Name="InCheckPrePaidCardID" ColumnName="InCheckPrePaidCardID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="SmartCardID" ColumnName="SmartCardID" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="TicketTypeID" ColumnName="TicketTypeID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="RecogPlateNumber" ColumnName="RecogPlateNumber" />
+          <ScalarProperty Name="RecogResultType" ColumnName="RecogResultType" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="PrecheckStatus" ColumnName="PrecheckStatus" />
+          <ScalarProperty Name="PreSupervisionStatus" ColumnName="PreSupervisionStatus" />
+          <ScalarProperty Name="SupervisionStatus" ColumnName="SupervisionStatus" />
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="WIMID" ColumnName="WIMID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsVehicleInfoManual" ColumnName="IsVehicleInfoManual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_CheckSmartCard">
+      <EntityTypeMapping TypeName="HPEModelRP.IN_CheckSmartCard">
+        <MappingFragment StoreEntitySet="IN_CheckSmartCard">
+          <ScalarProperty Name="InCheckSmartCardID" ColumnName="InCheckSmartCardID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="SmartCardID" ColumnName="SmartCardID" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="TicketTypeID" ColumnName="TicketTypeID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="RecogPlateNumber" ColumnName="RecogPlateNumber" />
+          <ScalarProperty Name="RecogResultType" ColumnName="RecogResultType" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="PrecheckStatus" ColumnName="PrecheckStatus" />
+          <ScalarProperty Name="PreSupervisionStatus" ColumnName="PreSupervisionStatus" />
+          <ScalarProperty Name="SupervisionStatus" ColumnName="SupervisionStatus" />
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="WIMID" ColumnName="WIMID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsVehicleInfoManual" ColumnName="IsVehicleInfoManual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LS_Card">
+      <EntityTypeMapping TypeName="HPEModelRP.LS_Card">
+        <MappingFragment StoreEntitySet="LS_Card">
+          <ScalarProperty Name="CardTypeID" ColumnName="CardTypeID" />
+          <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+          <ScalarProperty Name="CardTypeCode" ColumnName="CardTypeCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LS_Lane">
+      <EntityTypeMapping TypeName="HPEModelRP.LS_Lane">
+        <MappingFragment StoreEntitySet="LS_Lane">
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="LaneCode" ColumnName="LaneCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DirectionType" ColumnName="DirectionType" />
+          <ScalarProperty Name="LaneType" ColumnName="LaneType" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LS_Route">
+      <EntityTypeMapping TypeName="HPEModelRP.LS_Route">
+        <MappingFragment StoreEntitySet="LS_Route">
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FromStationID" ColumnName="FromStationID" />
+          <ScalarProperty Name="ToStationID" ColumnName="ToStationID" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsMaxLength" ColumnName="IsMaxLength" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LS_VehicleType">
+      <EntityTypeMapping TypeName="HPEModelRP.LS_VehicleType">
+        <MappingFragment StoreEntitySet="LS_VehicleType">
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="VehicleTypeCode" ColumnName="VehicleTypeCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="AmountPerKm" ColumnName="AmountPerKm" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OUT_CheckPrepaidCard">
+      <EntityTypeMapping TypeName="HPEModelRP.OUT_CheckPrepaidCard">
+        <MappingFragment StoreEntitySet="OUT_CheckPrepaidCard">
+          <ScalarProperty Name="OutCheckPrePaidCardID" ColumnName="OutCheckPrePaidCardID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="SmartCardID" ColumnName="SmartCardID" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="TollFee" ColumnName="TollFee" />
+          <ScalarProperty Name="BeginBalance" ColumnName="BeginBalance" />
+          <ScalarProperty Name="ChargeAmount" ColumnName="ChargeAmount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="TopUpAmount" ColumnName="TopUpAmount" />
+          <ScalarProperty Name="CashAmount" ColumnName="CashAmount" />
+          <ScalarProperty Name="TicketTypeID" ColumnName="TicketTypeID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="RecogPlateNumber" ColumnName="RecogPlateNumber" />
+          <ScalarProperty Name="RegisPlateNumber" ColumnName="RegisPlateNumber" />
+          <ScalarProperty Name="RecogResultType" ColumnName="RecogResultType" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="PrecheckStatus" ColumnName="PrecheckStatus" />
+          <ScalarProperty Name="PreSupervisionStatus" ColumnName="PreSupervisionStatus" />
+          <ScalarProperty Name="SupervisionStatus" ColumnName="SupervisionStatus" />
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="EntryPlateNumber" ColumnName="EntryPlateNumber" />
+          <ScalarProperty Name="EntryLaneID" ColumnName="EntryLaneID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="IsOnlineCheck" ColumnName="IsOnlineCheck" />
+          <ScalarProperty Name="ChargeSequenceID" ColumnName="ChargeSequenceID" />
+          <ScalarProperty Name="TopUpSequenceID" ColumnName="TopUpSequenceID" />
+          <ScalarProperty Name="SecurityBlock1" ColumnName="SecurityBlock1" />
+          <ScalarProperty Name="SecurityBlock2" ColumnName="SecurityBlock2" />
+          <ScalarProperty Name="SecurityBlock3" ColumnName="SecurityBlock3" />
+          <ScalarProperty Name="F1" ColumnName="F1" />
+          <ScalarProperty Name="F2" ColumnName="F2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OUT_CheckSmartCard">
+      <EntityTypeMapping TypeName="HPEModelRP.OUT_CheckSmartCard">
+        <MappingFragment StoreEntitySet="OUT_CheckSmartCard">
+          <ScalarProperty Name="OutCheckSmartCardID" ColumnName="OutCheckSmartCardID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="SmartCardID" ColumnName="SmartCardID" />
+          <ScalarProperty Name="InCheckSmartCardID" ColumnName="InCheckSmartCardID" />
+          <ScalarProperty Name="InCheckSmartCardIDManual" ColumnName="InCheckSmartCardIDManual" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="BeginBalance" ColumnName="BeginBalance" />
+          <ScalarProperty Name="ChargeAmount" ColumnName="ChargeAmount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="TicketTypeID" ColumnName="TicketTypeID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="RecogPlateNumber" ColumnName="RecogPlateNumber" />
+          <ScalarProperty Name="RecogResultType" ColumnName="RecogResultType" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="PrecheckStatus" ColumnName="PrecheckStatus" />
+          <ScalarProperty Name="PreSupervisionStatus" ColumnName="PreSupervisionStatus" />
+          <ScalarProperty Name="SupervisionStatus" ColumnName="SupervisionStatus" />
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EntryPlateNumber" ColumnName="EntryPlateNumber" />
+          <ScalarProperty Name="EntryLaneID" ColumnName="EntryLaneID" />
+          <ScalarProperty Name="F1" ColumnName="F1" />
+          <ScalarProperty Name="F2" ColumnName="F2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="f_sp_IN_CheckSmartCard_GetByCardIDAndSortTransactionID" FunctionName="HPEModelRP.Store.f_sp_IN_CheckSmartCard_GetByCardIDAndSortTransactionID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HPEModelRP.f_sp_IN_CheckSmartCard_GetByCardIDAndSortTransactionID_Result">
+          <ScalarProperty Name="InCheckSmartCardID" ColumnName="InCheckSmartCardID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="SmartCardID" ColumnName="SmartCardID" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="TicketTypeID" ColumnName="TicketTypeID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="LaneID" ColumnName="LaneID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="RecogPlateNumber" ColumnName="RecogPlateNumber" />
+          <ScalarProperty Name="RecogResultType" ColumnName="RecogResultType" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="PrecheckStatus" ColumnName="PrecheckStatus" />
+          <ScalarProperty Name="PreSupervisionStatus" ColumnName="PreSupervisionStatus" />
+          <ScalarProperty Name="SupervisionStatus" ColumnName="SupervisionStatus" />
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="WIMID" ColumnName="WIMID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsVehicleInfoManual" ColumnName="IsVehicleInfoManual" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
