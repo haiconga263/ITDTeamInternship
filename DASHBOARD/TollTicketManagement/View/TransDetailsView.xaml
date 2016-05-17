@@ -1,0 +1,180 @@
+﻿<Window x:Class="TollTicketManagement.View.TransDetailsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converter="clr-namespace:TollTicketManagement.Model.Converter"
+        Title="TransDetailsView"
+        Width="1280" Height="768" 
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanMinimize" Style="{StaticResource CustomWindow}">
+    <Window.Resources>
+        <converter:BoolToStringConverter x:Key="BoolToStringConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="2" Style="{StaticResource ListViewTitleStyle}" Text="CHI TIẾT GIAO DỊCH" Grid.Column="0" Margin="10" Grid.Row="0"/>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Style="{StaticResource GroupboxPanel}" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Header="Thông tin chung" Padding="1" Margin="5">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Mã thẻ" Grid.Column="0" Margin="5" Grid.Row="0"/>
+                    <TextBlock Text="{Binding WhiteList.CardID}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="1" Grid.Row="0"/>
+
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Lộ trình" Grid.Column="0" Margin="5" Grid.Row="1"/>
+                    <TextBlock Text="{Binding WhiteList.Route.Name}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="1" Grid.Row="1"/>
+
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Loại thẻ" Grid.Column="2" Margin="5" Grid.Row="0"/>
+                    <TextBlock Text="{Binding WhiteList.CardType}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="3" Grid.Row="0"/>
+
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Loại xe" Grid.Column="2" Margin="5" Grid.Row="1"/>
+                    <TextBlock Text="{Binding WhiteList.VehicleType.ShortName}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="3" Grid.Row="1"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Thông tin khóa" Padding="1" Margin="5">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Đã khóa" Grid.Column="0" Margin="5" Grid.Row="0"/>
+                    <CheckBox IsChecked="{Binding WhiteList.IsLock, Converter={StaticResource BoolToStringConverter}}" Style="{StaticResource NormalCheckBox}" Width="150" Grid.Column="1" Grid.Row="0"/>
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Nhân viên khóa" Grid.Column="0" Margin="5" Grid.Row="1"/>
+                    <TextBlock Text="{Binding WhiteList.LockEmployee.FirstName}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Nhân viên mở khóa" Grid.Column="0" Margin="5" Grid.Row="2"/>
+                    <TextBlock Text="{Binding WhiteList.UnlockEmployee.FirstName}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="1" Grid.Row="2"/>
+
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Thời điểm khóa" Grid.Column="2" Margin="5" Grid.Row="1"/>
+                    <TextBlock Text="{Binding WhiteList.LockDate}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="3" Grid.Row="1"/>
+
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Thời điểm mở khóa" Grid.Column="2" Margin="5" Grid.Row="2"/>
+                    <TextBlock Text="{Binding WhiteList.UnlockDate}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="3" Grid.Row="2"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Thông tin khóa" Padding="1" Margin="5">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Bị mất" Grid.Column="0" Margin="5" Grid.Row="0"/>
+                    <CheckBox IsChecked="{Binding WhiteList.IsLost, Converter={StaticResource BoolToStringConverter}}" Style="{StaticResource NormalCheckBox}" Width="150" Grid.Column="1" Grid.Row="0"/>
+                    <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Ghi chú" Grid.Column="0" Margin="5" Grid.Row="1"/>
+                    <TextBlock Text="{Binding WhiteList.Note}" Style="{StaticResource WaterMarkTextBlock}" Width="150" Grid.Column="1" Grid.Row="1" TextWrapping="WrapWithOverflow"/>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+        <GroupBox Header="Thông tin vào" Padding="1" Margin="5" Grid.Column="0" Grid.Row="2">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <WrapPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Biển xe vào" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.VehiclePlateIn}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Thời điểm vào" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.LastCheckDateIn}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Trạm vào" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.StationIn.Name}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Làn vào" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.LaneIn.Name}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                </WrapPanel>
+                <Grid Grid.Row="1">
+                    <Image Source="{Binding WhiteList.ImageIn}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Thông tin ra" Padding="1" Margin="5" Grid.Column="1" Grid.Row="2">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Style="{StaticResource GroupboxTitle}"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <WrapPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Biển xe ra" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.VehiclePlateOut}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Thời điểm ra" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.LastCheckDateOut}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Trạm ra" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.StationOut.Name}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Style="{StaticResource NormalTextBlockAlignRight}" Text="Làn ra" Margin="5" Width="100"/>
+                        <TextBlock Text="{Binding WhiteList.LaneOut.Name}" Style="{StaticResource WaterMarkTextBlock}" Width="150"/>
+                    </StackPanel>
+                </WrapPanel>
+                <Grid Grid.Row="1">
+                    <Grid Grid.Row="1">
+                        <Image Source="{Binding WhiteList.ImageOut}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

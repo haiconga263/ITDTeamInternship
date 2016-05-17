@@ -62,3 +62,16 @@ C:\Users\HaiConGa\Desktop\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUt
 C:\Users\HaiConGa\Desktop\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.csproj.GenerateResource.Cache
 C:\Users\HaiConGa\Desktop\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.exe
 C:\Users\HaiConGa\Desktop\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.pdb
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\bin\Release\SupervisionUtility.exe.config
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\bin\Release\SupervisionUtility.exe
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\bin\Release\SupervisionUtility.pdb
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.csprojResolveAssemblyReference.cache
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\MainWindow.baml
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\MainWindow.g.cs
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\App.g.cs
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility_MarkupCompile.cache
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.g.resources
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.Properties.Resources.resources
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.csproj.GenerateResource.Cache
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.exe
+D:\Project\Repos\ITDTeamInternship\DASHBOARD\SupervisionUtility\obj\Release\SupervisionUtility.pdb

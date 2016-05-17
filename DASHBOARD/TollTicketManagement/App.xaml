@@ -49,6 +49,7 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="BorderBrush" Value="Silver"/>
             <Setter Property="Foreground" Value="#D0D0D0"/>
+            <Setter Property="Icon" Value="/Resources/Images/itd.ico"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Window">

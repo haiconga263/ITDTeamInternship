@@ -368,5 +368,17 @@ namespace TollTicketManagement
                 }
             }
         }
+
+        private void btnLookup_Click(object sender, RoutedEventArgs e)
+        {
+            var wdn = new LookupView();
+            wdn.ShowDialog();
+        }
+
+        private void btnStatistics_Click(object sender, RoutedEventArgs e)
+        {
+            var wdn = new Statistical();
+            wdn.ShowDialog();
+        }
     }
 }
