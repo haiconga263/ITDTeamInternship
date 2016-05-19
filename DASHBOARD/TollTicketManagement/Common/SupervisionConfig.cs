@@ -63,6 +63,14 @@ namespace TollTicketManagement.Common
         internal static int BonusShiftTime = 30;
 
         internal static bool IsVehicleImporting = false;
-
+        internal enum ImageExtension
+        {
+            JBG = 0,
+            JPE = 1,
+            JPEG = 2,
+            JPG = 3,
+            PCD = 4,
+            PNG = 5
+        }
     }
 }
