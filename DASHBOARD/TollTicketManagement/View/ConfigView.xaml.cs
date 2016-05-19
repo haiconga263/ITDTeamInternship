@@ -33,7 +33,7 @@ namespace TollTicketManagement.View
             InitializeComponent();
             //Load thông tin config đã lưu
             LoadDatabaseControls();
-            //LoadCommonControl();
+            LoadCommonControl();
         }
 
         private void LoadDatabaseControls()
@@ -96,6 +96,7 @@ namespace TollTicketManagement.View
             var closeButton = GetTemplateChild("closeButton") as Button;
             if (closeButton != null) closeButton.Click += CloseClick;
             InitTrackChangeControlValues();
+            cbTypeImage.ItemsSource = Enum.GetValues(typeof(SupervisionConfig.ImageExtension)).Cast<SupervisionConfig.ImageExtension>();
             LoadSupervisionConfig();
         }
 
@@ -332,6 +333,10 @@ namespace TollTicketManagement.View
                 SaveDatabaseConfig();
                 SaveSupervisionConfig();
             }
+            else if (TabControl1.SelectedItem == TabCommon)
+            {
+                SaveCommonConfig();
+            }
 
             return true;
         }
@@ -364,6 +369,31 @@ namespace TollTicketManagement.View
                         oDatabaseConfigModel.Password2, oDatabaseConfigModel.Timeout2);
             }
             MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void SaveCommonConfig()
+        {
+            var configModel = GetCommonControlValue();
+            _ConfigController.SaveDirectoryConfig(configModel);
+            MessageBox.Show("Lưu dữ liệu thành công", "Thông báo !", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private CommonConfigModel GetCommonControlValue()
+        {
+            CommonConfigModel result = new CommonConfigModel();
+            result.EntryFolderPath = txtEntryFolder.Text;
+            result.ExitFolderPath = txtExitFolder.Text;
+            result.RecognizeFolderPath = txtRecogFolder.Text;
+            result.StandardFolderPath = txtStandarFolder.Text;
+            result.ImageType = Convert.ToString(cbTypeImage.SelectedValue);
+
+            int maxTime = 0;
+            int.TryParse(txtMaxTime.Text, out maxTime);
+            maxTime = maxTime <= 0 ? 1 : maxTime;
+            txtMaxTime.Text = Convert.ToString(maxTime);
+            result.MaxTime = maxTime;
+
+            return result;
         }
 
         private void SaveSupervisionConfig()
@@ -494,6 +524,70 @@ namespace TollTicketManagement.View
             TestConnection(cbxServerName2.Text, cbxDBName2.Text, txtUserName2.Text, txtPassword2.Password,
                 txtTimeout2.Text);
             Mouse.OverrideCursor = prevCursor;
+        }
+
+        void LoadCommonControl()
+        {
+            var commonConfigModel = _ConfigController.GetDirectoryConfig();
+            try
+            {
+                if (commonConfigModel != null)
+                {
+                    txtEntryFolder.Text = commonConfigModel.EntryFolderPath;
+                    txtExitFolder.Text = commonConfigModel.ExitFolderPath;
+                    txtRecogFolder.Text = commonConfigModel.RecognizeFolderPath;
+                    txtStandarFolder.Text = commonConfigModel.StandardFolderPath;
+                    if (commonConfigModel.MaxTime > 0)
+                    {
+                        txtMaxTime.Text = Convert.ToString(commonConfigModel.MaxTime);
+                    }
+                    else
+                    {
+                        txtMaxTime.Text = "1";
+                    }
+
+                    //if the first time this will be null
+                    if (!string.IsNullOrWhiteSpace(commonConfigModel.ImageType))
+                    {
+                        var index = (int)((SupervisionConfig.ImageExtension)Enum.Parse(typeof(SupervisionConfig.ImageExtension), commonConfigModel.ImageType));
+                        cbTypeImage.SelectedIndex = index;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //log here
+
+            }
+        }
+
+        private void btnSelEntryFolder_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
+            dialog.ShowDialog();
+            txtEntryFolder.Text = dialog.SelectedPath;
+        }
+
+        private void btnSelExitFolder_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
+            dialog.ShowDialog();
+            txtExitFolder.Text = dialog.SelectedPath;
+        }
+
+        private void btnSelRecofFolder_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
+            dialog.ShowDialog();
+            txtRecogFolder.Text = dialog.SelectedPath;
+        }
+
+        private void btnSelStandarFolder_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
+            dialog.ShowDialog();
+            txtStandarFolder.Text = dialog.SelectedPath;
         }
     }
 }
