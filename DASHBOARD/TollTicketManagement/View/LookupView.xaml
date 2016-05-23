@@ -66,7 +66,7 @@
                                 <ComboBox Style="{StaticResource NormalComboBox}" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" ItemsSource="{Binding lstCardType}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedItem="{Binding SelectedItemCardType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                                 <TextBlock Style="{StaticResource NormalTextBlock}" Text="Loại xe" Grid.Column="0" Margin="5" Grid.Row="1"/>
-                                <ComboBox Style="{StaticResource NormalComboBox}" Width="100" Grid.Column="1" Grid.Row="1" Margin="5" ItemsSource="{Binding lstVeh}" DisplayMemberPath="ShortName" SelectedValuePath="VehicleTypeID" SelectedItem="{Binding SelectedItemVehicleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <ComboBox Style="{StaticResource NormalComboBox}" Width="100" Grid.Column="1" Grid.Row="1" Margin="5,6,0,0" ItemsSource="{Binding lstVeh}" DisplayMemberPath="ShortName" SelectedValuePath="VehicleTypeID" SelectedItem="{Binding SelectedItemVehicleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
                             </Grid>
                         </GroupBox>
                         <GroupBox Header="Thông tin trạm" Padding="1" Margin="5">
