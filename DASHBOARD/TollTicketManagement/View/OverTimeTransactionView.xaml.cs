@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TollTicketManagement.Model;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace TollTicketManagement.View
 {
@@ -31,7 +33,15 @@ namespace TollTicketManagement.View
         }
         public string[] lShiftID { set; get; }
         private bool IsSearchTime = true;
-        
+        private Thread thmain;
+        private bool IsSearching = false;
+        private string[] SearchingStatus =
+        {
+            "Searching.",
+            "Searching..",
+            "Searching..."
+        };
+
         public OverTimeTransactionView()
         {
             InitializeComponent();
@@ -47,6 +57,30 @@ namespace TollTicketManagement.View
             radioTime.IsChecked = true;
             radioDateShift.IsChecked = false;
             gbDateShift.IsEnabled = false;
+            thmain = new Thread(new ThreadStart(thmainRun));
+            thmain.IsBackground = true;
+            thmain.Start();
+        }
+        private void thmainRun()
+        {
+            int indexStatus = 0;
+            while(true)
+            {
+                if(IsSearching)
+                {
+                    if (indexStatus == 0) indexStatus = 1;
+                    else if (indexStatus == 1) indexStatus = 2;
+                    else indexStatus = 0;
+                    lbStatus.Dispatcher.BeginInvoke((Action)delegate () { lbStatus.Text = SearchingStatus[indexStatus]; }, DispatcherPriority.DataBind);
+                    //lbStatus.Text = SearchingStatus[indexStatus];
+                }
+                else
+                {
+                    indexStatus = 0;
+                    lbStatus.Dispatcher.Invoke((Action)delegate () { lbStatus.Text = "Complete"; });
+                }
+                Thread.Sleep(200);
+            }
         }
         private void InitcbShilftNgayCa()
         {
@@ -78,7 +112,7 @@ namespace TollTicketManagement.View
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-
+            IsSearching = true;
             int count = 0;
             int StationID = 0;
             int Timeout = 0;
@@ -88,7 +122,7 @@ namespace TollTicketManagement.View
             }
             foreach (LS_Station item in lstStation)
             {
-                if(cbStation.Text.Equals(item.Name))
+                if (cbStation.Text.Equals(item.Name))
                 {
                     StationID = item.StationID;
                     break;
@@ -115,7 +149,7 @@ namespace TollTicketManagement.View
             lbitemnumber.Text = "/ " + count;
             int Pagenumber = (count / 20 + ((count % 20 == 0) ? 0 : 1));
             lbPagenumber.Text = "/ " + Pagenumber;
-            if(count > 0)
+            if (count > 0)
             {
                 cbPageIndex.Items.Clear();
                 tbitemIndex.Text = 1.ToString();
@@ -126,6 +160,7 @@ namespace TollTicketManagement.View
                 cbPageIndex.SelectedIndex = 0;
             }
             updateView(0);
+            IsSearching = false;
         }
         private string getCondition()
         {
@@ -205,7 +240,32 @@ namespace TollTicketManagement.View
 
         private void View_Selected(object sender, SelectedCellsChangedEventArgs e)
         {
-            tbitemIndex.Text = (View.SelectedIndex + (int)cbPageIndex.SelectedItem * 20).ToString();
+            tbitemIndex.Text = (View.SelectedIndex + cbPageIndex.SelectedIndex * 20).ToString();
+        }
+
+        private void View_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if(View.SelectedIndex > 0)
+            {
+                int STT = View.SelectedIndex + cbPageIndex.SelectedIndex * 20;
+                foreach (OverTimeSmartCard item in dataResults)
+                {
+                    if (item.STT.Equals(STT))
+                    {
+                        OverViewTransactionDetail wpf = new OverViewTransactionDetail(
+                            item.SmartCardID,
+                            item.RecogPlateNumber,
+                            item.StationIDIn.ToString(),
+                            item.LaneIn.ToString(),
+                            item.ShiftID.ToString(),
+                            item.DateTimeIn,
+                            item.ImageID
+                            );
+                        wpf.ShowDialog();
+                        break;
+                    }
+                }
+            }
         }
     }
 }

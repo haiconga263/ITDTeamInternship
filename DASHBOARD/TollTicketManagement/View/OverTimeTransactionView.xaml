@@ -134,7 +134,10 @@
                         <TextBlock Text="Thời hạn cho phép" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Style="{StaticResource NormalTextBlockAlignRight}" Margin="5"/>
                         <wpfTool:DecimalUpDown Name="UpdownTimeOut" Grid.Column="5" Grid.Row="0" Width="60" Margin="5"/>
                         <TextBlock Text="giờ" Grid.Column="6" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Style="{StaticResource NormalTextBlockAlignRight}" Margin="5"/>
-                        <Button Name="btnSearch" Height="35" Grid.Column="7" Grid.Row="0" VerticalAlignment="Center" Style="{StaticResource NormalButton}"  Content="Tìm kiếm" Width="100" HorizontalAlignment="Right" Margin="5" Click="btnSearch_Click"/>
+                        <Grid Grid.Column="7" Grid.Row="0">
+                            <TextBlock HorizontalAlignment="Right" Margin="5,5,160,5" Name="lbStatus" FontSize="16" Style="{StaticResource NormalTextBlockAlignRight}" Foreground="White"></TextBlock>
+                            <Button Name="btnSearch" Height="35" Grid.Column="7" Grid.Row="0" VerticalAlignment="Center" Style="{StaticResource NormalButton}"  Content="Tìm kiếm" Width="100" HorizontalAlignment="Right" Margin="5" Click="btnSearch_Click"/>
+                        </Grid>
                     </Grid>
                     <Grid  HorizontalAlignment="Right">
                         <Grid.ColumnDefinitions>
@@ -183,7 +186,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" Text="Danh sách thẻ vào quá hạn"  Background="Aqua" Height="30" TextAlignment="Center" FontSize="20" Margin="10,0"></TextBlock>
-            <DataGrid Name="View" Grid.Column="0" Grid.Row="1" Margin="10,0,10,10" ClipToBounds="True" ItemsSource="{Binding dataResults}" SelectedCellsChanged="View_Selected">
+            <DataGrid Name="View" Grid.Column="0" Grid.Row="1" Margin="10,0,10,10" ClipToBounds="True" ItemsSource="{Binding dataResults}" SelectedCellsChanged="View_Selected" MouseDoubleClick="View_MouseDoubleClick">
                 <DataGrid.Resources>
                     <DataTemplate x:Key="HeaderTemplate">
                         <StackPanel>
