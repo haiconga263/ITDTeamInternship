@@ -67,6 +67,12 @@ namespace TollTicketManagement.Model
             set { dateTimeIn = value; OnPropertyChanged(); }
             get { return dateTimeIn; }
         }
+        private string imageID;
+        public string ImageID
+        {
+            set { imageID = value; OnPropertyChanged(); }
+            get { return imageID; }
+        }
         private string overTime;
         public string OverTime
         {
@@ -86,6 +92,7 @@ namespace TollTicketManagement.Model
             result.LaneIn = Int32.Parse(row.ItemArray[4].ToString().Substring(1, 2));
             result.ShiftID = (int)row.ItemArray[5];
             result.DateTimeIn = ((DateTime)row.ItemArray[6]).ToShortDateString() + " " + ((DateTime)row.ItemArray[6]).ToLongTimeString();
+            result.ImageID = row.ItemArray[7].ToString();
             result.OverTime = tmpOverTime;
             tmpOverTime = string.Empty;
             tick = 0;
@@ -119,7 +126,11 @@ namespace TollTicketManagement.Model
             DAL da = new DAL(Base_Ctrl.ServerName, Base_Ctrl.UserID, Base_Ctrl.Password, Base_Ctrl.Database);
             using (DataTable dt = da.ExecCommand("exec [HPE].[dbo].[OverTimeSmartCard_Store_Data] 1,'" + getDateDBString(from) + "','" + getDateDBString(to) + "','19700101',0," + timeout + "," + StationID + ",'" + Condition + "'"))
             {
-                count = (int)dt.Rows[0].ItemArray[0];
+                try
+                {
+                    count = (int)dt.Rows[0].ItemArray[0];
+                }
+                catch { }
             }
             return count;
         }
@@ -129,7 +140,11 @@ namespace TollTicketManagement.Model
             DAL da = new DAL(Base_Ctrl.ServerName, Base_Ctrl.UserID, Base_Ctrl.Password, Base_Ctrl.Database);
             using (DataTable dt = da.ExecCommand("exec [HPE].[dbo].[OverTimeSmartCard_Store_Data] 0,'19700101','19700101','" + getDateString(date) + "'," + shiftID + "," + timeout + "," + StationID + ",'" + Condition + "'"))
             {
+                try
+                { 
                 count = (int)dt.Rows[0].ItemArray[0];
+                }
+                catch { }
             }
             return count;
         }
