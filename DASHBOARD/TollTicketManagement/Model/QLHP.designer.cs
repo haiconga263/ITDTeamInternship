@@ -147,8 +147,15 @@ namespace TollTicketManagement.Model
 				return this.GetTable<AC_PPCWhiteList>();
 			}
 		}
-		
-		public System.Data.Linq.Table<LS_Card> LS_Cards
+        public System.Data.Linq.Table<OverTimeSmartCard> OverTimeSmartCardLists
+        {
+            get
+            {
+                return this.GetTable<OverTimeSmartCard>();
+            }
+        }
+
+        public System.Data.Linq.Table<LS_Card> LS_Cards
 		{
 			get
 			{
