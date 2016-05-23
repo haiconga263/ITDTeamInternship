@@ -380,5 +380,11 @@ namespace TollTicketManagement
             var wdn = new Statistical();
             wdn.ShowDialog();
         }
+
+        private void btnoverTimeTransactionView_Click(object sender, RoutedEventArgs e)
+        {
+            var wdn = new OverTimeTransactionView();
+            wdn.ShowDialog();
+        }
     }
 }

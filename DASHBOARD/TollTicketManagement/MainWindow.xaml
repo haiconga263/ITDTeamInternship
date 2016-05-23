@@ -71,6 +71,18 @@
                                 </StackPanel>
                             </Button>
                         </Grid>
+                        <!--THÔNG KẾ-->
+                        <Grid Width="200" Height="150">
+                            <TextBlock Text="XE QUÁ HẠN" Style="{StaticResource GroupboxTitle}" HorizontalAlignment="Center"/>
+                            <Button  Name="btnoverTimeTransactionView" 
+                                     Style="{StaticResource ActionButtonStyle}" 
+                                     HorizontalAlignment="Left" Click="btnoverTimeTransactionView_Click">
+                                <StackPanel>
+                                    <Image Source="Resources\Images\Statistics.png" Width="65" Height="65" HorizontalAlignment="Center"/>
+                                    <TextBlock HorizontalAlignment="Center" >Thống kê<LineBreak/>Xe quá hạn</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
                     </UniformGrid>
                 </TabItem>
                 <TabItem Header="Cấu hình" Name="TabConfig">
