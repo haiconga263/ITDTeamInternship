@@ -83,7 +83,7 @@ namespace TollTicketManagement.Model
             result.SmartCardID = row.ItemArray[1].ToString();
             result.RecogPlateNumber = row.ItemArray[2].ToString();
             result.StationIDIn = (int)row.ItemArray[3];
-            result.LaneIn = (int)row.ItemArray[4];
+            result.LaneIn = Int32.Parse(row.ItemArray[4].ToString().Substring(1, 2));
             result.ShiftID = (int)row.ItemArray[5];
             result.DateTimeIn = ((DateTime)row.ItemArray[6]).ToShortDateString() + " " + ((DateTime)row.ItemArray[6]).ToLongTimeString();
             result.OverTime = tmpOverTime;
