@@ -86,6 +86,7 @@
     <Compile Include="Model\Converter\StringToPathImageConverter.cs" />
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\OverTimeSmartCard.cs" />
+    <Compile Include="Model\OverTransactionDetail.cs" />
     <Compile Include="Model\QLHP.cs">
       <DependentUpon>QLHP.dbml</DependentUpon>
     </Compile>
@@ -127,6 +128,9 @@
     </Compile>
     <Compile Include="View\OverTimeTransactionView.xaml.cs">
       <DependentUpon>OverTimeTransactionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OverViewTransactionDetail.xaml.cs">
+      <DependentUpon>OverViewTransactionDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TransDetailsView.xaml.cs">
       <DependentUpon>TransDetailsView.xaml</DependentUpon>
@@ -188,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OverTimeTransactionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OverViewTransactionDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
